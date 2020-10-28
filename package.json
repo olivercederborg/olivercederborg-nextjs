@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:css": "postcss src/tailwind.css -o static/dist/tailwind.css"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
@@ -27,7 +28,10 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^5.4.0",
+    "@zeit/next-css": "^1.0.1",
     "file-loader": "^6.1.1",
+    "next-purgecss": "^4.0.0",
+    "next-sass": "^1.0.3",
     "raw-loader": "^4.0.2",
     "react-svg-loader": "^3.0.3",
     "tailwindcss": "^1.9.6"
