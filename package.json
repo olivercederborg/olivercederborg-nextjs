@@ -11,7 +11,7 @@
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "alpinejs": "^2.7.2",
     "autoprefixer": "^10.0.1",
-    "next": "9.5.3",
+    "next": "^10.0.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",
