@@ -1,0 +1,10 @@
+/* purgecss start ignore */
+@tailwind  base;
+@tailwind  components;
+/* purgecss end ignore */
+@tailwind  utilities;
+
+.header-collapsed {
+   background: #141628de !important;
+   backdrop-filter: saturate(180%) blur(20px) !important;
+}

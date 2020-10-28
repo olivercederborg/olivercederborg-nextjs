@@ -8,8 +8,28 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "alpinejs": "^2.7.2",
+    "autoprefixer": "^10.0.1",
     "next": "9.5.3",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-import": "^13.0.0",
+    "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-dom": "16.13.1",
+    "react-icons": "^3.11.0",
+    "react-scrollspy-nav": "^1.2.4",
+    "react-use-scrollspy": "^2.0.0",
+    "sass": "^1.27.0",
+    "svg-url-loader": "^6.0.0",
+    "webpack": "^5.2.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^5.4.0",
+    "file-loader": "^6.1.1",
+    "raw-loader": "^4.0.2",
+    "react-svg-loader": "^3.0.3",
+    "tailwindcss": "^1.9.6"
   }
 }

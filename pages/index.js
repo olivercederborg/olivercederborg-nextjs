@@ -1,209 +1,279 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Layout, { siteTitle } from "../components/layout";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { useState, useEffect } from "react";
+import { workCases } from "../workCases";
+import {
+	FaTwitter,
+	FaDribbble,
+	FaInstagram,
+	FaLinkedin,
+	FaLink,
+} from "react-icons/fa";
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const Index = () => {
+	const [count, setCount] = useState(1);
+	const maxCount = workCases.length;
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+	let workCase = workCases[count - 1];
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+	const changeCounter = (value) => {
+		if (value === "increment" && count != maxCount) {
+			setCount((prevState) => prevState + 1);
+		} else if (value === "decrement" && count != 1) {
+			setCount((prevState) => prevState - 1);
+		} else if (value === "increment" && count == maxCount) {
+			setCount(1);
+		} else if (value === "decrement" && count == 1) {
+			setCount(maxCount);
+		}
+	};
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+	// const WorkCaseLink = () => {
+	// 	if (workCase.caseLink === null) {
+	// 		return;
+	// 	}
+	// 	if (workCase.caseLink !== null) {
+	// 		return (
+	// 			<a
+	// 				href={workCase.caseLink}
+	// 				className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex'
+	// 			>
+	// 				Visit site
+	// 			</a>
+	// 		);
+	// 	}
+	// };
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+	return (
+		<Layout>
+			<Head>
+				<title>{siteTitle}</title>
+			</Head>
+			<section
+				id='hero'
+				className='bg-backgroundOne pt-52 pb-30 lg:pt-80 lg:pb-56 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
+			>
+				<div className='flex container'>
+					<div className='flex-inline flex-col flex-wrap w-full'>
+						<h1 className='text-4xl lg:text-6xl font-semibold text-white leading-tight'>
+							Hey, Im <span className='text-primaryBrand'>Oliver</span>
+							<span className=''>
+								<br></br>
+								<span className='text-3xl lg:text-5xl'>
+									a{" "}
+									<span className='text-primaryBrand'>
+										self-taught
+									</span>{" "}
+									designer<br></br> &amp; front-end developer.
+								</span>
+							</span>
+						</h1>
+						<p className='text-greyText font-normal text-normal mt-8'>
+							Stick around to see some of my work.
+						</p>
+						<AnchorLink
+							href='#work'
+							offset={() => 72}
+							className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 text-center inline-flex w-auto'
+						>
+							See my work
+						</AnchorLink>
+					</div>
+				</div>
+			</section>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+			<section
+				id='work'
+				className='bg-backgroundTwo pt-32 pb-48 overflow-x-hidden'
+			>
+				<div className='container'>
+					<div className='flex flex-row items-center'>
+						<div className='h-1 w-16 bg-primaryBrand mr-6'></div>
+						<p className='text-greyText text-base font-medium'>Work</p>
+					</div>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+					<h2 className='text-white font-semibold text-4xl lg:text-secheader mt-8'>
+						Hand-picked projects <br></br>for you to see.
+					</h2>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
+					<div className='flex flex-col-reverse lg:flex-row items-start'>
+						<div className='w-12/12 lg:w-5/12'>
+							<div className='flex flex-row items-center text-white mt-20 lg:mt-36'>
+								<button
+									onClick={() => changeCounter("decrement")}
+									className='bg-primaryGrey hover:bg-primaryBrand text-2xl py-2 px-4 mr-4 ease-in-out duration-300'
+								>
+									&larr;
+								</button>
+								<p className='text-white text-base font-semibold mr-4'>
+									0{count}/0{maxCount}
+								</p>
+								<button
+									onClick={() => changeCounter("increment")}
+									className='bg-primaryGrey hover:bg-primaryBrand text-2xl py-2 px-4 mr-4 ease-in-out duration-300'
+								>
+									&rarr;
+								</button>
+							</div>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+							<h3 className='text-white font-semibold text-secheader mt-12'>
+								{workCase.title}
+							</h3>
+							<div className='flex flex-row items-center mt-7'>
+								<div className='h-1 w-6 bg-primaryBrand mr-6'></div>
+								<p className='text-greyText text-base font-medium'>
+									{workCase.category}
+								</p>
+							</div>
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+							<p className='text-greyText font-normal text-base leading-loose mt-6 w-12/12 lg:w-10/12'>
+								{workCase.description}
+							</p>
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+							{/* <a
+								href={workCase.caseLink}
+								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex'
+							>
+								Visit site
+							</a> */}
+						</div>
 
-        footer img {
-          margin-left: 0.5rem;
-        }
+						<div className='w-12/12 lg:w-7/12 flex justify-center'>
+							<img
+								src={workCase.caseImage}
+								alt={workCase.caseImageAlt}
+								className='max-h-xl xl:-mr-20 mt-26 lg:mt-16'
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
 
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+			<section
+				id='about'
+				className='bg-backgroundOne pt-32 pb-48 overflow-x-hidden'
+			>
+				<div className='container'>
+					<div className='flex flex-row items-center'>
+						<div className='h-1 w-16 bg-primaryBrand mr-6'></div>
+						<p className='text-greyText text-base font-medium'>About</p>
+					</div>
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
+					<h2 className='text-white font-semibold text-4xl lg:text-secheader mt-8'>
+						Get a closer look at who I am.
+					</h2>
 
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
+					<div className='flex flex-col-reverse lg:flex-row items-start'>
+						<div className='w-full lg:w-7/12'>
+							<div className='flex flex-row items-center mt-16 lg:mt-36'>
+								<div className='h-1 w-6 bg-primaryBrand mr-6'></div>
+								<p className='text-white text-base font-medium'>
+									Skills &amp; Tools
+								</p>
+							</div>
 
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
+							<p className='text-greyText font-normal text-base mt-6 leading-loose'>
+								HTML/CSS, Javascript, React, Next.js, WordPress,
+								Photoshop, Illustrator, Adobe Xd, Figma
+							</p>
 
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
+							<div className='flex flex-row items-center mt-14'>
+								<div className='h-1 w-6 bg-primaryBrand mr-6'></div>
+								<p className='text-white text-base font-medium'>
+									Who am I
+								</p>
+							</div>
 
-        .title,
-        .description {
-          text-align: center;
-        }
+							<p className='text-greyText font-normal text-base mt-6 leading-loose'>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+								sed do eiusmod tempor incididunt ut labore et dolore
+								magna aliqua. Ut enim ad minim veniam, quis nostrud
+								exercitation ullamco laboris nisi ut aliquip ex ea
+								commodo consequat. Duis aute irure dolor in
+								reprehenderit.
+							</p>
 
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
+							<AnchorLink
+								href='#connect'
+								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
+							>
+								Get in touch
+							</AnchorLink>
+						</div>
 
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
+						<div className='flex w-7/12 md:w-5/12 justify-end'>
+							<img
+								src='/images/about-oliver.svg'
+								alt='About Oliver Cederborg'
+								className='max-h-sm mt-30'
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
+			<section
+				id='connect'
+				className='bg-backgroundTwo pt-32 overflow-x-hidden'
+			>
+				<div className='container pb-36 md:pb-48'>
+					<div className='flex flex-row items-center'>
+						<div className='h-1 w-16 bg-primaryBrand mr-6'></div>
+						<p className='text-greyText text-base font-medium'>Connect</p>
+					</div>
 
-          max-width: 800px;
-          margin-top: 3rem;
-        }
+					<h2 className='text-white font-semibold text-4xl lg:text-secheader mt-8'>
+						Interested in working with me <br></br>or perhaps just talk?
+					</h2>
 
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
+					<a
+						href='mailto:hey@olivercederborg.com'
+						className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
+					>
+						Drop an email
+					</a>
+				</div>
+				<footer className='container pb-10 text-gray-600 flex flex-col-reverse md:flex-row justify-between items-center lg:items-center'>
+					{/* <p><a href="mailto:hey@olivercederborg.com" className="hover:text-greyText ease-in-out duration-300 hover:underline">hey@olivercederborg.com</a></p> */}
+					<p className='hover:text-greyText ease-in-out duration-300 mt-10 md:mt-0'>
+						&copy; 2020 Oliver Cederborg
+					</p>
 
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
+					<div className='flex flex-row text-white'>
+						<a
+							href='https://dribbble.com/oliver'
+							target='_blank'
+							className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+						>
+							<FaDribbble />
+						</a>
+						<a
+							href='https://twitter.com/olivercederborg'
+							target='_blank'
+							className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+						>
+							<FaTwitter />
+						</a>
+						<a
+							href='https://instagram.com/olivercederborg'
+							target='_blank'
+							className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+						>
+							<FaInstagram />
+						</a>
+						<a
+							href='https://www.linkedin.com/in/olivercederborg'
+							target='_blank'
+							className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+						>
+							<FaLinkedin />
+						</a>
+					</div>
+				</footer>
+			</section>
+		</Layout>
+	);
+};
 
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
-}
+export default Index;
