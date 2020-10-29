@@ -100,7 +100,7 @@ const Layout = ({ children }) => {
 					</div>
 				</nav>
 			</header>
-			<main className='w-screen font-display'>{children}</main>
+			<main className='font-display'>{children}</main>
 		</div>
 	);
 };
