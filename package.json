@@ -5,14 +5,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "build:css": "postcss src/tailwind.css -o static/dist/tailwind.css"
+    "start": "next start"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
-    "alpinejs": "^2.7.2",
+    "@svgr/webpack": "^5.4.0",
+    "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^10.0.1",
+    "file-loader": "^6.1.1",
     "next": "^10.0.0",
+    "next-purgecss": "^4.0.0",
+    "next-sass": "^1.0.3",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-import": "^13.0.0",
     "postcss-preset-env": "^6.7.0",
@@ -21,20 +24,12 @@
     "react-dom": "16.13.1",
     "react-icons": "^3.11.0",
     "react-scrollspy-nav": "^1.2.4",
+    "react-svg-loader": "^3.0.3",
     "react-use-scrollspy": "^2.0.0",
     "sass": "^1.27.0",
-    "svg-url-loader": "^6.0.0",
-    "webpack": "^5.2.0"
+    "tailwindcss": "^1.9.6"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.4.0",
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
-    "file-loader": "^6.1.1",
-    "next-purgecss": "^4.0.0",
-    "next-sass": "^1.0.3",
-    "raw-loader": "^4.0.2",
-    "react-svg-loader": "^3.0.3",
-    "tailwindcss": "^1.9.6"
+    "raw-loader": "^4.0.2"
   }
 }

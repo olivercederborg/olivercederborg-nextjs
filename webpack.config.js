@@ -1,26 +1,24 @@
-// webpack.config.js
-module.exports = {
-   // ...
-   module: {
-     rules: [
-       {
-         // ...
-         use: [
-           // ...
-           {
-             loader: 'postcss-loader',
-             options: {
-               postcssOptions: {
-                 ident: 'postcss',
-                 plugins: [
-                   require('tailwindcss'),
-                   require('autoprefixer'),
-                 ],
-               },
-             }
-           },
-         ],
-       }
-     ],
-   }
- }
+// module.exports = {
+//    module: {
+//      rules: [
+//       {
+//          test: /\.(png|jpe?g|gif)$/i,
+//          loader: 'file-loader',
+//          options: {
+//            name: '[path][name].[ext]',
+//          },
+//        },
+//        {
+//          test: /\.txt$/i,
+//          use: [
+//            {
+//              loader: 'raw-loader',
+//              options: {
+//                esModule: false,
+//              },
+//            },
+//          ],
+//        },
+//      ],
+//    },
+//  };
