@@ -6,6 +6,9 @@
     "build": "next build",
     "start": "next start"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "@svgr/webpack": "^5.4.0",
