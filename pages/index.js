@@ -152,9 +152,10 @@ const Index = () => {
 							{ workCase.caseLink != null ? (
 								<a
 								href={workCase.caseLink}
+								target="_blank"
 								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
 							>
-								Visit site <MdKeyboardArrowRight className="ml-1 text-2xl" />
+								{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
 							</a>
 							) : null }
 							

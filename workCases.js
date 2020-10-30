@@ -5,6 +5,7 @@ export const workCases = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         caseImage: "/images/lunar-way-project.png",
         caseLink: null,
+        caseLinkText: null,
         caseImageAlt: "Lunar Way app design concept",
       },
       {
@@ -13,6 +14,7 @@ export const workCases = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         caseImage: "/images/noyer-project.png",
         caseLink: "https://noyer.dk/",
+        caseLinkText: "Visit Noyer",
         caseImageAlt: "Noyer wordpress webshop",
       },
       {
@@ -21,6 +23,7 @@ export const workCases = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         caseImage: "/images/nordsjaelland-osteopati-case.png",
         caseLink: "https://nordsjaelland-osteopati.dk/",
+        caseLinkText: "Visit site",
         caseImageAlt: "",
       },
    ]
