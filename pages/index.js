@@ -242,7 +242,7 @@ const Index = () => {
 							<img
 								src={workCase.caseImage}
 								alt={workCase.caseImageAlt}
-								className='max-h-xl max-w-full xl:-mr-20 mt-26 lg:mt-16'
+								className='max-h-xl max-w-full object-contain xl:-mr-20 mt-26 lg:mt-16'
 							/>
 						</div>
 					</div>
