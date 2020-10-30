@@ -12,9 +12,8 @@ const Layout = ({ children }) => {
 	useEffect(() => {
 		function onScroll() {
 			const navId = document.getElementById("navigation")
-			const navOuter = document.getElementsByTagName("header")
 			const topPos = 250;
-			let currentPosition = window.pageYOffset; // or use document.documentElement.scrollTop;
+			let currentPosition = window.pageYOffset;
 			if (
 				currentPosition > topPos &&
 				navId.classList.contains("py-12") === true
@@ -104,7 +103,7 @@ const Layout = ({ children }) => {
 				</nav>
 			</header>
 
-			<nav className="fixed w-full md:hidden text-2xl bg-gray-900 bottom-0 bg-opacity-75 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" style={{ "backdrop-filter": "saturate(180%) blur(20px)", "-webkit-backdrop-filter": "saturate(180%) blur(20px)" }}>
+			<nav className="fixed w-full md:hidden text-2xl bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" style={{ "backdrop-filter": "saturate(180%) blur(20px)", "-webkit-backdrop-filter": "saturate(180%) blur(20px)" }}>
 				<AnchorLink
 					href='#hero'
 					className='px-8 hover:text-white ease-in-out duration-300 py-6'
