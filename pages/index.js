@@ -238,7 +238,7 @@ const Index = () => {
 
 						</div>
 
-						<div id="case-image" className='w-12/12 h-auto lg:w-7/12 flex justify-center mt-26 lg:mt-16 xl:-mr-20'>
+						<div id="case-image" className='w-12/12 lg:w-7/12 flex justify-center mt-26 lg:mt-16 xl:-mr-20'>
 							<img
 								src={workCase.caseImage}
 								alt={workCase.caseImageAlt}
