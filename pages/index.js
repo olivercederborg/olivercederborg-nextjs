@@ -39,14 +39,21 @@ const Index = () => {
 		const heroTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".hero-h1",
-				start: "center center",
+				start: "center bottom",
 				end: "=-300",
 			},
 		});
 		const workTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#work .section-line",
-				start: "center center",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
+		const caseTextTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#case-nav",
+				start: "center bottom",
 				end: "=-300",
 			}
 		});
@@ -63,26 +70,76 @@ const Index = () => {
 			opacity: 0,
 			stagger: 0.3,
 			skewY: -0.8,
+			ease: "power3.out"
 		});
 
 		//work section timeline
-		workTl.from("#work .section-line", 1.5, {
+		workTl.from("#work .section-line", 1, {
 			width: 0,
-			delay: 0.2,
+			delay: 0,
 			ease: "power3.out"
 		}).from("#work .section-category", 1.5, {
 			x: -10,
 			opacity: 0,
 			stagger: 0.3,
 			skewX: 5,
-			delay: -1,
+			delay: -0.5,
 			ease: "power3.out"
 		}).from(".work-h2", 1, {
 			x: -70,
 			opacity: 0,
 			stagger: 0.3,
 			skewX: 5,
+			delay: -1.5,
+		});
+
+		//case text timeline
+		caseTextTl.from("#case-nav", 2, {
+			y: -20,
+			opacity: 0,
+			delay: 0,
+			ease: "power3.out"
+		}).from("#case-header", 1, {
+			x: -50,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1.5,
+		}).from("#case-category-line", 1, {
+			width: 0,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
 			delay: -1,
+			ease: "power3.out"
+		}).from("#case-category", 1, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -0.5,
+		}).from("#case-description", 1, {
+			x: -30,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -1,
+		}).from("#case-link", 1, {
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -0.5,
+		})
+
+		gsap.from("#case-image", 1.3, {
+			scrollTrigger: {
+				trigger: "#case-image",
+				start: "center bottom",
+				end: "=-300",
+			},
+			x: -50,
+			opacity: 0,
+			delay: 0.5,
 		})
 	}, []);
 
@@ -137,7 +194,7 @@ const Index = () => {
 
 					<div className='flex flex-col-reverse lg:flex-row items-start'>
 						<div className='w-12/12 lg:w-5/12'>
-							<div className='flex flex-row items-center text-white mt-20 lg:mt-36 '>
+							<div id="case-nav" className='flex flex-row items-center text-white mt-20 lg:mt-36 '>
 								<button
 									onClick={() => changeCounter("decrement")}
 									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
@@ -148,24 +205,24 @@ const Index = () => {
 									0{count}/0{maxCount}
 								</p>
 								<button
-									onClick={() => changeCounter("increment")}
+									onClick={() => changeCounter("increment") }
 									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
 								>
 									<HiOutlineArrowNarrowRight />
 								</button>
 							</div>
 
-							<h3 className='text-white font-semibold text-secheader mt-12'>
+							<h3 id="case-header" className='text-white font-semibold text-secheader mt-12'>
 								{workCase.title}
 							</h3>
 							<div className='flex flex-row items-center mt-7'>
-								<div className='h-1 w-6 bg-primaryBrand mr-6'></div>
-								<p className='text-greyText text-base font-medium'>
+								<div id="case-category-line" className='h-1 w-6 bg-primaryBrand mr-6'></div>
+								<p id="case-category" className='text-greyText text-base font-medium'>
 									{workCase.category}
 								</p>
 							</div>
 
-							<p className='text-greyText font-normal text-base leading-loose mt-6 w-12/12 lg:w-10/12'>
+							<p id="case-description" className='text-greyText font-normal text-base leading-loose mt-6 w-12/12 lg:w-10/12'>
 								{workCase.description}
 							</p>
 
@@ -173,6 +230,7 @@ const Index = () => {
 								<a
 									href={workCase.caseLink}
 									target="_blank"
+									id="case-link"
 									className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
 								>
 									{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
@@ -181,7 +239,7 @@ const Index = () => {
 
 						</div>
 
-						<div className='w-12/12 lg:w-7/12 flex justify-center'>
+						<div id="case-image" className='w-12/12 lg:w-7/12 flex justify-center'>
 							<img
 								src={workCase.caseImage}
 								alt={workCase.caseImageAlt}
