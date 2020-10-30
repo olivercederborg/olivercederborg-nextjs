@@ -1,9 +1,9 @@
 import Head from "next/head";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useState, useEffect } from "react";
-import { BiHomeAlt } from "react-icons/bi"
+import { BiHomeAlt, BiUser  } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
-import { HiOutlineUserCircle, HiOutlineMail } from "react-icons/hi"
+import { HiOutlineMail } from "react-icons/hi"
 
 export const siteTitle =
 	"Oliver Cederborg - Self-taught designer & front-end developer.";
@@ -121,7 +121,7 @@ const Layout = ({ children }) => {
 					href='#about'
 					className='px-8 hover:text-white ease-in-out duration-300 py-6'
 				>
-					<HiOutlineUserCircle />
+					<BiUser />
 				</AnchorLink>
 				<AnchorLink
 					href='#connect'
