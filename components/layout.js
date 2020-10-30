@@ -1,6 +1,9 @@
 import Head from "next/head";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useState, useEffect } from "react";
+import { BiHomeAlt } from "react-icons/bi"
+import { FiBriefcase } from "react-icons/fi"
+import { HiOutlineUserCircle, HiOutlineMail } from "react-icons/hi"
 
 export const siteTitle =
 	"Oliver Cederborg - Self-taught designer & front-end developer.";
@@ -101,34 +104,30 @@ const Layout = ({ children }) => {
 				</nav>
 			</header>
 
-			<nav className="fixed w-screen bg-gray-900 bottom-0 bg-opacity-75 flex flex-row justify-between" style={{ "backdrop-filter": "saturate(180%) blur(20px)" }}>
+			<nav className="fixed w-full md:hidden text-2xl bg-gray-900 bottom-0 bg-opacity-75 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" style={{ "backdrop-filter": "saturate(180%) blur(20px)" }}>
 				<AnchorLink
 					href='#hero'
-					offset='72'
-					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6 border-r-1 border-primaryGrey'
 				>
-					Home
+					<BiHomeAlt />
 				</AnchorLink>
 				<AnchorLink
 					href='#work'
-					offset='72'
-					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6 border-r-1 border-primaryGrey'
 				>
-					Work
+					<FiBriefcase />
 				</AnchorLink>
 				<AnchorLink
 					href='#about'
-					offset='72'
-					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6 border-r-1 border-primaryGrey'
 				>
-					About
+					<HiOutlineUserCircle />
 				</AnchorLink>
 				<AnchorLink
 					href='#connect'
-					offset='72'
-					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
 				>
-					Connect
+					<HiOutlineMail />
 				</AnchorLink>
 			</nav>
 			<main className='font-display'>{children}</main>

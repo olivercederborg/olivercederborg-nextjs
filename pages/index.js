@@ -52,7 +52,7 @@ const Index = () => {
 			</Head>
 			<section
 				id='hero'
-				className='bg-backgroundOne pt-10 pb-30 lg:pt-80 lg:pb-56 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
+				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
 			>
 				<div className='flex container'>
 					<div className='flex-inline flex-col flex-wrap w-full'>
