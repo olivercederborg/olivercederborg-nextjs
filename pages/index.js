@@ -10,6 +10,7 @@ import {
 	FaInstagram,
 	FaLinkedin
 } from "react-icons/fa";
+import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi";
 
 const Index = () => {
 	const [count, setCount] = useState(1);
@@ -134,18 +135,18 @@ const Index = () => {
 							<div className='flex flex-row items-center text-white mt-20 lg:mt-36'>
 								<button
 									onClick={() => changeCounter("decrement")}
-									className='bg-primaryGrey hover:bg-primaryBrand text-2xl py-2 px-4 mr-4 ease-in-out duration-300'
+									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300'
 								>
-									&larr;
+									<HiOutlineArrowNarrowLeft />
 								</button>
 								<p className='text-white text-base font-semibold mr-4'>
 									0{count}/0{maxCount}
 								</p>
 								<button
 									onClick={() => changeCounter("increment")}
-									className='bg-primaryGrey hover:bg-primaryBrand text-2xl py-2 px-4 mr-4 ease-in-out duration-300'
+									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300'
 								>
-									&rarr;
+									<HiOutlineArrowNarrowRight />
 								</button>
 							</div>
 
