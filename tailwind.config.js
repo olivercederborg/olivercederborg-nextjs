@@ -86,6 +86,8 @@ const spacing = {
   '10xl': '120rem',
 }
 module.exports = {
+    corePlugins: {
+    },
   theme: {
       container: {
           center: true,

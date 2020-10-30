@@ -11,6 +11,7 @@ import {
 	FaLinkedin
 } from "react-icons/fa";
 import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Index = () => {
 	const [count, setCount] = useState(1);
@@ -29,22 +30,6 @@ const Index = () => {
 			setCount(maxCount);
 		}
 	};
-
-	// const WorkCaseLink = () => {
-	// 	if (workCase.caseLink === null) {
-	// 		return;
-	// 	}
-	// 	if (workCase.caseLink !== null) {
-	// 		return (
-	// 			<a
-	// 				href={workCase.caseLink}
-	// 				className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex'
-	// 			>
-	// 				Visit site
-	// 			</a>
-	// 		);
-	// 	}
-	// };
 
 	return (
 		<Layout>
@@ -132,10 +117,10 @@ const Index = () => {
 
 					<div className='flex flex-col-reverse lg:flex-row items-start'>
 						<div className='w-12/12 lg:w-5/12'>
-							<div className='flex flex-row items-center text-white mt-20 lg:mt-36'>
+							<div className='flex flex-row items-center text-white mt-20 lg:mt-36 '>
 								<button
 									onClick={() => changeCounter("decrement")}
-									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300'
+									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
 								>
 									<HiOutlineArrowNarrowLeft />
 								</button>
@@ -144,7 +129,7 @@ const Index = () => {
 								</p>
 								<button
 									onClick={() => changeCounter("increment")}
-									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300'
+									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
 								>
 									<HiOutlineArrowNarrowRight />
 								</button>
@@ -164,12 +149,15 @@ const Index = () => {
 								{workCase.description}
 							</p>
 
-							{/* <a
+							{ workCase.caseLink != null ? (
+								<a
 								href={workCase.caseLink}
-								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex'
+								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
 							>
-								Visit site
-							</a> */}
+								Visit site <MdKeyboardArrowRight className="ml-1 text-2xl" />
+							</a>
+							) : null }
+							
 						</div>
 
 						<div className='w-12/12 lg:w-7/12 flex justify-center'>
@@ -268,12 +256,12 @@ const Index = () => {
 					</a>
 				</div>
 				<footer className='container pb-10 text-gray-600 flex flex-col-reverse md:flex-row justify-between items-center lg:items-center'>
-					{/* <p><a href="mailto:hey@olivercederborg.com" className="hover:text-greyText ease-in-out duration-300 hover:underline">hey@olivercederborg.com</a></p> */}
-					<p className='hover:text-greyText ease-in-out duration-300 mt-10 md:mt-0'>
+					<p><a href="mailto:hey@olivercederborg.com" className="hover:text-greyText ease-in-out duration-300 hover:underline">hey@olivercederborg.com</a></p>
+					<p className='hover:text-greyText ease-in-out duration-300 mb-5 md:mb-0'>
 						&copy; 2020 Oliver Cederborg
 					</p>
 
-					<div className='flex flex-row text-white'>
+					<div className='flex flex-row text-white mb-10 md:mb-0'>
 						<a
 							href='https://dribbble.com/oliver'
 							target='_blank'
