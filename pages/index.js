@@ -36,56 +36,41 @@ const Index = () => {
 			gsap.registerPlugin(ScrollTrigger);
 		}
 		//timelines defined
-		const heroTl = gsap.timeline();
-
-		//hero timeline
-		heroTl.from(".hero-h1", 1, {
+		const heroTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".hero-h1",
 				start: "center center",
 				end: "=-300",
-				// scrub: 1,
 			},
+		});
+		const workTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#work .section-line",
+				start: "center center",
+				end: "=-300",
+			}
+		});
+
+		//hero timeline
+		heroTl.from(".hero-h1", 1, {
 			x: -70,
 			opacity: 0,
 			stagger: 0.3,
 			skewX: 5,
 			delay: 0.4,
 		}).from(".hero-add", 0.8, {
-			scrollTrigger: {
-				trigger: ".hero-add",
-				start: "center center",
-				end: "=-300",
-				// scrub: 1,
-			},
 			y: -40,
 			opacity: 0,
 			stagger: 0.3,
 			skewY: -0.8,
-			// delay: 0,
 		});
 
 		//work section timeline
-		const workTl = gsap.timeline();
-
 		workTl.from("#work .section-line", 1.5, {
-			scrollTrigger: {
-				trigger: ".work-h2",
-				start: "center center",
-				end: "=-300",
-			},
 			width: 0,
-			// opacity: 0,
-			stagger: 0.3,
-			skewX: 5,
 			delay: 0.2,
 			ease: "power3.out"
 		}).from("#work .section-category", 1.5, {
-			scrollTrigger: {
-				trigger: ".work-h2",
-				start: "center center",
-				end: "=-300",
-			},
 			x: -10,
 			opacity: 0,
 			stagger: 0.3,
@@ -93,11 +78,6 @@ const Index = () => {
 			delay: -1,
 			ease: "power3.out"
 		}).from(".work-h2", 1, {
-			scrollTrigger: {
-				trigger: ".work-h2",
-				start: "center center",
-				end: "=-300",
-			},
 			x: -70,
 			opacity: 0,
 			stagger: 0.3,
