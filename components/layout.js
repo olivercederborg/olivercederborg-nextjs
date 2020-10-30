@@ -107,19 +107,19 @@ const Layout = ({ children }) => {
 			<nav className="fixed w-full md:hidden text-2xl bg-gray-900 bottom-0 bg-opacity-75 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" style={{ "backdrop-filter": "saturate(180%) blur(20px)", "-webkit-backdrop-filter": "saturate(180%) blur(20px)" }}>
 				<AnchorLink
 					href='#hero'
-					className='px-8 hover:text-white ease-in-out duration-300 py-6 border-r-1 border-primaryGrey'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
 				>
 					<BiHomeAlt />
 				</AnchorLink>
 				<AnchorLink
 					href='#work'
-					className='px-8 hover:text-white ease-in-out duration-300 py-6 border-r-1 border-primaryGrey'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
 				>
 					<FiBriefcase />
 				</AnchorLink>
 				<AnchorLink
 					href='#about'
-					className='px-8 hover:text-white ease-in-out duration-300 py-6 border-r-1 border-primaryGrey'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
 				>
 					<HiOutlineUserCircle />
 				</AnchorLink>
