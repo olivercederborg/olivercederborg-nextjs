@@ -31,6 +31,7 @@ const Index = () => {
 
 	useEffect(() => {
 		//gsap
+		gsap.to("body", 0, { css: { visibility: "visible" } });
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
