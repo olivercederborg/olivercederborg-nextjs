@@ -4,16 +4,14 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useState, useEffect } from "react";
 import { workCases } from "../workCases";
 import { motion } from 'framer-motion';
-import {
-	FaTwitter,
-	FaDribbble,
-	FaInstagram,
-	FaLinkedin
-} from "react-icons/fa";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { FaTwitter, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Index = () => {
+	//case slider
 	const [count, setCount] = useState(1);
 	const maxCount = workCases.length;
 
@@ -31,6 +29,84 @@ const Index = () => {
 		}
 	};
 
+	useEffect(() => {
+		//gsap
+
+		if (typeof window !== "undefined") {
+			gsap.registerPlugin(ScrollTrigger);
+		}
+		//timelines defined
+		const heroTl = gsap.timeline();
+
+		//hero timeline
+		heroTl.from(".hero-h1", 1, {
+			scrollTrigger: {
+				trigger: ".hero-h1",
+				start: "center center",
+				end: "=-300",
+				// scrub: 1,
+			},
+			x: -70,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: 0.4,
+		}).from(".hero-add", 0.8, {
+			scrollTrigger: {
+				trigger: ".hero-add",
+				start: "center center",
+				end: "=-300",
+				// scrub: 1,
+			},
+			y: -40,
+			opacity: 0,
+			stagger: 0.3,
+			skewY: -0.8,
+			// delay: 0,
+		});
+
+		//work section timeline
+		const workTl = gsap.timeline();
+
+		workTl.from("#work .section-line", 1.5, {
+			scrollTrigger: {
+				trigger: ".work-h2",
+				start: "center center",
+				end: "=-300",
+			},
+			width: 0,
+			// opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: 0.2,
+			ease: "power3.out"
+		}).from("#work .section-category", 1.5, {
+			scrollTrigger: {
+				trigger: ".work-h2",
+				start: "center center",
+				end: "=-300",
+			},
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1,
+			ease: "power3.out"
+		}).from(".work-h2", 1, {
+			scrollTrigger: {
+				trigger: ".work-h2",
+				start: "center center",
+				end: "=-300",
+			},
+			x: -70,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1,
+		})
+	}, []);
+
+
 	return (
 		<Layout>
 			<Head>
@@ -41,62 +117,25 @@ const Index = () => {
 				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
 			>
 				<div className='flex container'>
-					<div className='flex-inline flex-col flex-wrap w-full'>
-						<img src="/images/logo.svg" className="h-8 mb-30 md:hidden"></img>
-						<motion.div initial="hidden" animate="visible" variants={{
-							hidden: {
-								opacity: 0,
-								x: -50
-							},
-							visible: {
-								opacity: 1,
-								x: 0,
-								transition: {
-									delay: .4,
-									duration: 0.4
-								}
-							},
-						}}>
+					<div id="hero-content" className='flex-inline flex-col flex-wrap w-full'>
+						<img src="/images/logo.svg" className="hero-contents h-8 mb-30 md:hidden"></img>
 						<h1 className='text-4xl lg:text-6xl font-semibold text-white leading-tight'>
-							Hey, Im <span className='text-primaryBrand'>Oliver</span>
-							<span className=''>
-								<br></br>
-								<span className='text-3xl lg:text-5xl'>
-									a{" "}
-									<span className='text-primaryBrand'>
-										self-taught{" "}
-									</span>
-									designer<br></br> &amp; front-end developer.
-								</span>
-							</span>
+							<div className="hero-h1 leading-tight">Hey, Im <span className='text-primaryBrand'>Oliver</span></div>
+							<div className="hero-h1 text-3xl lg:text-5xl leading-normal">a <span className='text-primaryBrand'>self-taught</span> designer</div>
+							<div className="hero-h1 text-3xl lg:text-5xl leading-normal">&amp; front-end developer.</div>
 						</h1>
-						<p className='text-greyText font-normal text-normal mt-8'>
-							Stick around to see some of my work.
+						<div className="hero-add">
+							<p className='text-greyText font-normal text-normal mt-8'>
+								Stick around to see some of my work.
 						</p>
-						</motion.div>
-						<motion.button
-							whileHover="onHover"
-							whileTap={{ scale: 0.9 }}
-							variants={{
-								onHover: {
-									scale: 1.1
-								}
-							}}
-							transition={{ 
-								duration: .4,
-								bounce: .4,
-								type: "spring" 
-							}}
-						>
-
 							<AnchorLink
-							href='#work'
-							offset={() => 72}
-							className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 text-center inline-flex w-auto'
+								href='#work'
+								offset={() => 72}
+								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 text-center inline-flex w-auto'
 							>
-							See my work
+								See my work
 							</AnchorLink>
-						</motion.button>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -107,12 +146,13 @@ const Index = () => {
 			>
 				<div className='container'>
 					<div className='flex flex-row items-center'>
-						<div className='h-1 w-16 bg-primaryBrand mr-6'></div>
-						<p className='text-greyText text-base font-medium'>Work</p>
+						<div className='section-line h-1 w-16 bg-primaryBrand mr-6'></div>
+						<p className='section-category text-greyText text-base font-medium'>Work</p>
 					</div>
 
-					<h2 className='text-white font-semibold text-4xl lg:text-secheader mt-8'>
-						Hand-picked projects <br></br>for you to see.
+					<h2 className='section-h2 text-white font-semibold text-4xl lg:text-secheader mt-8'>
+						<div className="work-h2">Hand-picked projects</div>
+						<div className="work-h2">for you to see.</div>
 					</h2>
 
 					<div className='flex flex-col-reverse lg:flex-row items-start'>
@@ -149,16 +189,16 @@ const Index = () => {
 								{workCase.description}
 							</p>
 
-							{ workCase.caseLink != null ? (
+							{workCase.caseLink != null ? (
 								<a
-								href={workCase.caseLink}
-								target="_blank"
-								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
-							>
-								{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
-							</a>
-							) : null }
-							
+									href={workCase.caseLink}
+									target="_blank"
+									className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
+								>
+									{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
+								</a>
+							) : null}
+
 						</div>
 
 						<div className='w-12/12 lg:w-7/12 flex justify-center'>

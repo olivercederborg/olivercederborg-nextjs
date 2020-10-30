@@ -103,7 +103,9 @@ const Layout = ({ children }) => {
 				</nav>
 			</header>
 
-			<nav className="fixed w-full md:hidden text-2xl bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" style={{ "backdrop-filter": "saturate(180%) blur(20px)", "-webkit-backdrop-filter": "saturate(180%) blur(20px)" }}>
+			<nav 
+				className="fixed w-full md:hidden text-2xl bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" 
+				style={{ "backdropFilter": "saturate(180%) blur(20px)", "-webkit-backdropFilter": "saturate(180%) blur(20px)" }}>
 				<AnchorLink
 					href='#hero'
 					className='px-8 hover:text-white ease-in-out duration-300 py-6'
