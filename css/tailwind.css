@@ -3,3 +3,8 @@
 @tailwind  components;
 /* purgecss end ignore */
 @tailwind  utilities;
+
+html, 
+body {
+   visibility: hidden;
+}
