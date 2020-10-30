@@ -55,7 +55,7 @@ const Layout = ({ children }) => {
 				></link>
 				<meta
 					name='description'
-					content='Oliver Cederborg - Self-taught designer &amp; front-end developer.'
+					content={siteTitle}
 				/>
 				<meta property='og:image' content={"/images/about-oliver.svg"} />
 				<meta name='og:title' content={siteTitle} />

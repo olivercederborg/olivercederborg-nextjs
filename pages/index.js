@@ -31,11 +31,12 @@ const Index = () => {
 
 	useEffect(() => {
 		//gsap
-
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
 		//timelines defined
+
+		//hero timeline
 		const heroTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".hero-h1",
@@ -43,22 +44,6 @@ const Index = () => {
 				end: "=-300",
 			},
 		});
-		const workTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: "#work .section-line",
-				start: "center bottom",
-				end: "=-300",
-			}
-		});
-		const caseTextTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: "#case-nav",
-				start: "center bottom",
-				end: "=-300",
-			}
-		});
-
-		//hero timeline
 		heroTl.from(".hero-h1", 1, {
 			x: -70,
 			opacity: 0,
@@ -74,6 +59,13 @@ const Index = () => {
 		});
 
 		//work section timeline
+		const workTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#work .section-line",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
 		workTl.from("#work .section-line", 1, {
 			width: 0,
 			delay: 0,
@@ -94,6 +86,13 @@ const Index = () => {
 		});
 
 		//case text timeline
+		const caseTextTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#case-nav",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
 		caseTextTl.from("#case-nav", 2, {
 			y: -20,
 			opacity: 0,
@@ -130,7 +129,7 @@ const Index = () => {
 			skewX: 2,
 			delay: -0.5,
 		})
-
+		//case image
 		gsap.from("#case-image", 1.3, {
 			scrollTrigger: {
 				trigger: "#case-image",
@@ -142,7 +141,6 @@ const Index = () => {
 			delay: 0.5,
 		})
 	}, []);
-
 
 	return (
 		<Layout>
@@ -205,7 +203,7 @@ const Index = () => {
 									0{count}/0{maxCount}
 								</p>
 								<button
-									onClick={() => changeCounter("increment") }
+									onClick={() => changeCounter("increment")}
 									className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
 								>
 									<HiOutlineArrowNarrowRight />
