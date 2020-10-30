@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
 				<meta name='og:title' content={siteTitle} />
 				<meta name='twitter:card' content='summary_large_image' />
 			</Head>
-			<header className=' bg-backgroundOne border-backgroundTwo w-full fixed'>
+			<header className='bg-backgroundOne border-backgroundTwo w-full fixed hidden md:block'>
 				<nav className='container'>
 					<div
 						id='navigation'
@@ -100,6 +100,37 @@ const Layout = ({ children }) => {
 					</div>
 				</nav>
 			</header>
+
+			<nav className="fixed w-screen bg-gray-900 bottom-0 bg-opacity-75 flex flex-row justify-between" style={{ "backdrop-filter": "saturate(180%) blur(20px)" }}>
+				<AnchorLink
+					href='#hero'
+					offset='72'
+					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+				>
+					Home
+				</AnchorLink>
+				<AnchorLink
+					href='#work'
+					offset='72'
+					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+				>
+					Work
+				</AnchorLink>
+				<AnchorLink
+					href='#about'
+					offset='72'
+					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+				>
+					About
+				</AnchorLink>
+				<AnchorLink
+					href='#connect'
+					offset='72'
+					className='px-5 hover:text-white ease-in-out duration-300 py-6'
+				>
+					Connect
+				</AnchorLink>
+			</nav>
 			<main className='font-display'>{children}</main>
 		</div>
 	);

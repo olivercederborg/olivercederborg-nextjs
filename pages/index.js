@@ -3,12 +3,12 @@ import Layout, { siteTitle } from "../components/layout";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useState, useEffect } from "react";
 import { workCases } from "../workCases";
+import { motion } from 'framer-motion';
 import {
 	FaTwitter,
 	FaDribbble,
 	FaInstagram,
-	FaLinkedin,
-	FaLink,
+	FaLinkedin
 } from "react-icons/fa";
 
 const Index = () => {
@@ -52,10 +52,25 @@ const Index = () => {
 			</Head>
 			<section
 				id='hero'
-				className='bg-backgroundOne pt-52 pb-30 lg:pt-80 lg:pb-56 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
+				className='bg-backgroundOne pt-10 pb-30 lg:pt-80 lg:pb-56 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
 			>
 				<div className='flex container'>
 					<div className='flex-inline flex-col flex-wrap w-full'>
+						<img src="/images/logo.svg" className="h-8 mb-30 md:hidden"></img>
+						<motion.div initial="hidden" animate="visible" variants={{
+							hidden: {
+								opacity: 0,
+								x: -50
+							},
+							visible: {
+								opacity: 1,
+								x: 0,
+								transition: {
+									delay: .4,
+									duration: 0.4
+								}
+							},
+						}}>
 						<h1 className='text-4xl lg:text-6xl font-semibold text-white leading-tight'>
 							Hey, Im <span className='text-primaryBrand'>Oliver</span>
 							<span className=''>
@@ -63,8 +78,8 @@ const Index = () => {
 								<span className='text-3xl lg:text-5xl'>
 									a{" "}
 									<span className='text-primaryBrand'>
-										self-taught
-									</span>{" "}
+										self-taught{" "}
+									</span>
 									designer<br></br> &amp; front-end developer.
 								</span>
 							</span>
@@ -72,13 +87,30 @@ const Index = () => {
 						<p className='text-greyText font-normal text-normal mt-8'>
 							Stick around to see some of my work.
 						</p>
-						<AnchorLink
+						</motion.div>
+						<motion.button
+							whileHover="onHover"
+							whileTap={{ scale: 0.9 }}
+							variants={{
+								onHover: {
+									scale: 1.1
+								}
+							}}
+							transition={{ 
+								duration: .4,
+								bounce: .4,
+								type: "spring" 
+							}}
+						>
+
+							<AnchorLink
 							href='#work'
 							offset={() => 72}
 							className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 text-center inline-flex w-auto'
-						>
+							>
 							See my work
-						</AnchorLink>
+							</AnchorLink>
+						</motion.button>
 					</div>
 				</div>
 			</section>
