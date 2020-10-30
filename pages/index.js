@@ -248,7 +248,7 @@ const Index = () => {
 
 			<section
 				id='connect'
-				className='bg-backgroundTwo pt-32 overflow-x-hidden'
+				className='bg-backgroundTwo pt-32 pb-14 md:pb-0 overflow-x-hidden'
 			>
 				<div className='container pb-36 md:pb-48'>
 					<div className='flex flex-row items-center'>
