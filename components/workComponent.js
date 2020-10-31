@@ -33,8 +33,6 @@ const WorkComponent = () => {
 	};
 
 	//change case animation
-	
-
 	const changeCase = () => {
 		const testTl = gsap.timeline();
 		const caseTestAni = () => {
@@ -59,22 +57,6 @@ const WorkComponent = () => {
 			caseTestAni();
 		}
 	}
-
-	// const caseOnChangeTl = gsap.timeline();
-	// caseOnChangeTl.from("#case-header", 1, {
-	// 	x: -50,
-	// 	opacity: 0,
-	// 	stagger: 0.3,
-	// 	skewX: 5,
-	// }).from("#case-category-line", 1, {
-	// 	width: 0,
-	// 	stagger: 0.3,
-	// 	delay: -0.5
-	// }).from("#case-category", 1, {
-	// 	x: -10,
-	// 	opacity: 0,
-	// 	stagger: 0.3,
-	// });
 
 	useEffect(() => {
 		gsap.to("body", 0, { css: { visibility: "visible" } });
