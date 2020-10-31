@@ -1,20 +1,189 @@
-import { useState } from "react";
-import { workCases } from "../workCases";
+import { useState, useEffect } from "react";
+import { workCases } from "../workCases";;
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const WorkComponent = () => {
+	if (typeof window !== "undefined") {
+		gsap.registerPlugin(ScrollTrigger);
+	}
+
+	//case slider
 	const [count, setCount] = useState(1);
 	const maxCount = workCases.length;
+
 	let workCase = workCases[count - 1];
+
 	const changeCounter = (value) => {
 		if (value === "increment" && count != maxCount) {
 			setCount((prevState) => prevState + 1);
+			changeCase();
 		} else if (value === "decrement" && count != 1) {
 			setCount((prevState) => prevState - 1);
+			changeCase();
 		} else if (value === "increment" && count == maxCount) {
-			setCount(() => 1);
+			setCount(1);
+			changeCase();
 		} else if (value === "decrement" && count == 1) {
-			setCount(() => maxCount);
+			setCount(maxCount);
+			changeCase();
 		}
 	};
+
+	//change case animation
+	
+
+	const changeCase = () => {
+		const testTl = gsap.timeline();
+		const caseTestAni = () => {
+			testTl.fromTo("#case-text-content", 1.5, {
+				opacity: 0,
+				x: -30,
+			}, {
+				opacity: 1,
+				x: 0,
+				ease: "power4"
+			}).fromTo("#case-image", 1.5, {
+				opacity: 0,
+				x: -50,
+			}, {
+				opacity: 1,
+				x: 0,
+				delay: -1.5,
+				ease: "power4"
+			})
+		}
+		if (testTl.isActive() === false) {
+			caseTestAni();
+		}
+	}
+
+	// const caseOnChangeTl = gsap.timeline();
+	// caseOnChangeTl.from("#case-header", 1, {
+	// 	x: -50,
+	// 	opacity: 0,
+	// 	stagger: 0.3,
+	// 	skewX: 5,
+	// }).from("#case-category-line", 1, {
+	// 	width: 0,
+	// 	stagger: 0.3,
+	// 	delay: -0.5
+	// }).from("#case-category", 1, {
+	// 	x: -10,
+	// 	opacity: 0,
+	// 	stagger: 0.3,
+	// });
+
+	useEffect(() => {
+		gsap.to("body", 0, { css: { visibility: "visible" } });
+
+		//case text timeline
+		const caseTextTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#case-nav",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
+
+		caseTextTl.from("#case-nav", 2, {
+			y: -20,
+			opacity: 0,
+			delay: 0,
+			ease: "power3.out"
+		}).from("#case-header", 1, {
+			x: -50,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1.5,
+		}).from("#case-category-line", 1, {
+			width: 0,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1,
+			ease: "power3.out"
+		}).from("#case-category", 1, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -0.5,
+		}).from("#case-description", 1, {
+			x: -30,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -1,
+		}).from("#case-link", 1, {
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -0.5,
+		});
+	}, [])
+	return (
+		<div className='flex flex-col-reverse lg:flex-row items-start'>
+			<div className='w-12/12 lg:w-5/12'>
+				<div id="case-nav" className='flex flex-row items-center text-white mt-20 lg:mt-36 '>
+					<button
+						onClick={() => changeCounter("decrement")}
+						className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
+					>
+						<HiOutlineArrowNarrowLeft />
+					</button>
+					<p className='text-white text-base font-semibold mr-4'>
+						0{count}/0{maxCount}
+					</p>
+					<button
+						onClick={() => changeCounter("increment")}
+						className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
+					>
+						<HiOutlineArrowNarrowRight />
+					</button>
+				</div>
+
+				<div id="case-text-content">
+				<h3 id="case-header" className='text-white font-semibold text-secheader mt-12'>
+					{workCase.title}
+				</h3>
+				<div className='flex flex-row items-center mt-7'>
+					<div id="case-category-line" className='h-1 w-6 bg-primaryBrand mr-6'></div>
+					<p id="case-category" className='text-greyText text-base font-medium'>
+						{workCase.category}
+					</p>
+				</div>
+
+				<p id="case-description" className='text-greyText font-normal text-base leading-loose mt-6 w-12/12 lg:w-10/12'>
+					{workCase.description}
+				</p>
+
+				{workCase.caseLink != null ? (
+					<a
+						href={workCase.caseLink}
+						target="_blank"
+						id="case-link"
+						className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
+					>
+						{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
+					</a>
+				) : null}
+				</div>
+
+			</div>
+
+			<div id="case-image" className='w-12/12 lg:w-7/12 flex justify-center mt-26 lg:mt-16 xl:-mr-20'>
+				<img
+					src={workCase.caseImage}
+					alt={workCase.caseImageAlt}
+					className='max-h-sm md:max-h-xl max-w-full object-contain'
+				/>
+			</div>
+		</div>
+	);
 };
+
 export default WorkComponent;
