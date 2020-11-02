@@ -64,19 +64,6 @@ const Index = () => {
 			skewX: 5,
 			delay: -1.5,
 		});
-
-		
-		//case image
-		gsap.from("#case-image", 1.3, {
-			scrollTrigger: {
-				trigger: "#case-image",
-				start: "center bottom",
-				end: "=-300",
-			},
-			x: -50,
-			opacity: 0,
-			delay: 0.5,
-		})
 	}, []);
 
 	return (

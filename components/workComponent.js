@@ -106,6 +106,18 @@ const WorkComponent = () => {
 			skewX: 2,
 			delay: -0.5,
 		});
+
+		//case image
+		gsap.from("#case-image", 1.3, {
+			scrollTrigger: {
+				trigger: "#case-image",
+				start: "center bottom",
+				end: "=-300",
+			},
+			x: -50,
+			opacity: 0,
+			delay: 0.5,
+		})
 	}, [])
 	return (
 		<div className='flex flex-col-reverse lg:flex-row items-start'>
