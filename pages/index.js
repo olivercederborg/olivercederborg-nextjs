@@ -64,6 +64,94 @@ const Index = () => {
 			skewX: 5,
 			delay: -1.5,
 		});
+		
+		//about section timeline
+		const aboutTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#about .section-line",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
+		aboutTl.from("#about .section-line", 1, {
+			width: 0,
+			delay: 0,
+			ease: "power3.out"
+		}).from("#about .section-category", 1.5, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -0.5,
+			ease: "power3.out"
+		}).from(".about-h2", 1, {
+			x: -70,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1.5,
+		});
+		
+		//about skills timeline
+		const skillsTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#skills",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
+		skillsTl.from("#skills .intro-line", 1, {
+			width: 0,
+			delay: 0,
+			ease: "power3.out"
+		}).from("#skills .intro-text", 1.5, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1,
+			ease: "power3.out"
+		}).from(".skills-content", 1.5, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -1,
+			ease: "power3.out"
+		});
+		
+		const aboutMeTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#aboutme",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
+		aboutMeTl.from("#aboutme .intro-line", 1, {
+			width: 0,
+			delay: 0,
+			ease: "power3.out"
+		}).from("#aboutme .intro-text", 1.5, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 3,
+			delay: -1,
+			ease: "power3.out"
+		}).from(".aboutme-content", 1.5, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 3,
+			delay: -1,
+			ease: "power3.out"
+		}).from(".about-cta", 1, {
+			y: -30,
+			opacity: 0,
+			stagger: 0.3,
+			delay: -1,
+			ease: "power3.out"
+		});
 	}, []);
 
 	return (
@@ -125,36 +213,36 @@ const Index = () => {
 			>
 				<div className='container'>
 					<div className='flex flex-row items-center'>
-						<div className='h-1 w-16 bg-primaryBrand mr-6'></div>
-						<p className='text-greyText text-base font-medium'>About</p>
+						<div className='section-line h-1 w-16 bg-primaryBrand mr-6'></div>
+						<p className='section-category text-greyText text-base font-medium'>About</p>
 					</div>
 
-					<h2 className='text-white font-semibold text-4xl lg:text-secheader mt-8'>
+					<h2 className='about-h2 text-white font-semibold text-4xl lg:text-secheader mt-8'>
 						Get a closer look at who I am.
 					</h2>
 
 					<div className='flex flex-col-reverse lg:flex-row items-start'>
 						<div className='w-full lg:w-7/12'>
-							<div className='flex flex-row items-center mt-16 lg:mt-36'>
-								<div className='h-1 w-6 bg-primaryBrand mr-6'></div>
-								<p className='text-white text-base font-medium'>
+							<div id="skills" className='flex flex-row items-center mt-16 lg:mt-36'>
+								<div className='intro-line h-1 w-6 bg-primaryBrand mr-6'></div>
+								<p className='intro-text text-white text-base font-medium'>
 									Skills &amp; Tools
 								</p>
 							</div>
 
-							<p className='text-greyText font-normal text-base mt-6 leading-loose'>
+							<p className='skills-content text-greyText font-normal text-base mt-6 leading-loose'>
 								HTML/CSS, Javascript, React, Next.js, WordPress,
 								Photoshop, Illustrator, Adobe Xd, Figma
 							</p>
 
-							<div className='flex flex-row items-center mt-14'>
-								<div className='h-1 w-6 bg-primaryBrand mr-6'></div>
-								<p className='text-white text-base font-medium'>
+							<div id="aboutme" className='flex flex-row items-center mt-14'>
+								<div className='intro-line h-1 w-6 bg-primaryBrand mr-6'></div>
+								<p className='intro-text text-white text-base font-medium'>
 									Who am I
 								</p>
 							</div>
 
-							<p className='text-greyText font-normal text-base mt-6 leading-loose'>
+							<p className='aboutme-content text-greyText font-normal text-base mt-6 leading-loose'>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 								sed do eiusmod tempor incididunt ut labore et dolore
 								magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -163,12 +251,14 @@ const Index = () => {
 								reprehenderit.
 							</p>
 
-							<AnchorLink
-								href='#connect'
-								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
-							>
-								Get in touch
-							</AnchorLink>
+							<div className="about-cta">
+								<AnchorLink
+									href='#connect'
+									className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
+								>
+									Get in touch
+								</AnchorLink>
+							</div>
 						</div>
 
 						<div className='flex w-7/12 md:w-5/12 justify-end'>
