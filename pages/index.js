@@ -375,7 +375,7 @@ const Index = () => {
 					</h2>
 
 					<p className='connect-content text-greyText font-normal text-base mt-6 leading-loose'>
-						Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com" target="_blank" className="text-primaryBrand ease-in-out duration-200 transition-all hover:underline">hey@olivercederborg.com</a>
+						Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com" target="_blank" className="text-primaryBrand ease-in-out duration-200 border-b-1 border-backgroundTwo hover:border-primaryBrand">hey@olivercederborg.com</a>
 					</p>
 
 					<div className="connect-cta">
