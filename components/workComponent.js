@@ -82,18 +82,19 @@ const WorkComponent = () => {
 			skewX: 5,
 			delay: -1.5,
 			ease: "power3.out"
-		}).from("#case-category-line", 1, {
+		}).fromTo("#case-category-line", 1, {
 			width: 0,
-			opacity: 0,
+		}, {
+			width: "1.5rem",
 			stagger: 0.3,
 			delay: -1,
-			ease: "power3.out"
+			ease: "power3.inOut"
 		}).from("#case-category", 1, {
 			x: -10,
 			opacity: 0,
 			stagger: 0.3,
 			skewX: 2,
-			delay: -0.8,
+			delay: -0.5,
 			ease: "power3.out"
 		}).from("#case-description", 1, {
 			x: -30,
