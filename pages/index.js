@@ -52,10 +52,11 @@ const Index = () => {
 				end: "=-300",
 			}
 		});
-		workTl.from("#work .section-line", 1, {
+		workTl.fromTo("#work .section-line", 1, {
 			width: 0,
-			delay: 0,
-			ease: "power3.out"
+		}, {
+			width: "4rem",
+			ease: "power3.inOut"
 		}).from("#work .section-category", 1.5, {
 			x: -10,
 			opacity: 0,
@@ -80,10 +81,11 @@ const Index = () => {
 				end: "=-300",
 			}
 		});
-		aboutTl.from("#about .section-line", 1, {
+		aboutTl.fromTo("#about .section-line", 1, {
 			width: 0,
-			delay: 0,
-			ease: "power3.out"
+		}, {
+			width: "4rem",
+			ease: "power3.inOut"
 		}).from("#about .section-category", 1.5, {
 			x: -10,
 			opacity: 0,
@@ -108,16 +110,17 @@ const Index = () => {
 				end: "=-300",
 			}
 		});
-		skillsTl.from("#skills .intro-line", 1, {
+		skillsTl.fromTo("#skills .intro-line", 1, {
 			width: 0,
-			delay: 0,
-			ease: "power3.out"
+		}, {
+			width: "1.5rem",
+			ease: "power3.inOut"
 		}).from("#skills .intro-text", 1, {
 			opacity: 0,
 			x: -10,
 			stagger: 0.3,
 			skewX: 2,
-			delay: -1
+			delay: -0.5
 		}).from(".skills-content", 1, {
 			x: -30,
 			opacity: 0,
@@ -133,16 +136,17 @@ const Index = () => {
 				end: "=-300",
 			}
 		});
-		aboutMeTl.from("#aboutme .intro-line", 1, {
+		aboutMeTl.fromTo("#aboutme .intro-line", 1, {
 			width: 0,
-			delay: 0,
-			ease: "power3.out"
+		}, {
+			width: "1.5rem",
+			ease: "power3.inOut"
 		}).from("#aboutme .intro-text", 1, {
 			opacity: 0,
 			x: -10,
 			stagger: 0.3,
 			skewX: 2,
-			delay: -1
+			delay: -0.5
 		}).from(".aboutme-content", 1, {
 			x: -30,
 			opacity: 0,
@@ -176,10 +180,11 @@ const Index = () => {
 				end: "=-300",
 			}
 		});
-		connectTl.from("#connect .section-line", 1, {
+		connectTl.fromTo("#connect .section-line", 1, {
 			width: 0,
-			delay: 0,
-			ease: "power3.out"
+		}, {
+			width: "4rem",
+			ease: "power3.inOut"
 		}).from("#connect .section-category", 1.5, {
 			x: -10,
 			opacity: 0,
