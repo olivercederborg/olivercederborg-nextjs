@@ -226,10 +226,10 @@ const Index = () => {
 			>
 				<div className='flex container'>
 					<div id="hero-content" className='flex flex-col items-start'>
-						<img src="/images/logo.svg" className="h-8 mb-26 md:hidden"></img>
+						<img src="/images/logo.svg" className="h-8 mb-24 md:hidden"></img>
 
 						<div>
-							<div className="reveal-title relative inline-block">
+							<div className="reveal-title relative inline-block mb-4">
 								<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
 								<span className="reveal-title-content invisible">
 									<h1 className="w-auto inline-block text-4xl lg:text-6xl font-semibold text-white leading-snug">Hey, Im <span className='text-primaryBrand'>Oliver</span></h1>
@@ -237,17 +237,17 @@ const Index = () => {
 							</div>
 						</div>
 
-						<div className="reveal-title relative">
+						<div className="reveal-title relative mb-4">
 							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
 							<span className="reveal-title-content invisible">
-								<h1 className="text-4xl lg:text-5xl lg:leading-relaxed font-semibold text-white">a <span className='text-primaryBrand'>self-taught</span> designer</h1>
+								<h1 className="text-3xl lg:text-5xl lg:leading-relaxed font-semibold text-white">a <span className='text-primaryBrand'>self-taught</span> designer</h1>
 							</span>
 						</div>
 
 						<div className="reveal-title relative">
 							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
 							<span className="reveal-title-content invisible">
-								<h1 className="text-4xl lg:text-5xl lg:leading-relaxed font-semibold text-white">&amp; front-end developer.</h1>
+								<h1 className="text-3xl lg:text-5xl lg:leading-relaxed font-semibold text-white">&amp; front-end developer.</h1>
 							</span>
 						</div>
 
