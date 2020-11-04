@@ -226,7 +226,7 @@ const Index = () => {
 			>
 				<div className='flex container'>
 					<div id="hero-content" className='flex flex-col items-start'>
-						<img src="/images/logo.svg" className="h-8 mb-24 md:hidden"></img>
+						<img src="/images/logo.svg" className="h-8 mb-20 md:hidden"></img>
 
 						<div>
 							<div className="reveal-title relative inline-block mb-4">
