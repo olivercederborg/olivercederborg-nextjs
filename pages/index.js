@@ -52,8 +52,6 @@ const Index = () => {
 			delay: -0.3
 		});
 
-
-
 		//work section timeline
 		const workTl = gsap.timeline({
 			scrollTrigger: {
