@@ -1,6 +1,6 @@
 import Head from "next/head";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BiHomeAlt, BiUser  } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
