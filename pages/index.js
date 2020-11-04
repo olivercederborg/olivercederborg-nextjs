@@ -311,8 +311,8 @@ const Index = () => {
 							</div>
 
 							<p className='skills-content text-greyText font-normal text-base mt-6 leading-loose'>
-								HTML/CSS, Javascript, React, Next.js, WordPress,
-								Photoshop, Illustrator, Adobe Xd, Figma
+								Javascript, React, Next.js, SCSS, WordPress,
+								Photoshop, Illustrator, Figma
 							</p>
 
 							<div id="aboutme" className='flex flex-row items-center mt-14'>
