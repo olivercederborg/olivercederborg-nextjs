@@ -195,6 +195,12 @@ const Index = () => {
 			skewX: 3,
 			delay: -1.5,
 			ease: "power3.out"
+		}).from(".connect-content", 1, {
+			x: -30,
+			opacity: 0,
+			stagger: 0.3,
+			delay: -0.5,
+			ease: "power3.out"
 		}).from("#connect .connect-cta", 1, {
 			y: -30,
 			opacity: 0,
@@ -368,7 +374,7 @@ const Index = () => {
 						<div className="connect-h2">or perhaps just talk?</div>
 					</h2>
 
-					<p className='aboutme-content text-greyText font-normal text-base mt-6 leading-loose'>
+					<p className='connect-content text-greyText font-normal text-base mt-6 leading-loose'>
 						Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com" target="_blank" className="text-primaryBrand ease-in-out duration-200 transition-all hover:underline">hey@olivercederborg.com</a>
 					</p>
 
