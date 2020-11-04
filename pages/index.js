@@ -258,11 +258,6 @@ const Index = () => {
 							</span>
 						</div>
 
-						{/* <h1 className='text-4xl lg:text-6xl font-semibold text-white leading-tight'>
-							<span className="reveal-hero-h1"><div className="hero-h1 leading-tight">Hey, Im <span className='text-primaryBrand'>Oliver</span></div></span>
-							<div className="hero-h1 text-3xl lg:text-5xl leading-normal">a <span className='text-primaryBrand'>self-taught</span> designer</div>
-							<div className="hero-h1 text-3xl lg:text-5xl leading-normal">&amp; front-end developer.</div>
-						</h1> */}
 						<div className="hero-add">
 							<p className='text-greyText font-normal text-normal mt-8'>
 								Stick around to see some of my work.
