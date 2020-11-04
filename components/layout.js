@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
 				<nav className='container'>
 					<div
 						id='navigation'
-						className='flex items-center justify-between py-12 text-white font-display transition-all ease-in-out duration-200'
+						className='flex items-center justify-between py-12 text-white font-display font-medium transition-all ease-in-out duration-200'
 					>
 						<div>
 							<AnchorLink href='#hero'>
@@ -104,7 +104,7 @@ const Layout = ({ children }) => {
 			</header>
 
 			<nav 
-				className="fixed z-10 w-full md:hidden text-2xl bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" 
+				className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" 
 				style={{ "backdropFilter": "saturate(180%) blur(20px)", "WebkitBackdropFilter": "saturate(180%) blur(20px)" }}>
 				<AnchorLink
 					href='#hero'

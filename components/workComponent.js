@@ -65,7 +65,7 @@ const WorkComponent = () => {
 		const caseTextTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#case-nav",
-				start: "center bottom",
+				start: "center center",
 				end: "=-300",
 			}
 		});
@@ -81,11 +81,11 @@ const WorkComponent = () => {
 			stagger: 0.3,
 			skewX: 5,
 			delay: -1.5,
+			ease: "power3.out"
 		}).from("#case-category-line", 1, {
 			width: 0,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 5,
 			delay: -1,
 			ease: "power3.out"
 		}).from("#case-category", 1, {
@@ -93,13 +93,15 @@ const WorkComponent = () => {
 			opacity: 0,
 			stagger: 0.3,
 			skewX: 2,
-			delay: -0.5,
+			delay: -0.8,
+			ease: "power3.out"
 		}).from("#case-description", 1, {
 			x: -30,
 			opacity: 0,
 			stagger: 0.3,
 			skewX: 2,
 			delay: -1,
+			ease: "power3.out"
 		}).from("#case-link", 1, {
 			opacity: 0,
 			stagger: 0.3,
@@ -111,12 +113,13 @@ const WorkComponent = () => {
 		gsap.from("#case-image", 1.3, {
 			scrollTrigger: {
 				trigger: "#case-image",
-				start: "center bottom",
+				start: "top center",
 				end: "=-300",
 			},
 			x: -50,
 			opacity: 0,
-			delay: 0.5,
+			delay: 1,
+			ease: "power3.out"
 		})
 	}, [])
 	return (

@@ -15,34 +15,50 @@ const Index = () => {
 			gsap.registerPlugin(ScrollTrigger);
 		}
 		//timelines defined
-
 		//hero timeline
-		const heroTl = gsap.timeline({
+		const titleRevealTl = gsap.timeline({
 			scrollTrigger: {
-				trigger: ".hero-h1",
+				trigger: "#hero-content .reveal-title",
 				start: "center bottom",
-				end: "=-300",
+				end: "=-200",
 			},
+			defaults: {
+				// stagger: 0.3,
+				// delay: -0.3
+			}
 		});
-		heroTl.from(".hero-h1", 1, {
-			x: -70,
+		// titleRevealTl.from(".reveal-title-content h1", 1, {
+		// 	y: "150%",
+		// 	skewY: 5,
+		// 	ease: "Power3.OUT"
+		// }).from(".hero-add", 1.5, {
+		// 	// y: -20,
+		// 	opacity: 0,
+		// });
+		titleRevealTl.to(".reveal-title-content", 0, {
+			visibility: "visible",
+			delay: 0.3
+		}).to(".reveal-title-revealer", 1, {
+			scaleX: 0,
+			transformOrigin: "right",
+			ease: "power4.inOut",
+			stagger: 0.6
+		}).fromTo(".hero-add", 1, {
+			y: -20,
 			opacity: 0,
-			stagger: 0.3,
-			skewX: 5,
-			delay: 0.4,
-		}).from(".hero-add", 0.8, {
-			y: -40,
-			opacity: 0,
-			stagger: 0.3,
-			skewY: -0.8,
-			ease: "power3.out"
+		}, {
+			y: 0,
+			opacity: 1,
+			delay: -0.3
 		});
+
+
 
 		//work section timeline
 		const workTl = gsap.timeline({
 			scrollTrigger: {
-				trigger: "#work .section-line",
-				start: "center bottom",
+				trigger: "#work .section-h2",
+				start: "top center",
 				end: "=-300",
 			}
 		});
@@ -54,22 +70,23 @@ const Index = () => {
 			x: -10,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 5,
+			skewX: 3,
 			delay: -0.5,
 			ease: "power3.out"
 		}).from(".work-h2", 1, {
 			x: -70,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 5,
+			skewX: 3,
 			delay: -1.5,
+			ease: "power3.out"
 		});
-		
+
 		//about section timeline
 		const aboutTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#about .section-line",
-				start: "center bottom",
+				start: "top center",
 				end: "=-300",
 			}
 		});
@@ -88,15 +105,16 @@ const Index = () => {
 			x: -70,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 5,
+			skewX: 3,
 			delay: -1.5,
+			ease: "power3.out"
 		});
-		
+
 		//about skills timeline
 		const skillsTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#skills",
-				start: "center bottom",
+				start: "top center",
 				end: "=-300",
 			}
 		});
@@ -104,26 +122,24 @@ const Index = () => {
 			width: 0,
 			delay: 0,
 			ease: "power3.out"
-		}).from("#skills .intro-text", 1.5, {
+		}).from("#skills .intro-text", 1, {
+			opacity: 0,
 			x: -10,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -1
+		}).from(".skills-content", 1, {
+			x: -30,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 5,
-			delay: -1,
-			ease: "power3.out"
-		}).from(".skills-content", 1.5, {
-			x: -10,
-			opacity: 0,
-			stagger: 0.3,
-			skewX: 5,
-			delay: -1,
-			ease: "power3.out"
+			skewX: 2,
+			delay: -0.5,
 		});
-		
+
 		const aboutMeTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#aboutme",
-				start: "center bottom",
+				start: "top center",
 				end: "=-300",
 			}
 		});
@@ -131,27 +147,36 @@ const Index = () => {
 			width: 0,
 			delay: 0,
 			ease: "power3.out"
-		}).from("#aboutme .intro-text", 1.5, {
+		}).from("#aboutme .intro-text", 1, {
+			opacity: 0,
 			x: -10,
+			stagger: 0.3,
+			skewX: 2,
+			delay: -1
+		}).from(".aboutme-content", 1, {
+			x: -30,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 3,
-			delay: -1,
-			ease: "power3.out"
-		}).from(".aboutme-content", 1.5, {
-			x: -10,
-			opacity: 0,
-			stagger: 0.3,
-			skewX: 3,
-			delay: -1,
-			ease: "power3.out"
+			skewX: 2,
+			delay: -0.5,
 		}).from(".about-cta", 1, {
-			y: -30,
+			y: -20,
 			opacity: 0,
 			stagger: 0.3,
-			delay: -1,
+			delay: -0.5,
 			ease: "power3.out"
 		});
+
+		gsap.from("#about-img", 1, {
+			opacity: 0,
+			x: -50,
+			ease: "power3.out",
+			scrollTrigger: {
+				trigger: "#about-img",
+				start: "top center",
+				end: "=-300",
+			}
+		})
 	}, []);
 
 	return (
@@ -164,13 +189,37 @@ const Index = () => {
 				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
 			>
 				<div className='flex container'>
-					<div id="hero-content" className='flex-inline flex-col flex-wrap w-full'>
+					<div id="hero-content" className='flex flex-col'>
 						<img src="/images/logo.svg" className="hero-contents h-8 mb-30 md:hidden"></img>
-						<h1 className='text-4xl lg:text-6xl font-semibold text-white leading-tight'>
-							<div className="hero-h1 leading-tight">Hey, Im <span className='text-primaryBrand'>Oliver</span></div>
+
+						<div clas="">
+							<div className="reveal-title relative inline-block">
+								<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
+								<span className="reveal-title-content invisible">
+									<h1 className="w-auto inline-block text-4xl lg:text-6xl font-semibold text-white leading-snug">Hey, Im <span className='text-primaryBrand'>Oliver</span></h1>
+								</span>
+							</div>
+						</div>
+
+						<div className="reveal-title relative">
+							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
+							<span className="reveal-title-content invisible">
+								<h1 className="text-3xl lg:text-5xl leading-relaxed font-semibold text-white">a <span className='text-primaryBrand'>self-taught</span> designer</h1>
+							</span>
+						</div>
+
+						<div className="reveal-title relative">
+							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
+							<span className="reveal-title-content invisible">
+								<h1 className="text-3xl lg:text-5xl leading-relaxed font-semibold text-white">&amp; front-end developer.</h1>
+							</span>
+						</div>
+
+						{/* <h1 className='text-4xl lg:text-6xl font-semibold text-white leading-tight'>
+							<span className="reveal-hero-h1"><div className="hero-h1 leading-tight">Hey, Im <span className='text-primaryBrand'>Oliver</span></div></span>
 							<div className="hero-h1 text-3xl lg:text-5xl leading-normal">a <span className='text-primaryBrand'>self-taught</span> designer</div>
 							<div className="hero-h1 text-3xl lg:text-5xl leading-normal">&amp; front-end developer.</div>
-						</h1>
+						</h1> */}
 						<div className="hero-add">
 							<p className='text-greyText font-normal text-normal mt-8'>
 								Stick around to see some of my work.
@@ -263,6 +312,7 @@ const Index = () => {
 
 						<div className='flex w-7/12 md:w-5/12 justify-end'>
 							<img
+								id="about-img"
 								src='/images/about-oliver.svg'
 								alt='About Oliver Cederborg'
 								className='max-h-sm mt-30'
