@@ -309,19 +309,8 @@ const Index = () => {
 
 					<div className='flex flex-col-reverse lg:flex-row items-start'>
 						<div className='w-full lg:w-7/12'>
-							<div id="skills" className='flex flex-row items-center mt-16 lg:mt-36'>
-								<div className='intro-line h-1 w-6 bg-primaryBrand mr-6'></div>
-								<p className='intro-text text-white text-base font-medium'>
-									Skills &amp; Tools
-								</p>
-							</div>
 
-							<p className='skills-content text-greyText font-normal text-base mt-6 leading-loose'>
-								Javascript, React, Next.js, SCSS, WordPress,
-								Photoshop, Illustrator, Figma
-							</p>
-
-							<div id="aboutme" className='flex flex-row items-center mt-14'>
+							<div id="aboutme" className='flex flex-row items-center mt-16 lg:mt-36'>
 								<div className='intro-line h-1 w-6 bg-primaryBrand mr-6'></div>
 								<p className='intro-text text-white text-base font-medium'>
 									Who am I
@@ -329,18 +318,27 @@ const Index = () => {
 							</div>
 
 							<p className='aboutme-content text-greyText font-normal text-base mt-6 leading-loose'>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore
-								magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi ut aliquip ex ea
-								commodo consequat. Duis aute irure dolor in
-								reprehenderit.
+								I'm Oliver Cederborg, 23 years old and from Denmark. <br></br>Digital design has been an interest of mine for many years, and I work with anything from logo design to UI design and front-end development. <br></br>All the skills and tools I use, are self-taught over many years of practice and expanding my horizons.
+							</p>
+
+							<div id="skills" className='flex flex-row items-center mt-12'>
+								<div className='intro-line h-1 w-6 bg-primaryBrand mr-6'></div>
+								<p className='intro-text text-white text-base font-medium'>
+									Skills &amp; Tools
+								</p>
+							</div>
+
+							<p className='skills-content text-greyText font-normal text-base mt-6 leading-loose'>
+								Design: Figma, Photoshop, Illustrator, After Effects
+							</p>
+							<p className='skills-content text-greyText font-normal text-base mt-2 leading-loose'>
+								Development: JavaScript, React, Next.js, HTML, CSS/SCSS, TailwindCSS, WordPress
 							</p>
 
 							<div className="about-cta">
 								<AnchorLink
 									href='#connect'
-									className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
+									className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 inline-flex w-auto'
 								>
 									Get in touch
 								</AnchorLink>
@@ -384,7 +382,7 @@ const Index = () => {
 							className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
 						>
 							Drop an email
-					</a>
+						</a>
 					</div>
 				</div>
 				<footer className='container pb-10 text-gray-600 flex flex-col-reverse md:flex-row justify-between items-center lg:items-center'>

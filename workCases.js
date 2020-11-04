@@ -1,8 +1,8 @@
 export const workCases = [
       {
         title: "Lunar Way",
-        category: "App UI concept",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        category: "UI concept",
+        description: "Lunar Way is a modern bank app that makes it easy to manage your money. I wanted to practice and evolve my UI design skills, by visualizing my vision of this app.",
         caseImage: "/images/lunar-way-project.png",
         caseLink: null,
         caseLinkText: null,
@@ -11,7 +11,7 @@ export const workCases = [
       {
         title: "Noyer",
         category: "WordPress Webshop",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        description: "Noyer is a Danish design company that crafts handmade quality products in American walnut wood. The work I do for Noyer consists of helping them building/maintaining their WordPress shop, and photography work such as cropping and slight manipulations.",
         caseImage: "/images/noyer-project.png",
         caseLink: "https://noyer.dk/",
         caseLinkText: "Visit Noyer",
