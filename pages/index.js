@@ -27,14 +27,6 @@ const Index = () => {
 				// delay: -0.3
 			}
 		});
-		// titleRevealTl.from(".reveal-title-content h1", 1, {
-		// 	y: "150%",
-		// 	skewY: 5,
-		// 	ease: "Power3.OUT"
-		// }).from(".hero-add", 1.5, {
-		// 	// y: -20,
-		// 	opacity: 0,
-		// });
 		titleRevealTl.to(".reveal-title-content", 0, {
 			visibility: "visible",
 			delay: 0.3
@@ -56,7 +48,7 @@ const Index = () => {
 		const workTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#work .section-h2",
-				start: "top center",
+				start: "center bottom",
 				end: "=-300",
 			}
 		});
@@ -84,7 +76,7 @@ const Index = () => {
 		const aboutTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#about .section-line",
-				start: "top center",
+				start: "center bottom",
 				end: "=-300",
 			}
 		});
@@ -112,7 +104,7 @@ const Index = () => {
 		const skillsTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#skills",
-				start: "top center",
+				start: "center bottom",
 				end: "=-300",
 			}
 		});
@@ -137,7 +129,7 @@ const Index = () => {
 		const aboutMeTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#aboutme",
-				start: "top center",
+				start: "center bottom",
 				end: "=-300",
 			}
 		});
@@ -171,10 +163,58 @@ const Index = () => {
 			ease: "power3.out",
 			scrollTrigger: {
 				trigger: "#about-img",
-				start: "top center",
+				start: "center bottom",
 				end: "=-300",
 			}
-		})
+		});
+
+		//Connect section
+		const connectTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#connect",
+				start: "center bottom",
+				end: "=-300",
+			}
+		});
+		connectTl.from("#connect .section-line", 1, {
+			width: 0,
+			delay: 0,
+			ease: "power3.out"
+		}).from("#connect .section-category", 1.5, {
+			x: -10,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 5,
+			delay: -0.5,
+			ease: "power3.out"
+		}).from(".connect-h2", 1, {
+			x: -70,
+			opacity: 0,
+			stagger: 0.3,
+			skewX: 3,
+			delay: -1.5,
+			ease: "power3.out"
+		}).from("#connect .connect-cta", 1, {
+			y: -30,
+			opacity: 0,
+			stagger: 0.3,
+			delay: -0.5,
+			ease: "power3.out"
+		});
+
+		//footer section
+		const footerTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "footer",
+				start: "bottom bottom",
+				end: "=-300",
+			}
+		});
+		footerTl.from("footer", 1.5, {
+			y: -30,
+			opacity: 0,
+			ease: "power3.inOut"
+		});
 	}, []);
 
 	return (
@@ -326,20 +366,23 @@ const Index = () => {
 			>
 				<div className='container pb-36 md:pb-48'>
 					<div className='flex flex-row items-center'>
-						<div className='h-1 w-16 bg-primaryBrand mr-6'></div>
-						<p className='text-greyText text-base font-medium'>Connect</p>
+						<div className='section-line h-1 w-16 bg-primaryBrand mr-6'></div>
+						<p className='section-category text-greyText text-base font-medium'>Connect</p>
 					</div>
 
 					<h2 className='text-white font-semibold text-4xl lg:text-secheader mt-8'>
-						Interested in working with me <br></br>or perhaps just talk?
+						<div className="connect-h2">Interested in working with me</div>
+						<div className="connect-h2">or perhaps just talk?</div>
 					</h2>
 
-					<a
-						href='mailto:hey@olivercederborg.com'
-						className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
-					>
-						Drop an email
+					<div className="connect-cta">
+						<a
+							href='mailto:hey@olivercederborg.com'
+							className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
+						>
+							Drop an email
 					</a>
+					</div>
 				</div>
 				<footer className='container pb-10 text-gray-600 flex flex-col-reverse md:flex-row justify-between items-center lg:items-center'>
 					<p><a href="mailto:hey@olivercederborg.com" className="hover:text-greyText ease-in-out duration-300 hover:underline">hey@olivercederborg.com</a></p>

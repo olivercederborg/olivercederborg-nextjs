@@ -72,7 +72,7 @@ const Layout = ({ children }) => {
 								<img
 									src='/images/logo.svg'
 									alt='Oliver Cederborg Logo'
-									className='h-8'
+									className='h-8 hover:opacity-70 ease-in-out duration-200'
 								/>
 							</AnchorLink>
 						</div>

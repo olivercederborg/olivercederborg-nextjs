@@ -65,7 +65,7 @@ const WorkComponent = () => {
 		const caseTextTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#case-nav",
-				start: "center center",
+				start: "center bottom",
 				end: "=-300",
 			}
 		});
@@ -113,7 +113,7 @@ const WorkComponent = () => {
 		gsap.from("#case-image", 1.3, {
 			scrollTrigger: {
 				trigger: "#case-image",
-				start: "top center",
+				start: "center bottom",
 				end: "=-300",
 			},
 			x: -50,
