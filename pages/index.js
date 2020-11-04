@@ -368,6 +368,10 @@ const Index = () => {
 						<div className="connect-h2">or perhaps just talk?</div>
 					</h2>
 
+					<p className='aboutme-content text-greyText font-normal text-base mt-6 leading-loose'>
+						Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com" target="_blank" className="text-primaryBrand ease-in-out duration-200 transition-all hover:underline">hey@olivercederborg.com</a>
+					</p>
+
 					<div className="connect-cta">
 						<a
 							href='mailto:hey@olivercederborg.com'
@@ -378,7 +382,6 @@ const Index = () => {
 					</div>
 				</div>
 				<footer className='container pb-10 text-gray-600 flex flex-col-reverse md:flex-row justify-between items-center lg:items-center'>
-					<p><a href="mailto:hey@olivercederborg.com" className="hover:text-greyText ease-in-out duration-300 hover:underline">hey@olivercederborg.com</a></p>
 					<p className='hover:text-greyText ease-in-out duration-300 mb-5 md:mb-0'>
 						&copy; 2020 Oliver Cederborg
 					</p>
