@@ -53,10 +53,8 @@ const Layout = ({ children }) => {
 					href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
 					rel='stylesheet'
 				></link>
-				<meta
-					name='description'
-					content={siteDescription}
-				/>
+				<meta name='title' content={siteTitle}/>
+				<meta name='description' content={siteDescription}/>
 				<meta property='og:image' content={"/images/preview.png"} />
 				<meta name='og:title' content={siteTitle} />
 				<meta name='og:description' content={siteDescription} />
