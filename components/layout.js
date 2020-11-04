@@ -5,8 +5,8 @@ import { BiHomeAlt, BiUser  } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
 
-export const siteTitle =
-	"Oliver Cederborg - Self-taught designer & front-end developer.";
+export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
+export const siteDescription = "Self-taught designer & front-end developer from Copenhagen in Denmark.";
 
 const Layout = ({ children }) => {
 	useEffect(() => {
@@ -55,9 +55,9 @@ const Layout = ({ children }) => {
 				></link>
 				<meta
 					name='description'
-					content={siteTitle}
+					content={siteDescription}
 				/>
-				<meta property='og:image' content={"/images/about-oliver.svg"} />
+				<meta property='og:image' content={"/images/preview.png"} />
 				<meta name='og:title' content={siteTitle} />
 				<meta name='twitter:card' content='summary_large_image' />
 			</Head>
