@@ -177,7 +177,7 @@ const WorkComponent = () => {
 				<img
 					src={workCase.caseImage}
 					alt={workCase.caseImageAlt}
-					className='max-h-sm md:max-h-xl max-w-full object-contain'
+					className='max-h-sm md:max-h-xl max-w-full object-contain pointer-events-none'
 				/>
 			</div>
 		</div>
