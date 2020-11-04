@@ -22,10 +22,6 @@ const Index = () => {
 				start: "center bottom",
 				end: "=-200",
 			},
-			defaults: {
-				// stagger: 0.3,
-				// delay: -0.3
-			}
 		});
 		titleRevealTl.to(".reveal-title-content", 0, {
 			visibility: "visible",
@@ -220,22 +216,19 @@ const Index = () => {
 			opacity: 0,
 			ease: "power3.inOut"
 		});
-	}, []);
+	});
 
 	return (
 		<Layout>
-			<Head>
-				<title>{siteTitle}</title>
-			</Head>
 			<section
 				id='hero'
 				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
 			>
 				<div className='flex container'>
-					<div id="hero-content" className='flex flex-col'>
-						<img src="/images/logo.svg" className="hero-contents h-8 mb-30 md:hidden"></img>
+					<div id="hero-content" className='flex flex-col items-start'>
+						<img src="/images/logo.svg" className="h-8 mb-26 md:hidden"></img>
 
-						<div clas="">
+						<div>
 							<div className="reveal-title relative inline-block">
 								<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
 								<span className="reveal-title-content invisible">
@@ -247,14 +240,14 @@ const Index = () => {
 						<div className="reveal-title relative">
 							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
 							<span className="reveal-title-content invisible">
-								<h1 className="text-3xl lg:text-5xl leading-relaxed font-semibold text-white">a <span className='text-primaryBrand'>self-taught</span> designer</h1>
+								<h1 className="text-4xl lg:text-5xl lg:leading-relaxed font-semibold text-white">a <span className='text-primaryBrand'>self-taught</span> designer</h1>
 							</span>
 						</div>
 
 						<div className="reveal-title relative">
 							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
 							<span className="reveal-title-content invisible">
-								<h1 className="text-3xl lg:text-5xl leading-relaxed font-semibold text-white">&amp; front-end developer.</h1>
+								<h1 className="text-4xl lg:text-5xl lg:leading-relaxed font-semibold text-white">&amp; front-end developer.</h1>
 							</span>
 						</div>
 
