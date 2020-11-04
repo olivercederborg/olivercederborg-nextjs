@@ -6,6 +6,7 @@ import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
 
 export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
+export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, designer, developer, copenhagen, københavn, denmark, danmark ";
 export const siteDescription = "Self-taught designer & front-end developer from Copenhagen in Denmark.";
 
 const Layout = ({ children }) => {
@@ -28,18 +29,6 @@ const Layout = ({ children }) => {
 				navId.classList.remove("py-6");
 				navId.classList.add("py-12");
 			}
-			// if (
-			// 	currentPosition < topPos &&
-			// 	navOuter.classList.contains("header-collapsed") === false
-			// ) {
-			// 	navOuter.classList.add("header-collapsed");
-			// }
-			// if (
-			// 	currentPosition > topPos &&
-			// 	navOuter.classList.contains("header-collapsed") === true
-			// ) {
-			// 	navOuter.classList.remove("header-collapsed");
-			// }
 		}
 
 		window.addEventListener("scroll", onScroll);
@@ -53,8 +42,9 @@ const Layout = ({ children }) => {
 					href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
 					rel='stylesheet'
 				></link>
-				<meta name='title' content={siteTitle}/>
+				<title>{siteTitle}</title>
 				<meta name='description' content={siteDescription}/>
+				<meta name='keywords' content={siteKeywords}/>
 				<meta property='og:image' content={"/images/preview.png"} />
 				<meta name='og:title' content={siteTitle} />
 				<meta name='og:description' content={siteDescription} />
