@@ -103,11 +103,12 @@ const WorkComponent = () => {
 			skewX: 2,
 			delay: -1,
 			ease: "power3.out"
-		}).from("#case-link", 1, {
+		}).from(".case-cta", 1, {
 			opacity: 0,
+			y: -20,
 			stagger: 0.3,
-			skewX: 2,
 			delay: -0.5,
+			ease: "power3.out"
 		});
 
 		//case image
@@ -145,30 +146,32 @@ const WorkComponent = () => {
 				</div>
 
 				<div id="case-text-content">
-				<h3 id="case-header" className='text-white font-semibold text-secheader mt-12'>
-					{workCase.title}
-				</h3>
-				<div className='flex flex-row items-center mt-7'>
-					<div id="case-category-line" className='h-1 w-6 bg-primaryBrand mr-6'></div>
-					<p id="case-category" className='text-greyText text-base font-medium'>
-						{workCase.category}
+					<h3 id="case-header" className='text-white font-semibold text-secheader mt-12'>
+						{workCase.title}
+					</h3>
+					<div className='flex flex-row items-center mt-7'>
+						<div id="case-category-line" className='h-1 w-6 bg-primaryBrand mr-6'></div>
+						<p id="case-category" className='text-greyText text-base font-medium'>
+							{workCase.category}
+						</p>
+					</div>
+
+					<p id="case-description" className='text-greyText font-normal text-base leading-loose mt-6 w-12/12 lg:w-10/12'>
+						{workCase.description}
 					</p>
-				</div>
 
-				<p id="case-description" className='text-greyText font-normal text-base leading-loose mt-6 w-12/12 lg:w-10/12'>
-					{workCase.description}
-				</p>
-
-				{workCase.caseLink != null ? (
-					<a
-						href={workCase.caseLink}
-						target="_blank"
-						id="case-link"
-						className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
-					>
-						{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
-					</a>
-				) : null}
+					{workCase.caseLink != null ? (
+						<div className="case-cta">
+							<a
+								href={workCase.caseLink}
+								target="_blank"
+								id="case-link"
+								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
+							>
+								{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
+							</a>
+						</div>
+					) : null}
 				</div>
 
 			</div>
