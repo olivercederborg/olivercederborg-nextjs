@@ -1,5 +1,6 @@
 import Head from "next/head";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import Scrollspy from 'react-scrollspy'
 import { useEffect } from "react";
 import { BiHomeAlt, BiUser } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
@@ -74,27 +75,37 @@ const Layout = ({ children }) => {
 							</AnchorLink>
 						</div>
 						<div className='text-greyText'>
-							<AnchorLink
-								href='#work'
-								offset='72'
-								className='px-5 hover:text-white ease-in-out duration-300'
-							>
-								Work
+							<Scrollspy items={['hero', 'work', 'about', 'connect']} currentClassName="is-current" offset={ -350 }>
+								<AnchorLink
+									href='#hero'
+									offset='72'
+									className='px-5 hover:text-white ease-in-out duration-300 hidden'
+								>
+									Home
 							</AnchorLink>
-							<AnchorLink
-								href='#about'
-								offset='72'
-								className='px-5 hover:text-white ease-in-out duration-300'
-							>
-								About
+								<AnchorLink
+									href='#work'
+									id="work-link"
+									offset='72'
+									className='px-5 hover:text-white ease-in-out duration-300'
+								>
+									Work
 							</AnchorLink>
-							<AnchorLink
-								href='#connect'
-								offset='72'
-								className='px-5 hover:text-white ease-in-out duration-300'
-							>
-								Connect
+								<AnchorLink
+									href='#about'
+									offset='72'
+									className='px-5 hover:text-white ease-in-out duration-300'
+								>
+									About
 							</AnchorLink>
+								<AnchorLink
+									href='#connect'
+									offset='72'
+									className='px-5 hover:text-white ease-in-out duration-300'
+								>
+									Connect
+							</AnchorLink>
+							</Scrollspy>
 						</div>
 					</div>
 				</nav>

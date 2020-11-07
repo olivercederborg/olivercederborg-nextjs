@@ -9,3 +9,30 @@ body {
    background-color: #141628;
    visibility: hidden;
 }
+
+a::before {
+   @apply duration-200;
+   @apply ease-in-out;
+   @apply transition-all;
+}
+
+.is-current::before {
+   content: "\2022";
+   @apply text-primaryBrand;
+   @apply duration-200;
+   @apply ease-in-out;
+   @apply transition-all;
+   font-size: 2rem;
+   line-height: 24px;
+   position: relative;
+   top: auto;
+   bottom: auto;
+   right: 5px;
+   vertical-align: middle;
+}
+
+.is-current {
+   @apply duration-200;
+   @apply ease-in-out;
+   @apply text-white;
+}
