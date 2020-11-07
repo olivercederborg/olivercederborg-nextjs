@@ -348,7 +348,7 @@ const Index = () => {
 						<div className='flex w-7/12 md:w-5/12 justify-end'>
 							<img
 								id="about-img"
-								src='/images/about-oliver.svg'
+								src='/images/about-oliver.png'
 								alt='About Oliver Cederborg'
 								className='max-h-sm mt-30'
 							/>
