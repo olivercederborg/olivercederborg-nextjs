@@ -111,9 +111,6 @@ const Layout = ({ children }) => {
 				</nav>
 			</header>
 
-			{/* <nav
-				className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800"
-				style={{ "backdropFilter": "saturate(180%) blur(20px)", "WebkitBackdropFilter": "saturate(180%) blur(20px)" }}> */}
 				<Scrollspy items={['hero', 'work', 'about', 'connect']} currentClassName="mobile-current" offset={-350} componentTag={"nav"} className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800"
 				style={{ "backdropFilter": "saturate(180%) blur(20px)", "WebkitBackdropFilter": "saturate(180%) blur(20px)" }}>
 					<AnchorLink
@@ -141,7 +138,6 @@ const Layout = ({ children }) => {
 						<HiOutlineMail />
 					</AnchorLink>
 				</Scrollspy>
-			{/* </nav> */}
 			<main className='font-display'>{children}</main>
 		</div>
 	);
