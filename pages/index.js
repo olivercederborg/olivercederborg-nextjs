@@ -37,7 +37,9 @@ const Index = () => {
 		}, {
 			y: 0,
 			opacity: 1,
-			delay: -0.3
+			delay: -0.3,
+			stagger: 0.3,
+			ease: "power3.out",
 		});
 
 		//work section timeline
@@ -118,11 +120,11 @@ const Index = () => {
 			skewX: 2,
 			delay: -0.5
 		}).from(".skills-content", 1, {
-			x: -30,
+			y: -20,
 			opacity: 0,
 			stagger: 0.3,
 			skewX: 2,
-			delay: -0.5,
+			delay: -0.75,
 		});
 
 		const aboutMeTl = gsap.timeline({
@@ -141,14 +143,12 @@ const Index = () => {
 			opacity: 0,
 			x: -10,
 			stagger: 0.3,
-			skewX: 2,
 			delay: -0.5
 		}).from(".aboutme-content", 1, {
-			x: -30,
+			y: -20,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 2,
-			delay: -0.5,
+			delay: -0.75,
 		}).from(".about-cta", 1, {
 			y: -20,
 			opacity: 0,
@@ -161,6 +161,7 @@ const Index = () => {
 			opacity: 0,
 			x: -50,
 			ease: "power3.out",
+			delay: 0.5,
 			scrollTrigger: {
 				trigger: "#about-img",
 				start: "center bottom",
@@ -185,7 +186,6 @@ const Index = () => {
 			x: -10,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 5,
 			delay: -0.5,
 			ease: "power3.out"
 		}).from(".connect-h2", 1, {
@@ -196,16 +196,16 @@ const Index = () => {
 			delay: -1.5,
 			ease: "power3.out"
 		}).from(".connect-content", 1, {
-			x: -30,
+			y: -20,
 			opacity: 0,
 			stagger: 0.3,
-			delay: -0.5,
+			delay: -0.75,
 			ease: "power3.out"
 		}).from("#connect .connect-cta", 1, {
-			y: -30,
+			y: -20,
 			opacity: 0,
 			stagger: 0.3,
-			delay: -0.5,
+			delay: -0.75,
 			ease: "power3.out"
 		});
 
@@ -262,10 +262,10 @@ const Index = () => {
 							</span>
 						</div>
 
-						<div className="hero-add">
-							<p className='text-greyText font-normal text-normal mt-8'>
+							<p className='hero-add text-greyText font-normal text-normal mt-8'>
 								Stick around to see some of my work.
-						</p>
+							</p>
+						<div className="hero-add">
 							<AnchorLink
 								href='#work'
 								offset={() => 72}

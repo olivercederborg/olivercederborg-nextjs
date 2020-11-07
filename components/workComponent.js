@@ -19,24 +19,24 @@ const WorkComponent = () => {
 	const changeCounter = (value) => {
 		if (value === "increment" && count != maxCount) {
 			setCount((prevState) => prevState + 1);
-			changeCase();
+			nextCase();
 		} else if (value === "decrement" && count != 1) {
 			setCount((prevState) => prevState - 1);
-			changeCase();
+			prevCase();
 		} else if (value === "increment" && count == maxCount) {
 			setCount(1);
-			changeCase();
+			nextCase();
 		} else if (value === "decrement" && count == 1) {
 			setCount(maxCount);
-			changeCase();
+			prevCase();
 		}
 	};
 
-	//change case animation
-	const changeCase = () => {
-		const testTl = gsap.timeline();
-		const caseTestAni = () => {
-			testTl.fromTo("#case-text-content", 1.5, {
+	//next case animation
+	const nextCase = () => {
+		const nextCaseTl = gsap.timeline();
+		const nextCaseAni = () => {
+			nextCaseTl.fromTo("#case-text-content", 1.5, {
 				opacity: 0,
 				x: -30,
 			}, {
@@ -53,8 +53,34 @@ const WorkComponent = () => {
 				ease: "power4"
 			})
 		}
-		if (testTl.isActive() === false) {
-			caseTestAni();
+		if (nextCaseTl.isActive() === false) {
+			nextCaseAni();
+		}
+	}
+
+	//next case animation
+	const prevCase = () => {
+		const prevCaseTl = gsap.timeline();
+		const prevCaseAni = () => {
+			prevCaseTl.fromTo("#case-text-content", 1.5, {
+				opacity: 0,
+				x: 30,
+			}, {
+				opacity: 1,
+				x: 0,
+				ease: "power4"
+			}).fromTo("#case-image", 1.5, {
+				opacity: 0,
+				x: 50,
+			}, {
+				opacity: 1,
+				x: 0,
+				delay: -1.5,
+				ease: "power4"
+			})
+		}
+		if (prevCaseTl.isActive() === false) {
+			prevCaseAni();
 		}
 	}
 
@@ -76,10 +102,9 @@ const WorkComponent = () => {
 			delay: 0,
 			ease: "power3.out"
 		}).from("#case-header", 1, {
-			x: -50,
+			y: -20,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 5,
 			delay: -1.5,
 			ease: "power3.out"
 		}).fromTo("#case-category-line", 1, {
@@ -87,27 +112,25 @@ const WorkComponent = () => {
 		}, {
 			width: "1.5rem",
 			stagger: 0.3,
-			delay: -1,
+			delay: -1.5,
 			ease: "power3.inOut"
 		}).from("#case-category", 1, {
 			x: -10,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 2,
-			delay: -0.5,
+			delay: -1,
 			ease: "power3.out"
 		}).from("#case-description", 1, {
-			x: -30,
+			y: -20,
 			opacity: 0,
 			stagger: 0.3,
-			skewX: 2,
 			delay: -1,
 			ease: "power3.out"
 		}).from(".case-cta", 1, {
 			opacity: 0,
 			y: -20,
 			stagger: 0.3,
-			delay: -0.5,
+			delay: -0.7,
 			ease: "power3.out"
 		});
 

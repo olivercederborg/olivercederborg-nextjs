@@ -4,7 +4,7 @@ body {
    visibility: hidden;
 }
 
-a::before {
+ul > a::before {
    content: "\2022";
    @apply text-primaryBrand;
    @apply duration-200;
