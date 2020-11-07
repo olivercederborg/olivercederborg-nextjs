@@ -120,7 +120,7 @@ module.exports = {
         },
         extend: {
             backgroundImage: theme => ({
-                'hero-pattern': "url('/images/hero-graphic.png')",
+                'hero-pattern': "url('/images/hero-graphic.webp')",
             }),
             opacity: {
                 1: '.01',
