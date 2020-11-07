@@ -4,13 +4,28 @@ body {
    visibility: hidden;
 }
 
+a::before {
+   content: "\2022";
+   @apply text-primaryBrand;
+   @apply duration-200;
+   @apply ease-in-out;
+   @apply transition-all;
+   font-size: 0rem;
+   line-height: 24px;
+   position: relative;
+   top: auto;
+   bottom: auto;
+   right: 5px;
+   vertical-align: middle;
+}
+
 .is-current::before {
    content: "\2022";
    @apply text-primaryBrand;
    @apply duration-200;
    @apply ease-in-out;
    @apply transition-all;
-   font-size: 2rem;
+   font-size: 2.25rem;
    line-height: 24px;
    position: relative;
    top: auto;

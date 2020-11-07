@@ -176,11 +176,11 @@ const WorkComponent = () => {
 
 			</div>
 
-			<div id="case-image" className='w-12/12 lg:w-7/12 flex justify-center mt-26 lg:mt-16 xl:-mr-20'>
+			<div id="case-image" className='w-12/12 lg:w-7/12 flex justify-center mt-26 lg:mt-40 xl:-mr-20'>
 				<img
 					src={workCase.caseImage}
 					alt={workCase.caseImageAlt}
-					className='max-h-xs md:max-h-xl max-w-full object-contain pointer-events-none'
+					className='max-h-lg md:max-h-xl max-w-full object-contain pointer-events-none'
 				/>
 			</div>
 		</div>
