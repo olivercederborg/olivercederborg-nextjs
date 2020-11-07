@@ -226,11 +226,11 @@ const Index = () => {
 
 	return (
 		<Layout>
-			{/* <Head>
+			<Head>
 				<link rel="preload" as="image" href="/images/lunar-way-project.png" />
 				<link rel="preload" as="image" href="/images/noyer-project.png" />
 				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.png" />
-			</Head> */}
+			</Head>
 			<section
 				id='hero'
 				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
@@ -427,11 +427,6 @@ const Index = () => {
 					</div>
 				</footer>
 			</section>
-			<div id="preload">
-				<img src="/images/noyer-project.png" width="1" height="1" alt="Noyer wordpress webshop by Oliver Cederborg" />
-				<img src="/images/lunar-way-project.png" width="1" height="1" alt="Lunar Way app design concept by Oliver Cederborg" />
-				<img src="/images/nordsjaelland-osteopati-case.png" width="1" height="1" alt="nordsjaelland osteopati og fysioterapi wordpress website by Oliver Cederborg" />
-			</div>
 		</Layout>
 	);
 };
