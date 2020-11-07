@@ -227,7 +227,8 @@ const Index = () => {
 	return (
 		<Layout>
 			<Head>
-				<link rel="preload" as="image" href="/images/lunar-way-project.png" />
+				<link rel="preload" as="image" href="/images/hero-graphic.webp" />
+				<link rel="preload" as="image" href="/images/lunar-way-project.webp" />
 				<link rel="preload" as="image" href="/images/noyer-project.png" />
 				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.png" />
 			</Head>
