@@ -7,7 +7,7 @@ import { HiOutlineMail } from "react-icons/hi"
 
 export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
 export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, designer, developer, copenhagen, københavn, denmark, danmark ";
-export const siteDescription = "Self-taught designer & front-end developer from Copenhagen in Denmark.";
+export const siteDescription = "I'm a 23 year old self-taught designer & front-end developer, with focus on details and user experience.";
 
 const Layout = ({ children }) => {
 	useEffect(() => {
