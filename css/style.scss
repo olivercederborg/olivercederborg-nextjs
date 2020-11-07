@@ -26,11 +26,11 @@ body {
 }
 
 nav > a {
-   border-bottom: 2px solid rgba(0,0,0,0);
+   border-top: 1px solid rgba(0,0,0,0);
 }
 
 .mobile-current {
-   border-bottom: 2px solid;
+   border-top: 1px solid;
    @apply border-primaryBrand;
    @apply duration-200;
    @apply ease-in-out;
