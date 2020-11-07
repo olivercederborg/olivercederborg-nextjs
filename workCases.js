@@ -12,7 +12,7 @@ export const workCases = [
     title: "Lunar Way",
     category: "UI concept",
     description: "Lunar Way is a modern bank app that makes it easy to manage your money. I wanted to practice and evolve my UI design skills, by visualizing my vision of this app.",
-    caseImage: "/images/lunar-way-project.png",
+    caseImage: "/images/lunar-way-project.webp",
     caseImageAlt: "Lunar Way app design concept by Oliver Cederborg",
     caseLink: null,
     caseLinkText: null,
