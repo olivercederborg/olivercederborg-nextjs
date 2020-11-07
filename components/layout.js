@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
 				<meta name='description' content={siteDescription}/>
 				<meta name='keywords' content={siteKeywords}/>
 				<meta property='og:title' content={siteTitle} />
-				<meta property='og:image' content="/images/preview.png" />
+				<meta property='og:image' content="https://dev.olivercederborg.com/images/preview.png" />
 				<meta property='og:description' content={siteDescription} />
 				<meta property='og:type' content="website" />
 				<meta property='og:site_name' content="Oliver Cederborg" />
