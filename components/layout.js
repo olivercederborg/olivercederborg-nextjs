@@ -48,6 +48,8 @@ const Layout = ({ children }) => {
 				<meta property='og:title' content={siteTitle} />
 				<meta property='og:image' content="/images/preview.png" />
 				<meta property='og:description' content={siteDescription} />
+				<meta property='og:type' content="website" />
+				<meta property='og:site_name' content="Oliver Cederborg" />
 				<meta property='og:url' content="https://olivercederborg.com/" />
 				<meta name='twitter:card' content="summary_large_image" />
 				<meta name='twitter:site' content="@olivercederborg" />
