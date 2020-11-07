@@ -350,12 +350,12 @@ const Index = () => {
 							</div>
 						</div>
 
-						<div className='flex w-7/12 md:w-5/12 justify-end'>
+						<div className='flex w-8/12 md:w-5/12 justify-end'>
 							<img
 								id="about-img"
 								src='/images/about-oliver.png'
 								alt='About Oliver Cederborg'
-								className='max-h-sm mt-30'
+								className='max-h-sm mt-20 md:mt-30 object-contain'
 							/>
 						</div>
 					</div>
