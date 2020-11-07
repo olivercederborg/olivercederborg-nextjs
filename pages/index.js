@@ -213,7 +213,7 @@ const Index = () => {
 		const footerTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "footer",
-				start: "bottom bottom",
+				start: "top bottom",
 				end: "=-300",
 			}
 		});
@@ -280,7 +280,7 @@ const Index = () => {
 
 			<section
 				id='work'
-				className='bg-backgroundTwo pt-32 pb-48 overflow-x-hidden'
+				className='bg-backgroundTwo pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden'
 			>
 				<div className='container'>
 					<div className='flex flex-row items-center'>
@@ -300,7 +300,7 @@ const Index = () => {
 
 			<section
 				id='about'
-				className='bg-backgroundOne pt-32 pb-48 overflow-x-hidden'
+				className='bg-backgroundOne pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden'
 			>
 				<div className='container'>
 					<div className='flex flex-row items-center'>
@@ -364,7 +364,7 @@ const Index = () => {
 
 			<section
 				id='connect'
-				className='bg-backgroundTwo pt-32 pb-14 md:pb-0 overflow-x-hidden'
+				className='bg-backgroundTwo pt-26 md:pt-32 pb-14 md:pb-0 overflow-x-hidden'
 			>
 				<div className='container pb-36 md:pb-48'>
 					<div className='flex flex-row items-center'>
