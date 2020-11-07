@@ -1,13 +1,13 @@
 import Head from "next/head";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useEffect } from "react";
-import { BiHomeAlt, BiUser  } from "react-icons/bi"
+import { BiHomeAlt, BiUser } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
 
 export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
 export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, designer, developer, copenhagen, københavn, denmark, danmark ";
-export const siteDescription = "I'm a 23 year old self-taught designer & front-end developer, with focus on details and user experience.";
+export const siteDescription = "I'm a 23 year old self-taught designer & front-end developer, focused on details and user experience.";
 
 const Layout = ({ children }) => {
 	useEffect(() => {
@@ -37,15 +37,10 @@ const Layout = ({ children }) => {
 	return (
 		<div>
 			<Head>
-				<link rel='icon' href='/images/logo.svg' />
-				<link
-					href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
-					rel='stylesheet'
-				></link>
 				<title>{siteTitle}</title>
-				<meta name='description' content={siteDescription}/>
-				<meta name='keywords' content={siteKeywords}/>
-				<meta property='og:title' content={siteTitle} />
+				<meta name='description' content={siteDescription} />
+				<meta name='keywords' content={siteKeywords} />
+				<meta property='og:title' content="Oliver Cederborg" />
 				<meta property='og:image' content="https://dev.olivercederborg.com/images/preview.png" />
 				<meta property='og:description' content={siteDescription} />
 				<meta property='og:type' content="website" />
@@ -56,6 +51,12 @@ const Layout = ({ children }) => {
 				<meta name='twitter:creator' content="@olivercederborg" />
 				<meta name='twitter:description' content={siteDescription} />
 				<meta name='twitter:image' content="https://dev.olivercederborg.com/images/preview.png" />
+
+				<link rel='icon' href='/images/logo.svg' />
+				<link
+					href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
+					rel='stylesheet'
+				></link>
 			</Head>
 			<header className='bg-backgroundOne border-backgroundTwo w-full fixed hidden md:block z-10'>
 				<nav className='container'>
@@ -99,8 +100,8 @@ const Layout = ({ children }) => {
 				</nav>
 			</header>
 
-			<nav 
-				className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800" 
+			<nav
+				className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800"
 				style={{ "backdropFilter": "saturate(180%) blur(20px)", "WebkitBackdropFilter": "saturate(180%) blur(20px)" }}>
 				<AnchorLink
 					href='#hero'
