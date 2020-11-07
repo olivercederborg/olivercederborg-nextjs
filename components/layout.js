@@ -45,10 +45,10 @@ const Layout = ({ children }) => {
 				<title>{siteTitle}</title>
 				<meta name='description' content={siteDescription}/>
 				<meta name='keywords' content={siteKeywords}/>
+				<meta property='og:title' content={siteTitle} />
 				<meta property='og:image' content="/images/preview.png" />
-				<meta name='og:title' content={siteTitle} />
-				<meta name='og:description' content={siteDescription} />
-				<meta name='twitter:card' content="/images/preview.png" />
+				<meta property='og:description' content={siteDescription} />
+				<meta name='twitter:card' content="summary_large_image" />
 			</Head>
 			<header className='bg-backgroundOne border-backgroundTwo w-full fixed hidden md:block z-10'>
 				<nav className='container'>
