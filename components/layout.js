@@ -48,7 +48,10 @@ const Layout = ({ children }) => {
 				<meta property='og:title' content={siteTitle} />
 				<meta property='og:image' content="/images/preview.png" />
 				<meta property='og:description' content={siteDescription} />
+				<meta property='og:url' content="https://olivercederborg.com/" />
 				<meta name='twitter:card' content="summary_large_image" />
+				<meta name='twitter:site' content="@olivercederborg" />
+				<meta name='twitter:creator' content="@olivercederborg" />
 			</Head>
 			<header className='bg-backgroundOne border-backgroundTwo w-full fixed hidden md:block z-10'>
 				<nav className='container'>
