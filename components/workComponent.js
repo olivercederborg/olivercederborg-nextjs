@@ -180,7 +180,7 @@ const WorkComponent = () => {
 				<img
 					src={workCase.caseImage}
 					alt={workCase.caseImageAlt}
-					className='max-h-sm md:max-h-xl max-w-full object-contain pointer-events-none'
+					className='max-h-xs md:max-h-xl max-w-full object-contain pointer-events-none'
 				/>
 			</div>
 		</div>
