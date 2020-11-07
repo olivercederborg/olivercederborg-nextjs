@@ -226,6 +226,11 @@ const Index = () => {
 
 	return (
 		<Layout>
+			<Head>
+				<link rel="preload" as="image" href="/images/lunar-way-project.png" />
+				<link rel="preload" as="image" href="/images/noyer-project.png" />
+				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.png" />
+			</Head>
 			<section
 				id='hero'
 				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
