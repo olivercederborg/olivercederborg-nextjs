@@ -51,11 +51,11 @@ const Layout = ({ children }) => {
 				<meta property='og:type' content="website" />
 				<meta property='og:site_name' content="Oliver Cederborg" />
 				<meta property='og:url' content="https://olivercederborg.com/" />
-				<meta name='twitter:card' content="summary_large_image" />
+				<meta name='twitter:card' content="summary" />
 				<meta name='twitter:site' content="@olivercederborg" />
 				<meta name='twitter:creator' content="@olivercederborg" />
 				<meta name='twitter:description' content={siteDescription} />
-				<meta name='twitter:image' content="/images/preview.png" />
+				<meta name='twitter:image' content="https://olivercederborg.com/images/preview.png" />
 			</Head>
 			<header className='bg-backgroundOne border-backgroundTwo w-full fixed hidden md:block z-10'>
 				<nav className='container'>
