@@ -356,7 +356,7 @@ const Index = () => {
 								id="about-img"
 								src='/images/about-oliver.webp'
 								alt='About Oliver Cederborg'
-								className='max-h-sm mt-20 md:mt-30 object-contain'
+								className='max-h-sm mt-20 md:mt-30 object-contain pointer-events-none'
 							/>
 						</div>
 					</div>
