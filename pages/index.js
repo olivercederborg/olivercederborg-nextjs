@@ -229,8 +229,8 @@ const Index = () => {
 			<Head>
 				<link rel="preload" as="image" href="/images/hero-graphic.webp" />
 				<link rel="preload" as="image" href="/images/lunar-way-project.webp" />
-				<link rel="preload" as="image" href="/images/noyer-project.png" />
-				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.png" />
+				<link rel="preload" as="image" href="/images/noyer-project.webp" />
+				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.webp" />
 			</Head>
 			<section
 				id='hero'
@@ -354,7 +354,7 @@ const Index = () => {
 						<div className='flex w-8/12 md:w-5/12 justify-end'>
 							<img
 								id="about-img"
-								src='/images/about-oliver.png'
+								src='/images/about-oliver.webp'
 								alt='About Oliver Cederborg'
 								className='max-h-sm mt-20 md:mt-30 object-contain'
 							/>
