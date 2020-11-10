@@ -48,7 +48,7 @@ const Index = () => {
 	return (
 		<Layout>
 			<Head>
-				<link rel="preload" as="image" href="/images/hero-graphic.webp" media="(min-width: 768px)" />
+				{/* <link rel="preload" as="image" href="/images/hero-graphic.webp" media="(min-width: 768px)" /> */}
 				<link rel="preload" as="image" href="/images/lunar-way-project.webp" media="(min-width: 768px)" />
 				<link rel="preload" as="image" href="/images/noyer-project.webp" media="(min-width: 768px)" />
 				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.webp" media="(min-width: 768px)" />
