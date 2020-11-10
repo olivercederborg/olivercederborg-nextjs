@@ -107,7 +107,7 @@ const Index = () => {
 			<AboutSection sectionNumber={3} />
 			<ConnectSection sectionNumber={4} />
 			{/* Empty script tag as chrome bug fix, see https://stackoverflow.com/a/42969608/943337 */}
-			<script></script>
+			<script> </script>
 		</Layout>
 	);
 };
