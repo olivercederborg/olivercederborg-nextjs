@@ -135,15 +135,26 @@ const WorkSlider = () => {
 		});
 
 		//case image
-		gsap.from("#case-image, #case-image-mobile", 1.3, {
+		gsap.from("#case-image", 1.3, {
 			scrollTrigger: {
-				trigger: "#case-image, #case-image-mobile",
+				trigger: "#case-image",
 				start: "top bottom",
 				end: "=-300",
 			},
 			x: -50,
 			opacity: 0,
 			delay: 1,
+			ease: "power3.out"
+		})
+		gsap.from("#case-image-mobile", 1.3, {
+			scrollTrigger: {
+				trigger: "#case-image-mobile",
+				start: "top bottom",
+				end: "=-300",
+			},
+			x: -50,
+			opacity: 0,
+			delay: 0.5,
 			ease: "power3.out"
 		})
 	}, [])
@@ -210,7 +221,7 @@ const WorkSlider = () => {
 				<img
 					src={workCase.caseImageMobile}
 					alt={workCase.caseImageAlt}
-					className='max-h-lg md:max-h-xl max-w-full object-contain pointer-events-none'
+					className='h-full w-full object-contain pointer-events-none'
 				/>
 			</div>
 		</div>
