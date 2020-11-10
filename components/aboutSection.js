@@ -165,7 +165,7 @@ const AboutSection = (props) => {
                      id="about-img"
                      src='/images/about-oliver.webp'
                      alt='About Oliver Cederborg'
-                     className='h-sm mt-20 md:mt-30 object-contain pointer-events-none'
+                     className='h-full md:h-sm w-full mt-20 md:mt-30 object-contain pointer-events-none'
                   />
                </div>
             </div>
