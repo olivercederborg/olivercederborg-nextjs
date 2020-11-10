@@ -160,12 +160,12 @@ const AboutSection = (props) => {
                   </div>
                </div>
 
-               <div className='flex w-8/12 md:w-5/12 justify-end'>
+               <div className='flex w-9/12 md:w-5/12 justify-end'>
                   <img
                      id="about-img"
                      src='/images/about-oliver.webp'
                      alt='About Oliver Cederborg'
-                     className='max-h-sm mt-20 md:mt-30 object-contain pointer-events-none'
+                     className='h-sm mt-20 md:mt-30 object-contain pointer-events-none'
                   />
                </div>
             </div>
