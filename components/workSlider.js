@@ -42,15 +42,15 @@ const WorkSlider = () => {
 			}, {
 				opacity: 1,
 				x: 0,
-				ease: "power4"
-			}).fromTo("#case-image", 1.5, {
+				ease: "power4.out"
+			}).fromTo("#case-image, #case-image-mobile", 1.5, {
 				opacity: 0,
 				x: -50,
 			}, {
 				opacity: 1,
 				x: 0,
 				delay: -1.5,
-				ease: "power4"
+				ease: "power4.out"
 			})
 		}
 		if (nextCaseTl.isActive() === false) {
@@ -68,15 +68,15 @@ const WorkSlider = () => {
 			}, {
 				opacity: 1,
 				x: 0,
-				ease: "power4"
-			}).fromTo("#case-image", 1.5, {
+				ease: "power4.out"
+			}).fromTo("#case-image, #case-image-mobile", 1.5, {
 				opacity: 0,
 				x: 50,
 			}, {
 				opacity: 1,
 				x: 0,
 				delay: -1.5,
-				ease: "power4"
+				ease: "power4.out"
 			})
 		}
 		if (prevCaseTl.isActive() === false) {
@@ -135,7 +135,7 @@ const WorkSlider = () => {
 		});
 
 		//case image
-		gsap.from("#case-image", 1.3, {
+		gsap.from("#case-image, #case-image-mobile", 1.3, {
 			scrollTrigger: {
 				trigger: "#case-image",
 				start: "center bottom",
@@ -199,9 +199,16 @@ const WorkSlider = () => {
 
 			</div>
 
-			<div id="case-image" className='w-12/12 lg:w-7/12 flex justify-center mt-26 lg:mt-40 xl:-mr-20'>
+			<div id="case-image" className='hidden w-12/12 lg:w-7/12 md:flex justify-center mt-26 lg:mt-40 xl:-mr-20'>
 				<img
 					src={workCase.caseImage}
+					alt={workCase.caseImageAlt}
+					className='max-h-lg md:max-h-xl max-w-full object-contain pointer-events-none'
+				/>
+			</div>
+			<div id="case-image-mobile" className='md:hidden w-12/12 flex justify-center mt-26'>
+				<img
+					src={workCase.caseImageMobile}
 					alt={workCase.caseImageAlt}
 					className='max-h-lg md:max-h-xl max-w-full object-contain pointer-events-none'
 				/>
