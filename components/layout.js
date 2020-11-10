@@ -1,7 +1,8 @@
 import Head from "next/head";
+import { useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import Scrollspy from 'react-scrollspy'
-import { useEffect } from "react";
+import { gsap } from 'gsap';
 import { BiHomeAlt, BiUser } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
@@ -12,6 +13,13 @@ export const siteDescription = "I'm a 23 year old self-taught designer & front-e
 
 const Layout = ({ children }) => {
 	useEffect(() => {
+
+		gsap.from("header", 1.5, {
+         y: -30,
+         opacity: 0,
+         ease: "power3.inOut"
+		});
+		
 		function onScroll() {
 			const navId = document.getElementById("navigation")
 			const topPos = 250;
