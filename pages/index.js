@@ -53,9 +53,9 @@ const Index = () => {
 				<link rel="preload" as="image" href="/images/noyer-project.webp" media="(min-width: 768px)" />
 				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.webp" media="(min-width: 768px)" />
 
-				<link rel="preload" as="image" href="/images/lunar-way-case.jpg" media="(max-width: 767px)" />
-				<link rel="preload" as="image" href="/images/noyer-case.jpg" media="(max-width: 767px)" />
-				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.jpg" media="(max-width: 767px)" />
+				<link rel="preload" as="image" href="/images/lunar-way-case-mobile.jpg" media="(max-width: 767px)" />
+				<link rel="preload" as="image" href="/images/noyer-case-mobile.jpg" media="(max-width: 767px)" />
+				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case-mobile.jpg" media="(max-width: 767px)" />
 			</Head>
 			<section
 				id='hero'
