@@ -90,8 +90,7 @@ module.exports = {
     theme: {
         container: {
             center: true,
-            padding: '2rem',
-            container: {}
+            padding: '1.5rem',
         },
         backgroundPosition: {
             'large-desk': 'right 5rem bottom',

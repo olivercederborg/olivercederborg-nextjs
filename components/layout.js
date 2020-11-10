@@ -14,9 +14,13 @@ export const siteDescription = "I'm a 23 year old self-taught designer & front-e
 const Layout = ({ children }) => {
 	useEffect(() => {
 
-		gsap.from("header", 1.5, {
+		gsap.fromTo("header", 1.5, {
          y: -30,
          opacity: 0,
+		}, {
+			y: 0,
+			opacity: 1,
+			delay: 0.2,
          ease: "power3.inOut"
 		});
 		
