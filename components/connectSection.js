@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { FaTwitter, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-const ConnectSection = () => {
+const ConnectSection = (props) => {
    useEffect(() => {
       if (typeof window !== "undefined") {
          gsap.registerPlugin(ScrollTrigger);
@@ -66,7 +66,7 @@ const ConnectSection = () => {
    return (
       <section
          id='connect'
-         className='bg-backgroundTwo pt-26 md:pt-32 pb-14 md:pb-0 overflow-x-hidden'
+         className={'pt-26 md:pt-32 pb-14 md:pb-0 overflow-x-hidden' + (props.sectionNumber % 2 === 0 ? ' bg-backgroundTwo ' : ((props.sectionNumber % 2) != 0 ? ' bg-backgroundOne' : ''))}
       >
          <div className='container pb-36 md:pb-48'>
             <div className='flex flex-row items-center'>

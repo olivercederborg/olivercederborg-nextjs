@@ -3,7 +3,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-const AboutSection = () => {
+const AboutSection = (props) => {
    useEffect(() => {
       if (typeof window !== "undefined") {
          gsap.registerPlugin(ScrollTrigger);
@@ -110,7 +110,7 @@ const AboutSection = () => {
    return (
       <section
          id='about'
-         className='bg-backgroundOne pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden'
+			className={'pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden' + (props.sectionNumber % 2 === 0 ? ' bg-backgroundTwo ' : ((props.sectionNumber % 2) != 0 ? ' bg-backgroundOne' : ''))}
       >
          <div className='container'>
             <div className='flex flex-row items-center'>

@@ -99,9 +99,9 @@ const Index = () => {
 					</div>
 				</div>
 			</section>
-			<WorkSection />
-			<AboutSection />
-			<ConnectSection />
+			<WorkSection sectionNumber={2} />
+			<AboutSection sectionNumber={3} />
+			<ConnectSection sectionNumber={4} />
 		</Layout>
 	);
 };

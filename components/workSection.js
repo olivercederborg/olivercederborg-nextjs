@@ -4,11 +4,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import WorkSlider from './workSlider';
 
-const WorkSection = () => {
+const WorkSection = (props) => {
    useEffect(() => {
       if (typeof window !== "undefined") {
          gsap.registerPlugin(ScrollTrigger);
-		}
+      }
       //work section timeline
       const workTl = gsap.timeline({
          scrollTrigger: {
@@ -42,7 +42,7 @@ const WorkSection = () => {
    return (
       <section
          id='work'
-         className='bg-backgroundTwo pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden'
+         className={'pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden' + (props.sectionNumber % 2 === 0 ? ' bg-backgroundTwo ' : ((props.sectionNumber % 2) != 0 ? ' bg-backgroundOne' : ''))}
       >
          <div className='container'>
             <div className='flex flex-row items-center'>
