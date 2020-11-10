@@ -91,7 +91,7 @@ const WorkSlider = () => {
 		const caseTextTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#case-nav",
-				start: "center bottom",
+				start: "top bottom",
 				end: "=-300",
 			}
 		});

@@ -13,7 +13,7 @@ const WorkSection = (props) => {
       const workTl = gsap.timeline({
          scrollTrigger: {
             trigger: "#work .section-h2",
-            start: "center bottom",
+            start: "top bottom",
             end: "=-300",
          }
       });

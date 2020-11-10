@@ -12,7 +12,7 @@ const ConnectSection = (props) => {
       const connectTl = gsap.timeline({
          scrollTrigger: {
             trigger: "#connect",
-            start: "center bottom",
+            start: "top bottom",
             end: "=-300",
          }
       });

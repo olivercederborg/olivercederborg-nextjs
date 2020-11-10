@@ -12,7 +12,7 @@ const AboutSection = (props) => {
 		const aboutTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#about .section-line",
-				start: "center bottom",
+				start: "top bottom",
 				end: "=-300",
 			}
 		});
@@ -41,7 +41,7 @@ const AboutSection = (props) => {
 		const skillsTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#skills",
-				start: "center bottom",
+				start: "top bottom",
 				end: "=-300",
 			}
 		});
@@ -62,12 +62,18 @@ const AboutSection = (props) => {
 			stagger: 0.3,
 			skewX: 2,
 			delay: -0.75,
-		});
+		}).from(".about-cta", 1, {
+			y: -20,
+			opacity: 0,
+			stagger: 0.3,
+			delay: -0.5,
+			ease: "power3.out"
+		});;
 
 		const aboutMeTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#aboutme",
-				start: "center bottom",
+				start: "top bottom",
 				end: "=-300",
 			}
 		});
@@ -86,13 +92,7 @@ const AboutSection = (props) => {
 			opacity: 0,
 			stagger: 0.3,
 			delay: -0.75,
-		}).from(".about-cta", 1, {
-			y: -20,
-			opacity: 0,
-			stagger: 0.3,
-			delay: -0.5,
-			ease: "power3.out"
-		});
+		}).
 
 		gsap.from("#about-img", 1, {
 			opacity: 0,
@@ -101,7 +101,7 @@ const AboutSection = (props) => {
 			delay: 0.5,
 			scrollTrigger: {
 				trigger: "#about-img",
-				start: "center bottom",
+				start: "top bottom",
 				end: "=-300",
 			}
 		});

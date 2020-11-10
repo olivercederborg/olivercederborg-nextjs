@@ -21,7 +21,7 @@ const Index = () => {
 		const titleRevealTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#hero-content .reveal-title",
-				start: "center bottom",
+				start: "top bottom",
 				end: "=-200",
 			},
 		});
