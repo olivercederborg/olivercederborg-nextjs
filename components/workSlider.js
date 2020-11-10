@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const WorkComponent = () => {
+const WorkSlider = () => {
 	if (typeof window !== "undefined") {
 		gsap.registerPlugin(ScrollTrigger);
 	}
@@ -210,4 +210,4 @@ const WorkComponent = () => {
 	);
 };
 
-export default WorkComponent;
+export default WorkSlider;
