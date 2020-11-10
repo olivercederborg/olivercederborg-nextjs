@@ -137,7 +137,7 @@ const WorkSlider = () => {
 		//case image
 		gsap.from("#case-image, #case-image-mobile", 1.3, {
 			scrollTrigger: {
-				trigger: "#case-image",
+				trigger: "#case-image, #case-image-mobile",
 				start: "top bottom",
 				end: "=-300",
 			},
