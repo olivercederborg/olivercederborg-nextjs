@@ -92,7 +92,7 @@ const AboutSection = (props) => {
 			opacity: 0,
 			stagger: 0.3,
 			delay: -0.75,
-		}).
+		});
 
 		gsap.from("#about-img", 1, {
 			opacity: 0,
@@ -165,7 +165,7 @@ const AboutSection = (props) => {
                      id="about-img"
                      src='/images/about-oliver.webp'
                      alt='About Oliver Cederborg'
-                     className='h-full md:h-sm w-full mt-20 md:mt-30 object-contain pointer-events-none'
+                     className='h-full md:max-h-sm w-full mt-20 md:mt-30 object-contain pointer-events-none'
                   />
                </div>
             </div>
