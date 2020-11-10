@@ -4,6 +4,7 @@ body {
    visibility: hidden;
 }
 
+//Nav styling
 ul > a::before {
    content: "\2022";
    @apply text-primaryBrand;
