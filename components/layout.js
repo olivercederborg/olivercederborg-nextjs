@@ -65,7 +65,9 @@ const Layout = ({ children }) => {
 				<meta name='twitter:description' content={siteDescription} />
 				<meta name='twitter:image' content="https://dev.olivercederborg.com/images/preview.png" />
 
-				<link rel='icon' href='/images/logo.svg' />
+				<link rel='icon' sizes="180x180" href='/apple-touch-icon.png' />
+				<link rel='icon' sizes="32x32" href='/favicon_32x32.png' />
+				<link rel='icon' sizes="16x16" href='/favicon_16x16.png' />
 				<link
 					href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
 					rel='stylesheet'
