@@ -2,7 +2,7 @@ export const workCases = [
   {
     title: "Noyer",
     category: "WordPress Webshop",
-    description: "Noyer is a Danish design company that crafts handmade quality products in American walnut wood. The work I do for Noyer consists of helping them building/maintaining their WordPress shop, and photography work such as cropping and slight manipulations.",
+    description: `Noyer is a Danish design company that crafts handmade quality products in American walnut wood. The work I do for Noyer consists of helping them building/maintaining their WordPress shop with multiple language layers, and photography work such as cropping and slight manipulations.`,
     caseBackground: "/images/tablet-background.png",
     caseImage: "/images/noyer-case-tablet.png",
     caseImageMobile: "/images/noyer-project-mobile.png",
