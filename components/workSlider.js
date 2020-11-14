@@ -194,7 +194,7 @@ const WorkSlider = () => {
 						{workCase.description}
 					</p>
 
-					{workCase.caseLink != null ? (
+					{workCase.caseLink ? (
 						<div className="case-cta">
 							<a
 								href={workCase.caseLink}
@@ -210,7 +210,7 @@ const WorkSlider = () => {
 
 			</div>
 			<div id="case-image" className='hidden w-12/12 lg:w-7/12 md:flex justify-center mt-26 lg:mt-40 xl:-mr-20'>
-				{workCase.caseImage === null && workCase.caseImageOne !== null && workCase.caseImageTwo !== null ? (
+				{!workCase.caseImage && workCase.caseImageOne && workCase.caseImageTwo ? (
 					<div>
 						<img
 							src={workCase.caseImageTwo}
