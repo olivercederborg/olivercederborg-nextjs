@@ -49,9 +49,12 @@ const Index = () => {
 		<Layout>
 			<Head>
 				<link rel="preload" as="image" href="/images/hero-graphic.webp" media="(min-width: 768px)" />
-				<link rel="preload" as="image" href="/images/lunar-way-project.webp" media="(min-width: 768px)" />
-				<link rel="preload" as="image" href="/images/noyer-project.webp" media="(min-width: 768px)" />
-				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case.webp" media="(min-width: 768px)" />
+				<link rel="preload" as="image" href="/images/lunar-background.png" media="(min-width: 768px)" />
+				<link rel="preload" as="image" href="/images/lunar-first.png" media="(min-width: 768px)" />
+				<link rel="preload" as="image" href="/images/lunar-second.png" media="(min-width: 768px)" />
+				<link rel="preload" as="image" href="/images/tablet-background.png" media="(min-width: 768px)" />
+				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case-tablet.png" media="(min-width: 768px)" />
+				<link rel="preload" as="image" href="/images/noyer-case-tablet.png" media="(min-width: 768px)" />
 
 				<link rel="preload" as="image" href="/images/lunar-way-project-mobile.png" media="(max-width: 767px)" />
 				<link rel="preload" as="image" href="/images/noyer-project-mobile.png" media="(max-width: 767px)" />
