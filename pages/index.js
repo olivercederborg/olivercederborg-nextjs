@@ -52,7 +52,7 @@ const Index = () => {
 				<link rel="preload" as="image" href="/images/lunar-background.png" media="(min-width: 768px)" />
 				<link rel="preload" as="image" href="/images/lunar-first.png" media="(min-width: 768px)" />
 				<link rel="preload" as="image" href="/images/lunar-second.png" media="(min-width: 768px)" />
-				<link rel="preload" as="image" href="/images/tablet-background.png" media="(min-width: 768px)" />
+				{/* <link rel="preload" as="image" href="/images/tablet-background.png" media="(min-width: 768px)" /> */}
 				<link rel="preload" as="image" href="/images/nordsjaelland-osteopati-case-tablet.png" media="(min-width: 768px)" />
 				<link rel="preload" as="image" href="/images/noyer-case-tablet.png" media="(min-width: 768px)" />
 
