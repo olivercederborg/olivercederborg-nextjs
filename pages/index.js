@@ -62,7 +62,7 @@ const Index = () => {
 				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
 			>
 				<div className='flex container'>
-					<div id="hero-content" className='flex flex-col items-start'>
+					<div id="hero-content" className='flex flex-col items-start w-full'>
 						<img src="/images/logo.svg" className="h-8 mb-20 md:hidden"></img>
 
 						<div>
@@ -91,11 +91,11 @@ const Index = () => {
 						<p className='hero-add text-greyText font-normal text-normal mt-8'>
 							Stick around to see some of my work.
 							</p>
-						<div className="hero-add">
+						<div className="hero-add flex text-center w-full md:w-auto">
 							<AnchorLink
 								href='#work'
 								offset={() => 72}
-								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 text-center inline-flex w-auto'
+								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 md:px-8 py-4 mt-14 text-center justify-center inline-flex w-full'
 							>
 								See my work
 							</AnchorLink>
@@ -106,7 +106,7 @@ const Index = () => {
 			<WorkSection sectionNumber={2} />
 			<AboutSection sectionNumber={3} />
 			<ConnectSection sectionNumber={4} />
-			{/* Empty script tag as chrome bug fix, see https://stackoverflow.com/a/42969608/943337 */}
+			
 			<script> </script>
 		</Layout>
 	);
