@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { createRef, useState, useEffect } from "react";
 import { workCases } from "../workCases";;
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -209,14 +209,46 @@ const WorkSlider = () => {
 				</div>
 
 			</div>
-
 			<div id="case-image" className='hidden w-12/12 lg:w-7/12 md:flex justify-center mt-26 lg:mt-40 xl:-mr-20'>
-				<img
-					src={workCase.caseImage}
-					alt={workCase.caseImageAlt}
-					className='max-h-lg md:max-h-xl max-w-full object-contain pointer-events-none'
-				/>
+				{workCase.caseImage === null && workCase.caseImageOne !== null && workCase.caseImageTwo !== null ? (
+					<div>
+						<img
+							src={workCase.caseImageTwo}
+							id="dualImageCaeSecond"
+							alt={workCase.caseImageAlt}
+							className='case-image-two absolute h-full z-10 md:max-h-xl w-full object-contain pointer-events-none'
+						/>
+						<img
+							src={workCase.caseImageOne}
+							id="dualImageCaseFirst"
+							alt={workCase.caseImageAlt}
+							className='case-image-one absolute h-full z-10 md:max-h-xl w-full object-contain pointer-events-none'
+						/>
+						<img
+							src={workCase.caseBackground}
+							id="case-image-background"
+							alt=""
+							className='z-0 h-full md:max-h-xl w-full object-contain pointer-events-none'
+						/>
+					</div>
+				) : (
+						<div>
+							<img
+								src={workCase.caseBackground}
+								id="case-image-background"
+								alt=""
+								className='absolute z-0 h-full md:max-h-xl w-full object-contain pointer-events-none'
+							/>
+							<img
+								src={workCase.caseImage}
+								id="singleImageCase"
+								alt={workCase.caseImageAlt}
+								className='h-full z-10 md:max-h-xl w-full object-contain pointer-events-none'
+							/>
+						</div>
+					)}
 			</div>
+			
 			<div id="case-image-mobile" className='md:hidden w-12/12 flex justify-center mt-26'>
 				<img
 					src={workCase.caseImageMobile}
