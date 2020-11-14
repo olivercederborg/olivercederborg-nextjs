@@ -52,3 +52,88 @@ nav > a {
    @apply ease-in-out;
    @apply text-white;
 }
+
+//CASE ANIMATIONS
+@-webkit-keyframes dualImageCaseFirst {
+   0%   { transform: translate(0, -7px); }
+   50% { transform: translate(0, 7px); }
+   100%   { transform: translate(0, -7px); }
+ }
+ @-moz-keyframes dualImageCaseFirst {
+   0%   { transform: translate(0, -7px); }
+   50% { transform: translate(0, 7px); }
+   100%   { transform: translate(0, -7px); }
+ }
+ @-o-keyframes dualImageCaseFirst {
+   0%   { transform: translate(0, -7px); }
+   50% { transform: translate(0, 7px); }
+   100%   { transform: translate(0, -7px); }
+ }
+ @keyframes dualImageCaseFirst {
+   0%   { transform: translate(0, -7px); }
+   50% { transform: translate(0, 7px); }
+   100%   { transform: translate(0, -7px); }
+ }
+
+ #dualImageCaseFirst {
+   -webkit-animation: dualImageCaseFirst 5s infinite ease-in-out; /* Safari 4+ */
+   -moz-animation:    dualImageCaseFirst 5s infinite ease-in-out; /* Fx 5+ */
+   -o-animation:      dualImageCaseFirst 5s infinite ease-in-out; /* Opera 12+ */
+   animation:         dualImageCaseFirst 5s infinite ease-in-out; /* IE 10+, Fx 29+ */
+ }
+
+ @-webkit-keyframes dualImageCaseSecond {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+ @-moz-keyframes dualImageCaseSecond {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+ @-o-keyframes dualImageCaseSecond {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+ @keyframes dualImageCaseSecond {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+
+ #dualImageCaeSecond {
+   -webkit-animation: dualImageCaseSecond 5s infinite ease-in-out; /* Safari 4+ */
+   -moz-animation:    dualImageCaseSecond 5s infinite ease-in-out; /* Fx 5+ */
+   -o-animation:      dualImageCaseSecond 5s infinite ease-in-out; /* Opera 12+ */
+   animation:         dualImageCaseSecond 5s infinite ease-in-out; /* IE 10+, Fx 29+ */
+ }
+
+ @-webkit-keyframes singleImageCase {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+ @-moz-keyframes singleImageCase {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+ @-o-keyframes singleImageCase {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+ @keyframes singleImageCase {
+   0%   { transform: translate(0, 7px); }
+   50% { transform: translate(0, -7px); }
+   100%   { transform: translate(0, 7px); }
+ }
+
+ #singleImageCase {
+   -webkit-animation: singleImageCase 5s infinite ease-in-out; /* Safari 4+ */
+   -moz-animation:    singleImageCase 5s infinite ease-in-out; /* Fx 5+ */
+   -o-animation:      singleImageCase 5s infinite ease-in-out; /* Opera 12+ */
+   animation:         singleImageCase 5s infinite ease-in-out; /* IE 10+, Fx 29+ */
+ }
