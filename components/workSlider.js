@@ -1,9 +1,10 @@
-import { createRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { workCases } from "../workCases";;
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { HiOutlineArrowNarrowRight, HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { logEvent } from "../utils/analytics";
 
 const WorkSlider = () => {
 	if (typeof window !== "undefined") {
@@ -198,6 +199,7 @@ const WorkSlider = () => {
 						<div className="case-cta">
 							<a
 								href={workCase.caseLink}
+								onClick={() => logEvent(`Case ${workCase.title}`, `Redirected to ${workCase.caseLink}`)}
 								target="_blank"
 								id="case-link"
 								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
