@@ -6,12 +6,15 @@ import { gsap } from 'gsap';
 import { BiHomeAlt, BiUser } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
+import ReactGA from 'react-ga';
 
 export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
 export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, designer, developer, copenhagen, københavn, denmark, danmark ";
 export const siteDescription = "I'm a 23 year old self-taught designer & front-end developer, focused on details and user experience.";
 
 const Layout = ({ children }) => {
+	ReactGA.initialize('UA-120961215-1');
+	ReactGA.pageview(window.location.pathname + window.location.search);
 	useEffect(() => {
 
 		gsap.fromTo("header", 1.5, {
@@ -50,16 +53,6 @@ const Layout = ({ children }) => {
 	return (
 		<div>
 			<Head>
-				{/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-				<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120961215-1"></script>
-				<script>
-					window.dataLayer = window.dataLayer || [];
-  					function gtag(){dataLayer.push(arguments);}
-  					gtag('js', new Date());
-
-  					gtag('config', 'UA-120961215-1');
-				</script>
-
 				<title>{siteTitle}</title>
 				<meta name='description' content={siteDescription} />
 				<meta name='keywords' content={siteKeywords} />
