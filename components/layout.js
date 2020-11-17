@@ -8,13 +8,14 @@ import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-120961215-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
 export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, designer, developer, copenhagen, københavn, denmark, danmark ";
 export const siteDescription = "I'm a 23 year old self-taught designer & front-end developer, focused on details and user experience.";
 
 const Layout = ({ children }) => {
-	ReactGA.initialize('UA-120961215-1');
-	ReactGA.pageview(window.location.pathname + window.location.search);
 	useEffect(() => {
 
 		gsap.fromTo("header", 1.5, {
