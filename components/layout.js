@@ -15,15 +15,15 @@ const Layout = ({ children }) => {
 	useEffect(() => {
 
 		gsap.fromTo("header", 1.5, {
-         y: -30,
-         opacity: 0,
+			y: -30,
+			opacity: 0,
 		}, {
 			y: 0,
 			opacity: 1,
 			delay: 0.2,
-         ease: "power3.inOut"
+			ease: "power3.inOut"
 		});
-		
+
 		function onScroll() {
 			const navId = document.getElementById("navigation")
 			const topPos = 250;
@@ -50,6 +50,16 @@ const Layout = ({ children }) => {
 	return (
 		<div>
 			<Head>
+				{/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
+				<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120961215-1"></script>
+				<script>
+					window.dataLayer = window.dataLayer || [];
+  					function gtag(){dataLayer.push(arguments);}
+  					gtag('js', new Date());
+
+  					gtag('config', 'UA-120961215-1');
+				</script>
+
 				<title>{siteTitle}</title>
 				<meta name='description' content={siteDescription} />
 				<meta name='keywords' content={siteKeywords} />
@@ -125,33 +135,33 @@ const Layout = ({ children }) => {
 				</nav>
 			</header>
 
-				<Scrollspy items={['hero', 'work', 'about', 'connect']} currentClassName="mobile-current" offset={-350} componentTag={"nav"} className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800"
+			<Scrollspy items={['hero', 'work', 'about', 'connect']} currentClassName="mobile-current" offset={-350} componentTag={"nav"} className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800"
 				style={{ "backdropFilter": "saturate(180%) blur(20px)", "WebkitBackdropFilter": "saturate(180%) blur(20px)" }}>
-					<AnchorLink
-						href='#hero'
-						className='px-8 hover:text-white ease-in-out duration-300 py-6'
-					>
-						<BiHomeAlt />
-					</AnchorLink>
-					<AnchorLink
-						href='#work'
-						className='px-8 hover:text-white ease-in-out duration-300 py-6'
-					>
-						<FiBriefcase />
-					</AnchorLink>
-					<AnchorLink
-						href='#about'
-						className='px-8 hover:text-white ease-in-out duration-300 py-6'
-					>
-						<BiUser />
-					</AnchorLink>
-					<AnchorLink
-						href='#connect'
-						className='px-8 hover:text-white ease-in-out duration-300 py-6'
-					>
-						<HiOutlineMail />
-					</AnchorLink>
-				</Scrollspy>
+				<AnchorLink
+					href='#hero'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+				>
+					<BiHomeAlt />
+				</AnchorLink>
+				<AnchorLink
+					href='#work'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+				>
+					<FiBriefcase />
+				</AnchorLink>
+				<AnchorLink
+					href='#about'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+				>
+					<BiUser />
+				</AnchorLink>
+				<AnchorLink
+					href='#connect'
+					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+				>
+					<HiOutlineMail />
+				</AnchorLink>
+			</Scrollspy>
 			<main className='font-display'>{children}</main>
 		</div>
 	);
