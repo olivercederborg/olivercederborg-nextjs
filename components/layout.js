@@ -8,17 +8,17 @@ import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
 import ReactGA from 'react-ga';
 
+ReactGA.initialize('UA-120961215-1');
+if (typeof window !== "undefined") {
+	ReactGA.pageview(window.location.pathname + window.location.search);
+}
+
 export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
 export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, designer, developer, copenhagen, københavn, denmark, danmark ";
 export const siteDescription = "I'm a 23 year old self-taught designer & front-end developer, focused on details and user experience.";
 
 const Layout = ({ children }) => {
 	useEffect(() => {
-		ReactGA.initialize('UA-120961215-1');
-		if (typeof window !== "undefined") {
-			ReactGA.pageview(window.location.pathname + window.location.search);
-		}
-
 		gsap.fromTo("header", 1.5, {
 			y: -30,
 			opacity: 0,
