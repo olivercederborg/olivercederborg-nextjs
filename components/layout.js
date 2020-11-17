@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 import { BiHomeAlt, BiUser } from "react-icons/bi"
 import { FiBriefcase } from "react-icons/fi"
 import { HiOutlineMail } from "react-icons/hi"
-import { initGA, logPageView } from '../utils/analytics'
+import { initGA, logPageView, logEvent } from '../utils/analytics'
 
 export const siteTitle = "Oliver Cederborg - Self-taught designer & front-end developer.";
 export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, designer, developer, copenhagen, københavn, denmark, danmark ";
