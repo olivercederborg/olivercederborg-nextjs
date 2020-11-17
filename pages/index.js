@@ -98,6 +98,7 @@ const Index = () => {
 							<AnchorLink
 								href='#work'
 								offset={() => 72}
+								onClick={() => logEvent(`Hero CTA`, `User clicked CTA on hero section`)}
 								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 md:px-8 py-4 mt-14 text-center justify-center inline-flex w-full'
 							>
 								See my work

@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
+import { logEvent } from "../utils/analytics";
+ 
 const AboutSection = (props) => {
    useEffect(() => {
       if (typeof window !== "undefined") {
@@ -152,7 +153,8 @@ const AboutSection = (props) => {
 
                   <div className="about-cta">
                      <AnchorLink
-                        href='#connect'
+								href='#connect'
+								onClick={() => logEvent(`Get in touch`, `User clicked CTA on about section`)}
                         className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 inline-flex w-auto'
                      >
                         Get in touch
