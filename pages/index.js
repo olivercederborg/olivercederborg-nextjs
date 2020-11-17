@@ -3,6 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useEffect } from "react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { logEvent } from "../utils/analytics";
 
 //import components
 import Layout from "../components/layout";
