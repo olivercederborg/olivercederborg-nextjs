@@ -12,6 +12,7 @@ export const logPageView = () => {
 export const logEvent = (category = '', action = '') => {
   if (category && action) {
     ReactGA.event({ category, action })
+    console.log(`Logging event tracking for category: ${category}, action: ${action}`)
   }
 }
 export const logException = (description = '', fatal = false) => {
