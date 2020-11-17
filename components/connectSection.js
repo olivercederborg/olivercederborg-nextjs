@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { FaTwitter, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {logEvent} from '../utils/analytics';
 
 const ConnectSection = (props) => {
    useEffect(() => {
@@ -80,7 +81,7 @@ const ConnectSection = (props) => {
             </h2>
 
             <p className='connect-content text-greyText font-normal text-base mt-6 leading-loose'>
-               Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com" target="_blank" onClick={ga('send', 'event', 'Contact me', 'Click', 'Contact button clicked', '0')} className="text-primaryBrand ease-in-out duration-200 border-b-1 border-backgroundTwo hover:border-primaryBrand">hey@olivercederborg.com</a>
+               Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com" target="_blank" onClick={logEvent('Contact me', 'Contact button clicked')} className="text-primaryBrand ease-in-out duration-200 border-b-1 border-backgroundTwo hover:border-primaryBrand">hey@olivercederborg.com</a>
             </p>
 
             <div className="connect-cta">
