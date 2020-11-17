@@ -81,12 +81,12 @@ const ConnectSection = (props) => {
             </h2>
 
             <p className='connect-content text-greyText font-normal text-base mt-6 leading-loose'>
-               Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com" target="_blank" onClick={() => logEvent("Contact me", "Email link clicked")} className="text-primaryBrand ease-in-out duration-200 border-b-1 border-backgroundTwo hover:border-primaryBrand">hey@olivercederborg.com</a>
+               Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..." target="_blank" onClick={() => logEvent("Contact me", "Email link clicked")} className="text-primaryBrand ease-in-out duration-200 border-b-1 border-backgroundTwo hover:border-primaryBrand">hey@olivercederborg.com</a>
             </p>
 
             <div className="connect-cta">
                <a
-                  href='mailto:hey@olivercederborg.com'
+                  href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..."
                   onClick={() => logEvent("Contact me", "Contact me button clicked")}
                   className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
                >
