@@ -13,12 +13,11 @@ export const siteKeywords = "oliver cederborg, frontend, front-end, graphic, des
 export const siteDescription = "I'm a 23 year old self-taught designer & front-end developer, focused on details and user experience.";
 
 const Layout = ({ children }) => {
+	ReactGA.initialize('UA-120961215-1');
+	if (typeof window !== "undefined") {
+		ReactGA.pageview(window.location.pathname + window.location.search);
+	}
 	useEffect(() => {
-		ReactGA.initialize('UA-120961215-1');
-		if (typeof window !== "undefined") {
-			ReactGA.pageview(window.location.pathname + window.location.search);
-		}
-
 		gsap.fromTo("header", 1.5, {
 			y: -30,
 			opacity: 0,
