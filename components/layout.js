@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
 			window.GA_INITIALIZED = true
 		}
 		logPageView()
+		logEvent("On load", "The page loaded")
 		gsap.fromTo("header", 1.5, {
 			y: -30,
 			opacity: 0,
