@@ -1,5 +1,4 @@
 # olivercederborg-nextjs
-<h1>Personal portfolio site</h1>
 <p>My personal website made with next.js</p>
 <p>The site is live here: <a href="https://olivercederborg.com" target="_blank">olivercederborg.com</a></p>
 
