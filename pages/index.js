@@ -63,44 +63,44 @@ const Index = () => {
 			</Head>
 			<section
 				id='hero'
-				className='bg-backgroundOne pt-10 pb-30 md:pt-56 lg:pt-80 lg:pb-56 min-h-screen md:min-h-0 bg-no-repeat xl:bg-hero-pattern bg-large-desk'
+				className='min-h-screen pt-10 bg-no-repeat bg-backgroundOne pb-30 md:pt-56 lg:pt-80 lg:pb-56 md:min-h-0 xl:bg-hero-pattern bg-large-desk'
 			>
-				<div className='flex container'>
+				<div className='container flex'>
 					<div id="hero-content" className='flex flex-col items-start w-full'>
 						<img src="/images/logo.svg" className="h-8 mb-20 md:hidden"></img>
 
 						<div>
-							<div className="reveal-title relative inline-block mb-4">
-								<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
-								<span className="reveal-title-content invisible">
-									<h1 className="w-auto inline-block text-4xl lg:text-6xl font-semibold text-white leading-snug">Hey, Im <span className='text-primaryBrand'>Oliver</span></h1>
+							<div className="relative inline-block mb-4 reveal-title">
+								<span className="absolute top-0 bottom-0 z-0 w-full h-full reveal-title-revealer bg-backgroundOne" />
+								<span className="invisible reveal-title-content">
+									<h1 className="inline-block w-auto text-4xl font-semibold leading-snug text-white lg:text-6xl">Hey, Im <span className='text-primaryBrand'>Oliver</span></h1>
 								</span>
 							</div>
 						</div>
 
-						<div className="reveal-title relative mb-4">
-							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
-							<span className="reveal-title-content invisible">
-								<h1 className="text-3xl lg:text-5xl lg:leading-relaxed font-semibold text-white">a <span className='text-primaryBrand'>self-taught</span> designer</h1>
+						<div className="relative mb-4 reveal-title">
+							<span className="absolute top-0 bottom-0 z-0 w-full h-full reveal-title-revealer bg-backgroundOne" />
+							<span className="invisible reveal-title-content">
+								<h1 className="text-3xl font-semibold text-white lg:text-5xl lg:leading-relaxed">a <span className='text-primaryBrand'>self-taught</span> designer</h1>
 							</span>
 						</div>
 
-						<div className="reveal-title relative">
-							<span className="reveal-title-revealer absolute top-0 bottom-0 bg-backgroundOne h-full w-full z-0" />
-							<span className="reveal-title-content invisible">
-								<h1 className="text-3xl lg:text-5xl lg:leading-relaxed font-semibold text-white">&amp; front-end developer.</h1>
+						<div className="relative reveal-title">
+							<span className="absolute top-0 bottom-0 z-0 w-full h-full reveal-title-revealer bg-backgroundOne" />
+							<span className="invisible reveal-title-content">
+								<h1 className="text-3xl font-semibold text-white lg:text-5xl lg:leading-relaxed">&amp; front-end developer.</h1>
 							</span>
 						</div>
 
-						<p className='hero-add text-greyText font-normal text-normal mt-8'>
+						<p className='mt-8 font-normal hero-add text-greyText text-normal'>
 							Stick around to see some of my work.
 							</p>
-						<div className="hero-add flex text-center w-full md:w-auto">
+						<div className="flex w-full text-center hero-add md:w-auto">
 							<AnchorLink
 								href='#work'
 								offset={() => 72}
 								onClick={() => logEvent(`Hero CTA`, `User clicked CTA on hero section`)}
-								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 md:px-8 py-4 mt-14 text-center justify-center inline-flex w-full'
+								className='inline-flex justify-center w-full py-4 text-base font-medium text-center text-white duration-300 ease-in-out bg-primaryBrand hover:bg-primaryGrey md:px-8 mt-14'
 							>
 								See my work
 							</AnchorLink>

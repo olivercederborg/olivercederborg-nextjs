@@ -160,38 +160,38 @@ const WorkSlider = () => {
 		})
 	}, [])
 	return (
-		<div className='flex flex-col-reverse lg:flex-row items-start'>
+		<div className='flex flex-col-reverse items-start lg:flex-row'>
 			<div className='w-12/12 lg:w-5/12'>
-				<div id="case-nav" className='flex flex-row items-center text-white mt-20 lg:mt-36 '>
+				<div id="case-nav" className='flex flex-row items-center mt-20 text-white lg:mt-36 '>
 					<button
 						onClick={() => changeCounter("decrement")}
-						className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
+						className='p-4 mr-4 text-2xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand focus:outline-none'
 					>
 						<HiOutlineArrowNarrowLeft />
 					</button>
-					<p className='text-white text-base font-semibold mr-4'>
+					<p className='mr-4 text-base font-semibold text-white'>
 						0{count}/0{maxCount}
 					</p>
 					<button
 						onClick={() => changeCounter("increment")}
-						className='bg-primaryGrey hover:bg-primaryBrand text-2xl p-4 mr-4 ease-in-out duration-300 focus:outline-none'
+						className='p-4 mr-4 text-2xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand focus:outline-none'
 					>
 						<HiOutlineArrowNarrowRight />
 					</button>
 				</div>
 
 				<div id="case-text-content">
-					<h3 id="case-header" className='text-white font-semibold text-secheader mt-12'>
+					<h3 id="case-header" className='mt-12 font-semibold text-white text-secheader'>
 						{workCase.title}
 					</h3>
 					<div className='flex flex-row items-center mt-7'>
-						<div id="case-category-line" className='h-1 w-6 bg-primaryBrand mr-6'></div>
-						<p id="case-category" className='text-greyText text-base font-medium'>
+						<div id="case-category-line" className='w-6 h-1 mr-6 bg-primaryBrand'></div>
+						<p id="case-category" className='text-base font-medium text-greyText'>
 							{workCase.category}
 						</p>
 					</div>
 
-					<p id="case-description" className='text-greyText font-normal text-base leading-loose mt-6 w-12/12 lg:w-10/12'>
+					<p id="case-description" className='mt-6 text-base font-normal leading-loose text-greyText w-12/12 lg:w-10/12'>
 						{workCase.description}
 					</p>
 
@@ -202,7 +202,7 @@ const WorkSlider = () => {
 								onClick={() => logEvent(`Case ${workCase.title}`, `Redirected to ${workCase.caseLink}`)}
 								target="_blank"
 								id="case-link"
-								className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 items-center inline-flex'
+								className='inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out bg-primaryBrand hover:bg-primaryGrey'
 							>
 								{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
 							</a>
@@ -211,26 +211,26 @@ const WorkSlider = () => {
 				</div>
 
 			</div>
-			<div id="case-image" className='hidden w-12/12 lg:w-7/12 md:flex justify-center mt-26 lg:mt-40 xl:-mr-20'>
+			<div id="case-image" className='justify-center hidden w-12/12 lg:w-7/12 md:flex mt-26 lg:mt-40 xl:-mr-20'>
 				{!workCase.caseImage && workCase.caseImageOne && workCase.caseImageTwo ? (
 					<div>
 						<img
 							src={workCase.caseImageTwo}
 							id="dualImageCaeSecond"
 							alt={workCase.caseImageAlt}
-							className='case-image-two absolute h-full z-10 md:max-h-xl w-full object-contain pointer-events-none'
+							className='absolute z-10 object-contain w-full h-full pointer-events-none case-image-two md:max-h-xl'
 						/>
 						<img
 							src={workCase.caseImageOne}
 							id="dualImageCaseFirst"
 							alt={workCase.caseImageAlt}
-							className='case-image-one absolute h-full z-10 md:max-h-xl w-full object-contain pointer-events-none'
+							className='absolute z-10 object-contain w-full h-full pointer-events-none case-image-one md:max-h-xl'
 						/>
 						<img
 							src={workCase.caseBackground}
 							id="case-image-background"
 							alt=""
-							className='z-0 h-full md:max-h-xl w-full object-contain pointer-events-none'
+							className='z-0 object-contain w-full h-full pointer-events-none md:max-h-xl'
 						/>
 					</div>
 				) : (
@@ -239,23 +239,23 @@ const WorkSlider = () => {
 								src={workCase.caseBackground}
 								id="case-image-background"
 								alt=""
-								className='absolute z-0 h-full md:max-h-xl w-full object-contain pointer-events-none'
+								className='absolute z-0 object-contain w-full h-full pointer-events-none md:max-h-xl'
 							/>
 							<img
 								src={workCase.caseImage}
 								id="singleImageCase"
 								alt={workCase.caseImageAlt}
-								className='h-full z-10 md:max-h-xl w-full object-contain pointer-events-none'
+								className='z-10 object-contain w-full h-full pointer-events-none md:max-h-xl'
 							/>
 						</div>
 					)}
 			</div>
 			
-			<div id="case-image-mobile" className='md:hidden w-12/12 flex justify-center mt-26'>
+			<div id="case-image-mobile" className='flex justify-center md:hidden w-12/12 mt-26'>
 				<img
 					src={workCase.caseImageMobile}
 					alt={workCase.caseImageAlt}
-					className='h-full w-full object-contain pointer-events-none'
+					className='object-contain w-full h-full pointer-events-none'
 				/>
 			</div>
 		</div>
