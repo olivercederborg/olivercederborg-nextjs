@@ -71,60 +71,60 @@ const ConnectSection = (props) => {
       >
          <div className='container pb-36 md:pb-48'>
             <div className='flex flex-row items-center'>
-               <div className='section-line h-1 w-16 bg-primaryBrand mr-6'></div>
-               <p className='section-category text-greyText text-base font-medium'>Connect</p>
+               <div className='w-16 h-1 mr-6 section-line bg-primaryBrand'></div>
+               <p className='text-base font-medium section-category text-greyText'>Connect</p>
             </div>
 
-            <h2 className='text-white font-semibold text-4xl lg:text-secheader mt-8'>
+            <h2 className='mt-8 text-4xl font-semibold text-white lg:text-secheader'>
                <div className="connect-h2">Interested in working with me</div>
                <div className="connect-h2">or perhaps just talk?</div>
             </h2>
 
-            <p className='connect-content text-greyText font-normal text-base mt-6 leading-loose'>
-               Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..." target="_blank" onClick={() => logEvent("Contact me", "Email link clicked")} className="text-primaryBrand ease-in-out duration-200 border-b-1 border-backgroundTwo hover:border-primaryBrand">hey@olivercederborg.com</a>
+            <p className='mt-6 text-base font-normal leading-loose connect-content text-greyText'>
+               Reach me on social media or by sending an<br></br> email to <a href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..." target="_blank" onClick={() => logEvent("Contact me", "Email link clicked")} className="duration-200 ease-in-out text-primaryBrand border-b-1 border-backgroundTwo hover:border-primaryBrand">hey@olivercederborg.com</a>
             </p>
 
             <div className="connect-cta">
                <a
                   href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..."
                   onClick={() => logEvent("Contact me", "Contact me button clicked")}
-                  className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-12 inline-flex w-auto'
+                  className='inline-flex w-auto px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out bg-primaryBrand hover:bg-primaryGrey'
                >
                   Drop an email
 						</a>
             </div>
          </div>
-         <footer className='container pb-10 text-gray-600 flex flex-col-reverse md:flex-row justify-between items-center lg:items-center'>
-            <p className='hover:text-greyText ease-in-out duration-300 mb-5 md:mb-0'>
+         <footer className='container flex flex-col-reverse items-center justify-between pb-10 text-gray-600 md:flex-row lg:items-center'>
+            <p className='mb-5 duration-300 ease-in-out hover:text-greyText md:mb-0'>
                &copy; 2020 Oliver Cederborg
 					</p>
 
-            <div className='flex flex-row text-white mb-10 md:mb-0'>
+            <div className='flex flex-row mb-10 text-white md:mb-0'>
                <a
                   href='https://dribbble.com/oliver'
                   target='_blank'
-                  className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+                  className='p-4 mx-1 text-xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand'
                >
                   <FaDribbble />
                </a>
                <a
                   href='https://twitter.com/olivercederborg'
                   target='_blank'
-                  className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+                  className='p-4 mx-1 text-xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand'
                >
                   <FaTwitter />
                </a>
                <a
                   href='https://instagram.com/olivercederborg'
                   target='_blank'
-                  className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+                  className='p-4 mx-1 text-xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand'
                >
                   <FaInstagram />
                </a>
                <a
                   href='https://www.linkedin.com/in/olivercederborg'
                   target='_blank'
-                  className='text-xl mx-1 p-4 bg-primaryGrey hover:bg-primaryBrand ease-in-out duration-300'
+                  className='p-4 mx-1 text-xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand'
                >
                   <FaLinkedin />
                </a>

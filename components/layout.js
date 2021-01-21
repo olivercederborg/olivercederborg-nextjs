@@ -78,18 +78,18 @@ const Layout = ({ children }) => {
 					rel='stylesheet'
 				></link>
 			</Head>
-			<header className='bg-backgroundOne border-backgroundTwo w-full fixed hidden md:block z-10'>
+			<header className='fixed z-10 hidden w-full bg-backgroundOne border-backgroundTwo md:block'>
 				<nav className='container'>
 					<div
 						id='navigation'
-						className='flex items-center justify-between py-12 text-white font-display font-medium transition-all ease-in-out duration-200'
+						className='flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out font-display'
 					>
 						<div>
 							<AnchorLink href='#hero'>
 								<img
 									src='/images/logo.svg'
 									alt='Oliver Cederborg Logo'
-									className='h-8 hover:opacity-70 ease-in-out duration-200'
+									className='h-8 duration-200 ease-in-out hover:opacity-70'
 								/>
 							</AnchorLink>
 						</div>
@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
 								<AnchorLink
 									href='#hero'
 									offset='72'
-									className='px-5 hover:text-white ease-in-out duration-300 hidden'
+									className='hidden px-5 duration-300 ease-in-out hover:text-white'
 								>
 									Home
 							</AnchorLink>
@@ -106,21 +106,21 @@ const Layout = ({ children }) => {
 									href='#work'
 									id="work-link"
 									offset='72'
-									className='px-5 hover:text-white ease-in-out duration-300'
+									className='px-5 duration-300 ease-in-out hover:text-white'
 								>
 									Work
 							</AnchorLink>
 								<AnchorLink
 									href='#about'
 									offset='72'
-									className='px-5 hover:text-white ease-in-out duration-300'
+									className='px-5 duration-300 ease-in-out hover:text-white'
 								>
 									About
 							</AnchorLink>
 								<AnchorLink
 									href='#connect'
 									offset='72'
-									className='px-5 hover:text-white ease-in-out duration-300'
+									className='px-5 duration-300 ease-in-out hover:text-white'
 								>
 									Connect
 							</AnchorLink>
@@ -130,29 +130,29 @@ const Layout = ({ children }) => {
 				</nav>
 			</header>
 
-			<Scrollspy items={['hero', 'work', 'about', 'connect']} currentClassName="mobile-current" offset={-350} componentTag={"nav"} className="fixed z-10 w-full md:hidden text-2xl text-center bg-gray-900 bottom-0 bg-opacity-90 flex flex-row justify-evenly text-gray-500 border-t-1 border-gray-800"
+			<Scrollspy items={['hero', 'work', 'about', 'connect']} currentClassName="mobile-current" offset={-350} componentTag={"nav"} className="fixed bottom-0 z-10 flex flex-row w-full text-2xl text-center text-gray-500 bg-gray-900 border-gray-800 md:hidden bg-opacity-90 justify-evenly border-t-1"
 				style={{ "backdropFilter": "saturate(180%) blur(20px)", "WebkitBackdropFilter": "saturate(180%) blur(20px)" }}>
 				<AnchorLink
 					href='#hero'
-					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 py-6 duration-300 ease-in-out hover:text-white'
 				>
 					<BiHomeAlt />
 				</AnchorLink>
 				<AnchorLink
 					href='#work'
-					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 py-6 duration-300 ease-in-out hover:text-white'
 				>
 					<FiBriefcase />
 				</AnchorLink>
 				<AnchorLink
 					href='#about'
-					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 py-6 duration-300 ease-in-out hover:text-white'
 				>
 					<BiUser />
 				</AnchorLink>
 				<AnchorLink
 					href='#connect'
-					className='px-8 hover:text-white ease-in-out duration-300 py-6'
+					className='px-8 py-6 duration-300 ease-in-out hover:text-white'
 				>
 					<HiOutlineMail />
 				</AnchorLink>

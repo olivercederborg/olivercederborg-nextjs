@@ -115,39 +115,39 @@ const AboutSection = (props) => {
       >
          <div className='container'>
             <div className='flex flex-row items-center'>
-               <div className='section-line h-1 w-16 bg-primaryBrand mr-6'></div>
-               <p className='section-category text-greyText text-base font-medium'>About</p>
+               <div className='w-16 h-1 mr-6 section-line bg-primaryBrand'></div>
+               <p className='text-base font-medium section-category text-greyText'>About</p>
             </div>
 
-            <h2 className='about-h2 text-white font-semibold text-4xl lg:text-secheader mt-8'>
+            <h2 className='mt-8 text-4xl font-semibold text-white about-h2 lg:text-secheader'>
                Get a closer look at who I am.
             </h2>
 
-            <div className='flex flex-col-reverse lg:flex-row items-start'>
+            <div className='flex flex-col-reverse items-start lg:flex-row'>
                <div className='w-full lg:w-7/12'>
 
                   <div id="aboutme" className='flex flex-row items-center mt-16 lg:mt-36'>
-                     <div className='intro-line h-1 w-6 bg-primaryBrand mr-6'></div>
-                     <p className='intro-text text-white text-base font-medium'>
+                     <div className='w-6 h-1 mr-6 intro-line bg-primaryBrand'></div>
+                     <p className='text-base font-medium text-white intro-text'>
                         Who am I
                      </p>
                   </div>
 
-                  <p className='aboutme-content text-greyText font-normal text-base mt-6 leading-loose'>
+                  <p className='mt-6 text-base font-normal leading-loose aboutme-content text-greyText'>
                      I'm Oliver Cederborg, 23 years old and from Denmark. <br></br>Digital design has been an interest of mine for many years, and I work with anything from logo design to UI design and front-end development. <br></br>All the skills and tools I use, are self-taught over many years of practice and expanding my horizons.
                   </p>
 
                   <div id="skills" className='flex flex-row items-center mt-12'>
-                     <div className='intro-line h-1 w-6 bg-primaryBrand mr-6'></div>
-                     <p className='intro-text text-white text-base font-medium'>
+                     <div className='w-6 h-1 mr-6 intro-line bg-primaryBrand'></div>
+                     <p className='text-base font-medium text-white intro-text'>
                         Skills &amp; Tools
                      </p>
                   </div>
 
-                  <p className='skills-content text-greyText font-normal text-base mt-6 leading-loose'>
+                  <p className='mt-6 text-base font-normal leading-loose skills-content text-greyText'>
                      Design: Figma, Photoshop, Illustrator, After Effects
                   </p>
-                  <p className='skills-content text-greyText font-normal text-base mt-2 leading-loose'>
+                  <p className='mt-2 text-base font-normal leading-loose skills-content text-greyText'>
                      Development: JavaScript, React, Next.js, HTML, CSS/SCSS, TailwindCSS, WordPress
                   </p>
 
@@ -155,19 +155,19 @@ const AboutSection = (props) => {
                      <AnchorLink
 								href='#connect'
 								onClick={() => logEvent(`Get in touch`, `User clicked CTA on about section`)}
-                        className='text-white text-base font-medium bg-primaryBrand hover:bg-primaryGrey ease-in-out duration-300 px-8 py-4 mt-14 inline-flex w-auto'
+                        className='inline-flex w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out bg-primaryBrand hover:bg-primaryGrey mt-14'
                      >
                         Get in touch
                      </AnchorLink>
                   </div>
                </div>
 
-               <div className='flex w-9/12 md:w-5/12 justify-end'>
+               <div className='flex justify-end w-9/12 md:w-5/12'>
                   <img
                      id="about-img"
                      src='/images/about-oliver.webp'
                      alt='About Oliver Cederborg'
-                     className='h-full md:max-h-sm w-full mt-20 md:mt-30 object-contain pointer-events-none'
+                     className='object-contain w-full h-full mt-20 pointer-events-none md:max-h-sm md:mt-30'
                   />
                </div>
             </div>
