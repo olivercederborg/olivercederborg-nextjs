@@ -160,21 +160,12 @@ const WorkSlider = () => {
 		})
 	}, [])
 	return (
-<<<<<<< HEAD
 		<div className='lg:flex-row flex flex-col-reverse items-start'>
 			<div className='w-12/12 lg:w-5/12'>
 				<div id="case-nav" className='lg:mt-36 flex flex-row items-center mt-20 text-white'>
 					<button
 						onClick={() => changeCounter("decrement")}
 						className='bg-primaryGrey hover:bg-primaryBrand focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'
-=======
-		<div className='flex flex-col-reverse items-start lg:flex-row'>
-			<div className='w-12/12 lg:w-5/12'>
-				<div id="case-nav" className='flex flex-row items-center mt-20 text-white lg:mt-36 '>
-					<button
-						onClick={() => changeCounter("decrement")}
-						className='p-4 mr-4 text-2xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand focus:outline-none'
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 					>
 						<HiOutlineArrowNarrowLeft />
 					</button>
@@ -183,41 +174,24 @@ const WorkSlider = () => {
 					</p>
 					<button
 						onClick={() => changeCounter("increment")}
-<<<<<<< HEAD
 						className='bg-primaryGrey hover:bg-primaryBrand focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'
-=======
-						className='p-4 mr-4 text-2xl duration-300 ease-in-out bg-primaryGrey hover:bg-primaryBrand focus:outline-none'
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 					>
 						<HiOutlineArrowNarrowRight />
 					</button>
 				</div>
 
 				<div id="case-text-content">
-<<<<<<< HEAD
 					<h3 id="case-header" className='text-secheader mt-12 font-semibold text-white'>
 						{workCase.title}
 					</h3>
 					<div className='mt-7 flex flex-row items-center'>
 						<div id="case-category-line" className='bg-primaryBrand w-6 h-1 mr-6'></div>
 						<p id="case-category" className='text-greyText text-base font-medium'>
-=======
-					<h3 id="case-header" className='mt-12 font-semibold text-white text-secheader'>
-						{workCase.title}
-					</h3>
-					<div className='flex flex-row items-center mt-7'>
-						<div id="case-category-line" className='w-6 h-1 mr-6 bg-primaryBrand'></div>
-						<p id="case-category" className='text-base font-medium text-greyText'>
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 							{workCase.category}
 						</p>
 					</div>
 
-<<<<<<< HEAD
 					<p id="case-description" className='text-greyText w-12/12 lg:w-10/12 mt-6 text-base font-normal leading-loose'>
-=======
-					<p id="case-description" className='mt-6 text-base font-normal leading-loose text-greyText w-12/12 lg:w-10/12'>
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 						{workCase.description}
 					</p>
 
@@ -228,11 +202,7 @@ const WorkSlider = () => {
 								onClick={() => logEvent(`Case ${workCase.title}`, `Redirected to ${workCase.caseLink}`)}
 								target="_blank"
 								id="case-link"
-<<<<<<< HEAD
 								className='bg-primaryBrand hover:bg-primaryGrey inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'
-=======
-								className='inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out bg-primaryBrand hover:bg-primaryGrey'
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 							>
 								{workCase.caseLinkText} <MdKeyboardArrowRight className="ml-1 text-2xl" />
 							</a>
@@ -241,61 +211,34 @@ const WorkSlider = () => {
 				</div>
 
 			</div>
-<<<<<<< HEAD
 			<div id="case-image" className='w-12/12 lg:w-7/12 md:flex mt-26 lg:mt-40 xl:-mr-20 justify-center hidden'>
-=======
-			<div id="case-image" className='justify-center hidden w-12/12 lg:w-7/12 md:flex mt-26 lg:mt-40 xl:-mr-20'>
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 				{!workCase.caseImage && workCase.caseImageOne && workCase.caseImageTwo ? (
 					<div className="w-full">
 						<img
 							src={workCase.caseImageTwo}
 							id="dualImageCaeSecond"
 							alt={workCase.caseImageAlt}
-<<<<<<< HEAD
 							className='case-image-two md:max-h-xl absolute z-10 object-contain h-full pointer-events-none'
-=======
-							className='absolute z-10 object-contain w-full h-full pointer-events-none case-image-two md:max-h-xl'
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 						/>
 						<img
 							src={workCase.caseImageOne}
 							id="dualImageCaseFirst"
 							alt={workCase.caseImageAlt}
-<<<<<<< HEAD
 							className='case-image-one md:max-h-xl absolute z-10 object-contain h-full pointer-events-none'
-=======
-							className='absolute z-10 object-contain w-full h-full pointer-events-none case-image-one md:max-h-xl'
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 						/>
 						<img
 							src={workCase.caseBackground}
 							id="case-image-background"
 							alt=""
-<<<<<<< HEAD
 							className='md:max-h-xl z-0 object-contain h-full mt-3 pointer-events-none'
 						/>
 					</div>
 				) : (
 						<div className="w-full">
-=======
-							className='z-0 object-contain w-full h-full pointer-events-none md:max-h-xl'
-						/>
-					</div>
-				) : (
-						<div>
-							<img
-								src={workCase.caseBackground}
-								id="case-image-background"
-								alt=""
-								className='absolute z-0 object-contain w-full h-full pointer-events-none md:max-h-xl'
-							/>
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 							<img
 								src={workCase.caseImage}
 								id="singleImageCase"
 								alt={workCase.caseImageAlt}
-<<<<<<< HEAD
 								className='md:max-h-xl absolute z-10 object-contain w-full h-full -ml-2 pointer-events-none'
 							/>
 							<img
@@ -303,19 +246,12 @@ const WorkSlider = () => {
 								id="case-image-background"
 								alt=""
 								className='md:max-h-xl z-0 object-contain w-full h-full pointer-events-none'
-=======
-								className='z-10 object-contain w-full h-full pointer-events-none md:max-h-xl'
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 							/>
 						</div>
 					)}
 			</div>
 			
-<<<<<<< HEAD
 			<div id="case-image-mobile" className='md:hidden w-12/12 mt-26 flex justify-center'>
-=======
-			<div id="case-image-mobile" className='flex justify-center md:hidden w-12/12 mt-26'>
->>>>>>> eae57d2400c0c23315afabfa88165dd06038eee6
 				<img
 					src={workCase.caseImageMobile}
 					alt={workCase.caseImageAlt}
