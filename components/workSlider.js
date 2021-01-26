@@ -230,7 +230,7 @@ const WorkSlider = () => {
 							src={workCase.caseBackground}
 							id="case-image-background"
 							alt=""
-							className='md:max-h-xl z-0 object-contain h-full mt-4 pointer-events-none'
+							className='md:max-h-xl z-0 object-contain h-full mt-3 pointer-events-none'
 						/>
 					</div>
 				) : (
