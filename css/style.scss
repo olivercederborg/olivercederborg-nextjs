@@ -1,139 +1,211 @@
-html, 
+html,
 body {
-   background-color: #141628;
-   visibility: hidden;
+  background-color: #141628;
+  visibility: hidden;
 }
 
 //Nav styling
 ul > a::before {
-   content: "\2022";
-   @apply text-primaryBrand;
-   @apply duration-200;
-   @apply ease-in-out;
-   @apply transition-all;
-   font-size: 0rem;
-   line-height: 24px;
-   position: relative;
-   top: auto;
-   bottom: auto;
-   right: 5px;
-   vertical-align: middle;
+  content: "\2022";
+  @apply text-primaryBrand;
+  @apply duration-200;
+  @apply ease-in-out;
+  @apply transition-all;
+  font-size: 0rem;
+  line-height: 24px;
+  position: relative;
+  top: auto;
+  bottom: auto;
+  right: 5px;
+  vertical-align: middle;
 }
 
 .is-current::before {
-   content: "\2022";
-   @apply text-primaryBrand;
-   @apply duration-200;
-   @apply ease-in-out;
-   @apply transition-all;
-   font-size: 2.25rem;
-   line-height: 24px;
-   position: relative;
-   top: auto;
-   bottom: auto;
-   right: 5px;
-   vertical-align: middle;
+  content: "\2022";
+  @apply text-primaryBrand;
+  @apply duration-200;
+  @apply ease-in-out;
+  @apply transition-all;
+  font-size: 2.25rem;
+  line-height: 24px;
+  position: relative;
+  top: auto;
+  bottom: auto;
+  right: 5px;
+  vertical-align: middle;
 }
 
 .is-current {
-   @apply duration-200;
-   @apply ease-in-out;
-   @apply text-white;
+  @apply duration-200;
+  @apply ease-in-out;
+  @apply text-white;
 }
 
 nav > a {
-   border-top: 1px solid rgba(0,0,0,0);
+  border-top: 1px solid rgba(0, 0, 0, 0);
 }
 
 .mobile-current {
-   border-top: 1px solid;
-   @apply border-primaryBrand;
-   @apply duration-200;
-   @apply ease-in-out;
-   @apply text-white;
+  border-top: 1px solid;
+  @apply border-primaryBrand;
+  @apply duration-200;
+  @apply ease-in-out;
+  @apply text-white;
 }
 
 //CASE ANIMATIONS
 @-webkit-keyframes dualImageCaseFirst {
-   0%   { transform: translate(0, -7px); }
-   50% { transform: translate(0, 7px); }
-   100%   { transform: translate(0, -7px); }
- }
- @-moz-keyframes dualImageCaseFirst {
-   0%   { transform: translate(0, -7px); }
-   50% { transform: translate(0, 7px); }
-   100%   { transform: translate(0, -7px); }
- }
- @-o-keyframes dualImageCaseFirst {
-   0%   { transform: translate(0, -7px); }
-   50% { transform: translate(0, 7px); }
-   100%   { transform: translate(0, -7px); }
- }
- @keyframes dualImageCaseFirst {
-   0%   { transform: translate(0, -7px); }
-   50% { transform: translate(0, 7px); }
-   100%   { transform: translate(0, -7px); }
- }
+  0% {
+    transform: translate(0, -7px);
+  }
+  50% {
+    transform: translate(0, 7px);
+  }
+  100% {
+    transform: translate(0, -7px);
+  }
+}
+@-moz-keyframes dualImageCaseFirst {
+  0% {
+    transform: translate(0, -7px);
+  }
+  50% {
+    transform: translate(0, 7px);
+  }
+  100% {
+    transform: translate(0, -7px);
+  }
+}
+@-o-keyframes dualImageCaseFirst {
+  0% {
+    transform: translate(0, -7px);
+  }
+  50% {
+    transform: translate(0, 7px);
+  }
+  100% {
+    transform: translate(0, -7px);
+  }
+}
+@keyframes dualImageCaseFirst {
+  0% {
+    transform: translate(0, -7px);
+  }
+  50% {
+    transform: translate(0, 7px);
+  }
+  100% {
+    transform: translate(0, -7px);
+  }
+}
 
- #dualImageCaseFirst {
-   -webkit-animation: dualImageCaseFirst 6s infinite ease-in-out; /* Safari 4+ */
-   -moz-animation:    dualImageCaseFirst 6s infinite ease-in-out; /* Fx 5+ */
-   -o-animation:      dualImageCaseFirst 6s infinite ease-in-out; /* Opera 12+ */
-   animation:         dualImageCaseFirst 6s infinite ease-in-out; /* IE 10+, Fx 29+ */
- }
+#dualImageCaseFirst {
+  -webkit-animation: dualImageCaseFirst 6s infinite ease-in-out; /* Safari 4+ */
+  -moz-animation: dualImageCaseFirst 6s infinite ease-in-out; /* Fx 5+ */
+  -o-animation: dualImageCaseFirst 6s infinite ease-in-out; /* Opera 12+ */
+  animation: dualImageCaseFirst 6s infinite ease-in-out; /* IE 10+, Fx 29+ */
+}
 
- @-webkit-keyframes dualImageCaseSecond {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
- @-moz-keyframes dualImageCaseSecond {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
- @-o-keyframes dualImageCaseSecond {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
- @keyframes dualImageCaseSecond {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
+@-webkit-keyframes dualImageCaseSecond {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
+@-moz-keyframes dualImageCaseSecond {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
+@-o-keyframes dualImageCaseSecond {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
+@keyframes dualImageCaseSecond {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
 
- #dualImageCaeSecond {
-   -webkit-animation: dualImageCaseSecond 6s infinite ease-in-out; /* Safari 4+ */
-   -moz-animation:    dualImageCaseSecond 6s infinite ease-in-out; /* Fx 5+ */
-   -o-animation:      dualImageCaseSecond 6s infinite ease-in-out; /* Opera 12+ */
-   animation:         dualImageCaseSecond 6s infinite ease-in-out; /* IE 10+, Fx 29+ */
- }
+#dualImageCaeSecond {
+  -webkit-animation: dualImageCaseSecond 6s infinite ease-in-out; /* Safari 4+ */
+  -moz-animation: dualImageCaseSecond 6s infinite ease-in-out; /* Fx 5+ */
+  -o-animation: dualImageCaseSecond 6s infinite ease-in-out; /* Opera 12+ */
+  animation: dualImageCaseSecond 6s infinite ease-in-out; /* IE 10+, Fx 29+ */
+}
 
- @-webkit-keyframes singleImageCase {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
- @-moz-keyframes singleImageCase {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
- @-o-keyframes singleImageCase {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
- @keyframes singleImageCase {
-   0%   { transform: translate(0, 7px); }
-   50% { transform: translate(0, -7px); }
-   100%   { transform: translate(0, 7px); }
- }
+@-webkit-keyframes singleImageCase {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
+@-moz-keyframes singleImageCase {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
+@-o-keyframes singleImageCase {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
+@keyframes singleImageCase {
+  0% {
+    transform: translate(0, 7px);
+  }
+  50% {
+    transform: translate(0, -7px);
+  }
+  100% {
+    transform: translate(0, 7px);
+  }
+}
 
- #singleImageCase {
-   -webkit-animation: singleImageCase 5s infinite ease-in-out; /* Safari 4+ */
-   -moz-animation:    singleImageCase 5s infinite ease-in-out; /* Fx 5+ */
-   -o-animation:      singleImageCase 5s infinite ease-in-out; /* Opera 12+ */
-   animation:         singleImageCase 5s infinite ease-in-out; /* IE 10+, Fx 29+ */
- }
+#singleImageCase {
+  -webkit-animation: singleImageCase 5s infinite ease-in-out; /* Safari 4+ */
+  -moz-animation: singleImageCase 5s infinite ease-in-out; /* Fx 5+ */
+  -o-animation: singleImageCase 5s infinite ease-in-out; /* Opera 12+ */
+  animation: singleImageCase 5s infinite ease-in-out; /* IE 10+, Fx 29+ */
+}
