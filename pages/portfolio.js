@@ -12,6 +12,10 @@ import { RiExternalLinkLine } from "react-icons/ri";
 import Layout from "../components/layout";
 
 const Portfolio = (props) => {
+	useEffect(() => {
+		gsap.to("body", 0, { css: { visibility: "visible" } });
+	});
+
 	return (
 		<Layout>
 			<section className='bg-backgroundTwo flex flex-col pb-20'>
@@ -40,7 +44,9 @@ const Portfolio = (props) => {
 									Dribbble Followers
 									<RiExternalLinkLine className='ml-2 text-xl' />
 								</a>
-								<p className='text-4xl font-semibold'>{props.account.followers_count}</p>
+								<p className='text-4xl font-semibold'>
+									{props.account.followers_count}
+								</p>
 							</div>
 						</section>
 						<section className=''>
@@ -53,7 +59,9 @@ const Portfolio = (props) => {
 									Dribbble Shots
 									<RiExternalLinkLine className='ml-2 text-xl' />
 								</a>
-								<p className='text-4xl font-semibold'>{props.shot.length}</p>
+								<p className='text-4xl font-semibold'>
+									{props.shot.length}
+								</p>
 							</div>
 						</section>
 					</div>
@@ -66,7 +74,10 @@ const Portfolio = (props) => {
 									key={id}
 									className='bg-backgroundOne w-full overflow-hidden'
 								>
-									<img src={images.hidpi} className="hover:opacity-50 transition-opacity duration-200 ease-in-out" />
+									<img
+										src={images.hidpi}
+										className='hover:opacity-50 transition-opacity duration-200 ease-in-out'
+									/>
 								</figure>
 							</a>
 						))}
@@ -91,8 +102,8 @@ export async function getStaticProps() {
 
 	return {
 		props: {
-      shot,
-      account,
+			shot,
+			account,
 		},
 	};
 }
