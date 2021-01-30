@@ -46,11 +46,11 @@ const WorkSection = (props) => {
       >
          <div className='container'>
             <div className='flex flex-row items-center'>
-               <div className='w-16 h-1 mr-6 section-line bg-primaryBrand'></div>
-               <p className='text-base font-medium section-category text-greyText'>Work</p>
+               <div className='section-line bg-primaryBrand w-16 h-1 mr-6'></div>
+               <p className='section-category text-greyText text-base font-medium'>Work</p>
             </div>
 
-            <h2 className='mt-8 text-4xl font-semibold text-white section-h2 lg:text-secheader'>
+            <h2 className='section-h2 lg:text-secheader mt-8 text-4xl font-semibold leading-normal text-white'>
                <div className="work-h2">Hand-picked projects</div>
                <div className="work-h2">for you to see.</div>
             </h2>
