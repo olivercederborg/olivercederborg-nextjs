@@ -80,11 +80,11 @@ const ContactForm = () => {
 		<div id='form_wrapper'>
 			<motion.form
 				onSubmit={handleSubmit(() => handleOnSubmit())}
-				className='mt-10'
+				className='mt-20'
 				ref={ref}
 				style={{ opacity: inView ? 1 : 0 }}
 			>
-				<div className='flex flex-col w-1/3 text-white'>
+				<div className='md:w-1/2 lg:w-1/3 flex flex-col w-full text-white'>
 					<label htmlFor='name' className='flex flex-col mt-6'>
 						What’s your name?
 						<input
@@ -175,7 +175,7 @@ const ContactForm = () => {
 					<div id='submit_button'>
 						<button
 							type='submit'
-							className={`w-auto px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${
+							className={`md:w-auto w-full px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${
 								!status.submitting
 									? !status.submitted
 										? "bg-primaryBrand hover:bg-primaryGrey"
