@@ -119,7 +119,7 @@ const Index = (props) => {
 				id='hero'
 				className='bg-backgroundOne lg:bg-hero-pattern lg:bg-large-desk xl:bg-none bg-no-repeat'
 			>
-				<div className='pb-30 md:pt-56 lg:pt-80 lg:pb-56 md:min-h-0 xl:bg-hero-pattern bg-large-desk xl:bg-large-desk-xl container flex min-h-screen pt-10 bg-no-repeat'>
+				<div className='pb-30 md:pt-56 lg:pt-60 xl:pt-72 lg:pb-56 md:min-h-0 xl:bg-hero-pattern bg-large-desk xl:bg-large-desk-xl container flex min-h-screen pt-10 bg-no-repeat'>
 					<div
 						id='hero-content'
 						className='flex flex-col items-start w-full'
