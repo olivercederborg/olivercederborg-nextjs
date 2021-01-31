@@ -9,7 +9,7 @@ import Link from "next/link";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 //import components
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 const Portfolio = (props) => {
 	useEffect(() => {

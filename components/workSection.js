@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import WorkSlider from './workSlider';
+import WorkSlider from './WorkSlider';
 
 const WorkSection = (props) => {
    useEffect(() => {

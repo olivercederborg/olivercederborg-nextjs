@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { FaTwitter, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { logEvent } from "../utils/analytics";
 
-import ContactForm from "./contactForm";
+import ContactForm from "./ContactForm";
 
 const ConnectSection = (props) => {
    useEffect(() => {
