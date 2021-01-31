@@ -46,7 +46,7 @@ const Layout = ({ children, href }) => {
 
 		function onScroll() {
 			const navId = document.getElementById("navigation");
-			const topPos = 250;
+			const topPos = 100;
 			let currentPosition = window.pageYOffset;
 			if (navId) {
 				if (
