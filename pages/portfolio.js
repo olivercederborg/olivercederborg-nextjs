@@ -8,82 +8,82 @@ import { RiExternalLinkLine } from "react-icons/ri";
 import Layout from "../components/Layout";
 
 const Portfolio = (props) => {
-	// useEffect(() => {
-	// 	gsap.to("body", 0, { css: { visibility: "visible" } });
-	// 	if (typeof window !== "undefined") {
-	// 		gsap.registerPlugin(ScrollTrigger);
-	// 	}
+	useEffect(() => {
+		gsap.to("body", 0, { css: { visibility: "visible" } });
+		if (typeof window !== "undefined") {
+			gsap.registerPlugin(ScrollTrigger);
+		}
 
-	// 	//Connect section
-	// 	const portfolioTl = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: "#portfolio",
-	// 			start: "center bottom",
-	// 			end: "=-300",
-	// 		},
-	// 	});
+		//Connect section
+		const portfolioTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#portfolio",
+				start: "center bottom",
+				end: "=-300",
+			},
+		});
 
-	// 	const dribbbleShotTl = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: "#dribbble_container",
-	// 			start: "top bottom",
-	// 			end: "=-300",
-	// 		},
-	// 	});
+		const dribbbleShotTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#dribbble_container",
+				start: "top bottom",
+				end: "=-300",
+			},
+		});
 
-	// 	portfolioTl
-	// 		.fromTo(
-	// 			"#portfolio .section-line",
-	// 			1,
-	// 			{
-	// 				width: 0,
-	// 			},
-	// 			{
-	// 				width: "4rem",
-	// 				ease: "power3.inOut",
-	// 			}
-	// 		)
-	// 		.from("#portfolio .section-category", 1.5, {
-	// 			x: -10,
-	// 			opacity: 0,
-	// 			stagger: 0.3,
-	// 			delay: -0.5,
-	// 			ease: "power3.out",
-	// 		})
-	// 		.from(".dribbble-h2", 1, {
-	// 			x: -70,
-	// 			opacity: 0,
-	// 			stagger: 0.3,
-	// 			skewX: 3,
-	// 			delay: -1.5,
-	// 			ease: "power3.out",
-	// 		})
-	// 		.from(".dribbble-stats", 1, {
-	// 			y: -30,
-	// 			opacity: 0,
-	// 			stagger: 0.3,
-	// 			delay: -1.5,
-	// 			ease: "power3.out",
-	// 		});
+		portfolioTl
+			.fromTo(
+				"#portfolio .section-line",
+				1,
+				{
+					width: 0,
+				},
+				{
+					width: "4rem",
+					ease: "power3.inOut",
+				}
+			)
+			.from("#portfolio .section-category", 1.5, {
+				x: -10,
+				opacity: 0,
+				stagger: 0.3,
+				delay: -0.5,
+				ease: "power3.out",
+			})
+			.from(".dribbble-h2", 1, {
+				x: -70,
+				opacity: 0,
+				stagger: 0.3,
+				skewX: 3,
+				delay: -1.5,
+				ease: "power3.out",
+			})
+			.from(".dribbble-stats", 1, {
+				y: -30,
+				opacity: 0,
+				stagger: 0.3,
+				delay: -1.5,
+				ease: "power3.out",
+			});
 
-	// 		// dribbbleShotTl
-	// 		// .from("figure", 1, {
-	// 		// 	scaleY: 0,
-	// 		// 	transformOrigin: "top",
-	// 		// 	ease: "power4.inOut",
-	// 		// 	stagger: 0.15,
-	// 		// 	delay: 0.5,
-	// 		// })
-	// 		// .fromTo(".dribbble_shot", 2, {
-	// 		// 	opacity: 0,
-	// 		// },
-	// 		// {
-	// 		// 	opacity: 1,
-	// 		// 	delay: -1.75,
-	// 		// 	stagger: 0.1,
-	// 		// 	ease: "power3.out",
-	// 		// });
-	// });
+			dribbbleShotTl
+			.from("figure", 1, {
+				scaleY: 0,
+				transformOrigin: "top",
+				ease: "power4.inOut",
+				stagger: 0.15,
+				delay: 0.5,
+			})
+			.fromTo(".dribbble_shot", 2, {
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				delay: -1.75,
+				stagger: 0.1,
+				ease: "power3.out",
+			});
+	});
 
 
 	return (
