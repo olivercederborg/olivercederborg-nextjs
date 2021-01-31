@@ -93,7 +93,7 @@ module.exports = {
             padding: '1.5rem',
         },
         backgroundPosition: {
-            'large-desk-xl': 'right 0rem bottom',
+            'large-desk-xl': 'right -2rem bottom',
             'large-desk': 'right -10rem bottom',
         },
         borderWidth: {
