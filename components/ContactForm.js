@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { IoMdClose } from "react-icons/io";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const ContactForm = () => {
 	const { register, errors, handleSubmit, handleChange } = useForm({
@@ -70,11 +71,18 @@ const ContactForm = () => {
 		handleResponse(res.status, text);
 	};
 
+	const [ref, inView] = useInView({
+		triggerOnce: true,
+		rootMargin: "-100px 0px",
+	});
+
 	return (
-		<div>
-			<form
+		<div id='form_wrapper'>
+			<motion.form
 				onSubmit={handleSubmit(() => handleOnSubmit())}
 				className='mt-10'
+				ref={ref}
+				style={{ opacity: inView ? 1 : 0 }}
 			>
 				<div className='flex flex-col w-1/3 text-white'>
 					<label htmlFor='name' className='flex flex-col mt-6'>
@@ -148,7 +156,7 @@ const ContactForm = () => {
 							}`}
 						/>
 					</label>
-					<p className='mt-4'>
+					<p id='message_chars_left' className='mt-4'>
 						{inputs.message.length <= 200
 							? `${inputs.message.length}/200`
 							: "hi"}
@@ -164,25 +172,27 @@ const ContactForm = () => {
 					{errors.message && errors.message.type === "maxLength" && (
 						<p className='mt-4 text-red-500'>Your message is too long.</p>
 					)}
-					<button
-						type='submit'
-						className={`w-auto px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${
-							!status.submitting
+					<div id='submit_button'>
+						<button
+							type='submit'
+							className={`w-auto px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${
+								!status.submitting
+									? !status.submitted
+										? "bg-primaryBrand hover:bg-primaryGrey"
+										: "bg-green-500 hover:bg-green-600"
+									: "bg-yellow-400 hover:bg-yellow-500"
+							}`}
+							disabled={status.submitting || status.submitted}
+						>
+							{!status.submitting
 								? !status.submitted
-									? "bg-primaryBrand hover:bg-primaryGrey"
-									: "bg-green-500 hover:bg-green-600"
-								: "bg-yellow-400 hover:bg-yellow-500"
-						}`}
-						disabled={status.submitting || status.submitted}
-					>
-						{!status.submitting
-							? !status.submitted
-								? "Send message"
-								: "Message sent"
-							: "Sending..."}
-					</button>
+									? "Send message"
+									: "Message sent"
+								: "Sending..."}
+						</button>
+					</div>
 				</div>
-			</form>
+			</motion.form>
 		</div>
 	);
 };

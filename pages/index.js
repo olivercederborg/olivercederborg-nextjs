@@ -117,7 +117,7 @@ const Index = (props) => {
 			</Head>
 			<section
 				id='hero'
-				className='bg-backgroundOne pb-30 md:pt-56 lg:pt-80 lg:pb-56 md:min-h-0 xl:bg-hero-pattern bg-large-desk min-h-screen pt-10 bg-no-repeat'
+				className='bg-backgroundOne pb-30 md:pt-56 lg:pt-80 lg:pb-56 md:min-h-0 lg:bg-hero-pattern bg-large-desk xl:bg-large-desk-xl min-h-screen pt-10 bg-no-repeat'
 			>
 				<div className='container flex'>
 					<div
@@ -130,10 +130,10 @@ const Index = (props) => {
 						></img>
 
 						<div>
-							<div className='reveal-title relative inline-block mb-4'>
+							<div className='reveal-title md:mb-4 relative mb-2'>
 								<span className='reveal-title-revealer bg-backgroundOne absolute top-0 bottom-0 z-0 w-full h-full' />
 								<span className='reveal-title-content invisible'>
-									<h1 className='lg:text-6xl relative inline-block w-auto text-4xl font-semibold leading-loose text-white'>
+									<h1 className='lg:text-6xl lg:leading-snug md:text-5xl py-2 text-4xl font-semibold leading-normal text-white'>
 										Hey, Im{" "}
 										<span className='text-primaryBrand'>Oliver</span>
 									</h1>
@@ -141,10 +141,10 @@ const Index = (props) => {
 							</div>
 						</div>
 
-						<div className='reveal-title relative mb-4'>
+						<div className='reveal-title md:mb-4 relative mb-2'>
 							<span className='reveal-title-revealer bg-backgroundOne absolute top-0 bottom-0 z-0 w-full h-full' />
 							<span className='reveal-title-content invisible'>
-								<h1 className='lg:text-5xl lg:leading-normal text-3xl font-semibold text-white'>
+								<h1 className='lg:text-5xl lg:leading-normal md:text-4xl py-1 text-3xl font-semibold leading-normal text-white'>
 									a{" "}
 									<span className='text-primaryBrand'>
 										self-taught
@@ -157,7 +157,7 @@ const Index = (props) => {
 						<div className='reveal-title relative'>
 							<span className='reveal-title-revealer bg-backgroundOne absolute top-0 bottom-0 z-0 w-full h-full' />
 							<span className='reveal-title-content invisible'>
-								<h1 className='lg:text-5xl lg:leading-normal text-3xl font-semibold text-white'>
+								<h1 className='lg:text-5xl lg:leading-normal md:text-4xl py-1 text-3xl font-semibold leading-normal text-white'>
 									&amp; front-end developer.
 								</h1>
 							</span>

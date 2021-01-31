@@ -194,7 +194,7 @@ const AboutSection = (props) => {
 							TailwindCSS, WordPress
 						</p>
 
-						<div className='about-cta flex flex-row'>
+						<div className='about-cta md:flex-row flex flex-col'>
 							<AnchorLink
 								href='#connect'
 								onClick={() =>
@@ -210,7 +210,7 @@ const AboutSection = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target="_blank"
-								className='bg-primaryBrand hover:bg-primaryGrey mt-14 relative inline-flex w-auto px-8 py-4 ml-5 text-base font-medium text-white duration-300 ease-in-out'
+								className='bg-primaryBrand hover:bg-primaryGrey md:mt-14 md:ml-5 relative inline-flex justify-center w-auto px-8 py-4 mt-5 text-base font-medium text-white duration-300 ease-in-out'
 							>
 								<FaDribbble className="flex items-center justify-center mr-3 text-2xl text-center" />
 								Follow me

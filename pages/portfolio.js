@@ -18,7 +18,7 @@ const Portfolio = (props) => {
 		const portfolioTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#portfolio",
-				start: "center bottom",
+				start: "top bottom",
 				end: "=-300",
 			},
 		});
@@ -66,7 +66,7 @@ const Portfolio = (props) => {
 				ease: "power3.out",
 			});
 
-			dribbbleShotTl
+		dribbbleShotTl
 			.from("figure", 1, {
 				scaleY: 0,
 				transformOrigin: "top",
@@ -74,25 +74,28 @@ const Portfolio = (props) => {
 				stagger: 0.15,
 				delay: 0.5,
 			})
-			.fromTo(".dribbble_shot", 2, {
-				opacity: 0,
-			},
-			{
-				opacity: 1,
-				delay: -1.75,
-				stagger: 0.1,
-				ease: "power3.out",
-			});
+			.fromTo(
+				".dribbble_shot",
+				2,
+				{
+					opacity: 0,
+				},
+				{
+					opacity: 1,
+					delay: -1.75,
+					stagger: 0.1,
+					ease: "power3.out",
+				}
+			);
 	});
-
 
 	return (
 		<Layout>
 			<section
 				id='portfolio'
-				className='bg-backgroundTwo flex flex-col pb-20'
+				className='bg-backgroundTwo pb-30 flex flex-col'
 			>
-				<section className='bg-backgroundOne pb-30 pt-64'>
+				<section className='bg-backgroundOne lg:pb-30 md:pt-44 lg:pt-64 pt-20 pb-16'>
 					<div className='lg:grid-cols-3 container grid items-end grid-cols-1 gap-10'>
 						<section>
 							<div className='flex flex-row items-center'>
@@ -108,34 +111,34 @@ const Portfolio = (props) => {
 							</h2>
 						</section>
 						<section className='dribbble-stats'>
-							<div className='bg-primaryBrand flex flex-col px-5 py-4 text-base text-white'>
-								<a
-									href='https://dribbble.com/oliver'
-									target='_blank'
-									className='inline-flex items-center py-1 text-pink-100'
-								>
+							<a
+								href='https://dribbble.com/oliver'
+								target='_blank'
+								className='bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out'
+							>
+								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Followers
-									<RiExternalLinkLine className='ml-2 text-xl' />
-								</a>
-								<p className='text-4xl font-semibold'>
+									<RiExternalLinkLine className='ml-2 text-lg' />
+								</p>
+								<p className='mt-1 text-4xl font-semibold'>
 									{props.account.followers_count}
 								</p>
-							</div>
+							</a>
 						</section>
 						<section className='dribbble-stats'>
-							<div className='bg-primaryBrand flex flex-col px-5 py-4 text-base text-white'>
-								<a
-									href='https://dribbble.com/oliver'
-									target='_blank'
-									className='inline-flex items-center py-1 text-pink-100'
-								>
+							<a
+								href='https://dribbble.com/oliver'
+								target='_blank'
+								className='bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out'
+							>
+								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Shots
-									<RiExternalLinkLine className='ml-2 text-xl' />
-								</a>
-								<p className='text-4xl font-semibold'>
+									<RiExternalLinkLine className='ml-2 text-lg' />
+								</p>
+								<p className='mt-1 text-4xl font-semibold'>
 									{props.shot.length}
 								</p>
-							</div>
+							</a>
 						</section>
 					</div>
 				</section>
@@ -145,15 +148,16 @@ const Portfolio = (props) => {
 						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'
 					>
 						{props.shot.map(({ id, images, html_url }) => (
-							<a key={id} href={html_url} className="hover:opacity-50 transition-opacity duration-200 ease-in-out">
+							<a
+								key={id}
+								href={html_url}
+								className='hover:opacity-50 transition-opacity duration-200 ease-in-out'
+							>
 								<figure
 									key={id}
 									className='bg-primaryGrey w-full overflow-hidden'
 								>
-									<img
-										src={images.hidpi}
-										className='dribbble_shot'
-									/>
+									<img src={images.hidpi} className='dribbble_shot' />
 								</figure>
 							</a>
 						))}
