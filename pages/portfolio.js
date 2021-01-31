@@ -75,7 +75,7 @@ const Portfolio = (props) => {
 				stagger: 0.15,
 				delay: 0.5,
 			})
-			.fromTo("img", 2, {
+			.fromTo(".dribbble_shot", 2, {
 				opacity: 0,
 			},
 			{
