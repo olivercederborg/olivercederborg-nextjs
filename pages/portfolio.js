@@ -6,6 +6,7 @@ import { RiExternalLinkLine } from "react-icons/ri";
 
 //import components
 import Layout from "../components/Layout";
+import Footer from "../components/Footer";
 
 const Portfolio = (props) => {
 	useEffect(() => {
@@ -93,7 +94,7 @@ const Portfolio = (props) => {
 		<Layout>
 			<section
 				id='portfolio'
-				className='bg-backgroundTwo pb-30 flex flex-col'
+				className='bg-backgroundTwo pb-14 md:pb-0 flex flex-col'
 			>
 				<section className='bg-backgroundOne lg:pb-30 md:pt-44 lg:pt-64 pt-20 pb-16'>
 					<div className='lg:grid-cols-3 container grid items-end grid-cols-1 gap-10'>
@@ -142,7 +143,7 @@ const Portfolio = (props) => {
 						</section>
 					</div>
 				</section>
-				<div className='container'>
+				<div className='container pb-20'>
 					<div
 						id='dribbble_container'
 						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'
@@ -163,6 +164,7 @@ const Portfolio = (props) => {
 						))}
 					</div>
 				</div>
+				<Footer />
 			</section>
 			<script> </script>
 		</Layout>
