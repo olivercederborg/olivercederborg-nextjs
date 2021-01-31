@@ -80,7 +80,7 @@ const Portfolio = (props) => {
 			},
 			{
 				opacity: 1,
-				delay: -1.5,
+				delay: -1.75,
 				stagger: 0.1,
 				ease: "power3.out",
 			});
