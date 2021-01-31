@@ -32,13 +32,13 @@ const Layout = ({ children, href }) => {
 				"header",
 				1.5,
 				{
-					y: -30,
+					// y: -30,
 					opacity: 0,
 				},
 				{
-					y: 0,
+					// y: 0,
 					opacity: 1,
-					delay: 0.2,
+					delay: 0.3,
 					ease: "power3.inOut",
 				}
 			);
