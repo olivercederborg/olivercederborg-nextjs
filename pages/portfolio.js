@@ -14,6 +14,9 @@ import Layout from "../components/Layout";
 const Portfolio = (props) => {
 	useEffect(() => {
 		gsap.to("body", 0, { css: { visibility: "visible" } });
+		if (typeof window !== "undefined") {
+			gsap.registerPlugin(ScrollTrigger);
+		}
 
 		//Connect section
 		const portfolioTl = gsap.timeline({
