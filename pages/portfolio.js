@@ -1,11 +1,7 @@
-import Head from "next/head";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { logEvent } from "../utils/analytics";
 import axios from "axios";
-import Link from "next/link";
 import { RiExternalLinkLine } from "react-icons/ri";
 
 //import components
@@ -70,23 +66,23 @@ const Portfolio = (props) => {
 				ease: "power3.out",
 			});
 
-			dribbbleShotTl
-			.from("figure", 1, {
-				scaleY: 0,
-				transformOrigin: "top",
-				ease: "power4.inOut",
-				stagger: 0.15,
-				delay: 0.5,
-			})
-			.fromTo(".dribbble_shot", 2, {
-				opacity: 0,
-			},
-			{
-				opacity: 1,
-				delay: -1.75,
-				stagger: 0.1,
-				ease: "power3.out",
-			});
+			// dribbbleShotTl
+			// .from("figure", 1, {
+			// 	scaleY: 0,
+			// 	transformOrigin: "top",
+			// 	ease: "power4.inOut",
+			// 	stagger: 0.15,
+			// 	delay: 0.5,
+			// })
+			// .fromTo(".dribbble_shot", 2, {
+			// 	opacity: 0,
+			// },
+			// {
+			// 	opacity: 1,
+			// 	delay: -1.75,
+			// 	stagger: 0.1,
+			// 	ease: "power3.out",
+			// });
 	});
 
 
