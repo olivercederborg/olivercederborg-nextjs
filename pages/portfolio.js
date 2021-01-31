@@ -73,6 +73,7 @@ const Portfolio = (props) => {
 				transformOrigin: "top",
 				ease: "power4.inOut",
 				stagger: 0.15,
+				delay: 0.5,
 			})
 			.fromTo("img", 2, {
 				opacity: 0,
