@@ -29,8 +29,8 @@ const Portfolio = (props) => {
 
 		const dribbbleShotTl = gsap.timeline({
 			scrollTrigger: {
-				trigger: ".dribbble_shot",
-				start: "center bottom",
+				trigger: "#dribbble_container",
+				start: "top bottom",
 				end: "=-300",
 			},
 		});
