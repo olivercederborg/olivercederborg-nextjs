@@ -14,11 +14,84 @@ import Layout from "../components/layout";
 const Portfolio = (props) => {
 	useEffect(() => {
 		gsap.to("body", 0, { css: { visibility: "visible" } });
+
+		//Connect section
+		const portfolioTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#portfolio",
+				start: "center bottom",
+				end: "=-300",
+			},
+		});
+
+		const dribbbleShotTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".dribbble_shot",
+				start: "center bottom",
+				end: "=-300",
+			},
+		});
+
+		portfolioTl
+			.fromTo(
+				"#portfolio .section-line",
+				1,
+				{
+					width: 0,
+				},
+				{
+					width: "4rem",
+					ease: "power3.inOut",
+				}
+			)
+			.from("#portfolio .section-category", 1.5, {
+				x: -10,
+				opacity: 0,
+				stagger: 0.3,
+				delay: -0.5,
+				ease: "power3.out",
+			})
+			.from(".dribbble-h2", 1, {
+				x: -70,
+				opacity: 0,
+				stagger: 0.3,
+				skewX: 3,
+				delay: -1.5,
+				ease: "power3.out",
+			})
+			.from(".dribbble-stats", 1, {
+				y: -30,
+				opacity: 0,
+				stagger: 0.3,
+				delay: -1.5,
+				ease: "power3.out",
+			});
+
+			dribbbleShotTl
+			.from("figure", 1, {
+				scaleY: 0,
+				transformOrigin: "top",
+				ease: "power4.inOut",
+				stagger: 0.15,
+			})
+			.fromTo("img", 2, {
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				delay: -1.5,
+				stagger: 0.1,
+				ease: "power3.out",
+			});
 	});
+
 
 	return (
 		<Layout>
-			<section className='bg-backgroundTwo flex flex-col pb-20'>
+			<section
+				id='portfolio'
+				className='bg-backgroundTwo flex flex-col pb-20'
+			>
 				<section className='bg-backgroundOne pb-30 pt-64'>
 					<div className='lg:grid-cols-3 container grid items-end grid-cols-1 gap-10'>
 						<section>
@@ -34,7 +107,7 @@ const Portfolio = (props) => {
 								<div className='dribbble-h2'>dribbble shots.</div>
 							</h2>
 						</section>
-						<section className=''>
+						<section className='dribbble-stats'>
 							<div className='bg-primaryBrand flex flex-col px-5 py-4 text-base text-white'>
 								<a
 									href='https://dribbble.com/oliver'
@@ -49,7 +122,7 @@ const Portfolio = (props) => {
 								</p>
 							</div>
 						</section>
-						<section className=''>
+						<section className='dribbble-stats'>
 							<div className='bg-primaryBrand flex flex-col px-5 py-4 text-base text-white'>
 								<a
 									href='https://dribbble.com/oliver'
@@ -67,16 +140,19 @@ const Portfolio = (props) => {
 					</div>
 				</section>
 				<div className='container'>
-					<div className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'>
+					<div
+						id='dribbble_container'
+						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'
+					>
 						{props.shot.map(({ id, images, html_url }) => (
-							<a key={id} href={html_url}>
+							<a key={id} href={html_url} className="hover:opacity-50 transition-opacity duration-200 ease-in-out">
 								<figure
 									key={id}
-									className='bg-backgroundOne w-full overflow-hidden'
+									className='bg-primaryGrey w-full overflow-hidden'
 								>
 									<img
 										src={images.hidpi}
-										className='hover:opacity-50 transition-opacity duration-200 ease-in-out'
+										className='dribbble_shot'
 									/>
 								</figure>
 							</a>
