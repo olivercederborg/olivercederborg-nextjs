@@ -80,11 +80,11 @@ const ContactForm = () => {
 		<div id='form_wrapper'>
 			<motion.form
 				onSubmit={handleSubmit(() => handleOnSubmit())}
-				className='mt-20'
+				className='md:w-5/5 lg:w-1/3 w-full mt-20'
 				ref={ref}
 				style={{ opacity: inView ? 1 : 0 }}
 			>
-				<div className='md:w-1/2 lg:w-1/3 flex flex-col w-full text-white'>
+				<div className='flex flex-col text-white'>
 					<label htmlFor='name' className='flex flex-col mt-6'>
 						What’s your name?
 						<input
