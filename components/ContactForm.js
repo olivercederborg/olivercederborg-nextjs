@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const ContactForm = () => {
 	const { register, errors, handleSubmit, handleChange } = useForm({
@@ -93,24 +91,17 @@ const ContactForm = () => {
 		});
 	});
 
-	const [ref, inView] = useInView({
-		triggerOnce: true,
-		rootMargin: "-100px 0px",
-	});
-
 	return (
 		<div id='form_wrapper'>
-			<motion.form
+			<form
 				onSubmit={handleSubmit(() => handleOnSubmit())}
-				className='md:w-5/5 lg:w-1/3 w-full mt-20'
-				ref={ref}
-				style={{ opacity: inView ? 1 : 0 }}>
+				className='md:w-5/5 lg:w-1/3 w-full mt-20'>
 				<div className='flex flex-col text-white'>
 					<label htmlFor='name' className='flex flex-col'>
 						What’s your name?
 						<input
 							onChange={handleOnChange}
-							ref={register({ required: true, minLength: 2 })}
+							ref={register({ required: true })}
 							name='name'
 							id='name'
 							type='text'
@@ -208,7 +199,7 @@ const ContactForm = () => {
 						/>
 					</div>
 				</div>
-			</motion.form>
+			</form>
 		</div>
 	);
 };

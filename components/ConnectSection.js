@@ -6,6 +6,7 @@ import { logEvent } from "../utils/analytics";
 
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
+import MotionInView from "./MotionInView";
 
 const ConnectSection = (props) => {
 	useEffect(() => {
@@ -108,8 +109,9 @@ const ConnectSection = (props) => {
                   Drop an email
 						</a> */}
 				</div>
-
-				<ContactForm />
+				<MotionInView>
+					<ContactForm />
+				</MotionInView>
 			</div>
 
 			<Footer />
