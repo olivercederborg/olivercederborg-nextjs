@@ -19,6 +19,7 @@ const ContactForm = () => {
 		email: "",
 		message: "",
 	});
+	const [sendColor, setSendColor] = useState("");
 
 	const handleResponse = (status, msg) => {
 		const nameInputField = document.getElementById("name");
@@ -71,6 +72,27 @@ const ContactForm = () => {
 		handleResponse(res.status, text);
 	};
 
+	useEffect(() => {
+		setSendColor(() => {
+			if (status.submitting) {
+				return "bg-yellow-400 hover:bg-yellow-500";
+			} else if (status.submitted) {
+				return "bg-green-500 hover:bg-green-600";
+			} else if (
+				!errors.name &&
+				!errors.email &&
+				!errors.message &&
+				inputs.name &&
+				inputs.email &&
+				inputs.message
+			) {
+				return "bg-green-500 hover:bg-green-600";
+			} else {
+				return "bg-primaryBrand hover:bg-lighterGrey";
+			}
+		});
+	});
+
 	const [ref, inView] = useInView({
 		triggerOnce: true,
 		rootMargin: "-100px 0px",
@@ -82,10 +104,9 @@ const ContactForm = () => {
 				onSubmit={handleSubmit(() => handleOnSubmit())}
 				className='md:w-5/5 lg:w-1/3 w-full mt-20'
 				ref={ref}
-				style={{ opacity: inView ? 1 : 0 }}
-			>
+				style={{ opacity: inView ? 1 : 0 }}>
 				<div className='flex flex-col text-white'>
-					<label htmlFor='name' className='flex flex-col mt-6'>
+					<label htmlFor='name' className='flex flex-col'>
 						What’s your name?
 						<input
 							onChange={handleOnChange}
@@ -94,19 +115,19 @@ const ContactForm = () => {
 							id='name'
 							type='text'
 							// value={inputs.name}
-							className={`bg-backgroundOne border-b-3 px-4 py-3 mt-2 ${
-								!inputs.name
-									? "border-primaryBrand"
+							className={`bg-backgroundOne border-l-4 px-4 py-3 mt-2 transition-all duration-200 ease-out ${
+								!inputs.name && !errors.name
+									? "border-lighterGrey"
 									: !errors.name
 									? "border-green-500"
-									: "border-red-500"
+									: "border-red-500 border-l-6"
 							}`}
 						/>
 					</label>
 					{errors.name && errors.name.type === "required" && (
-						<p className='mt-4 text-red-500'>Your name is required.</p>
+						<p className='mt-3 text-red-400'>Your name is required.</p>
 					)}
-					<label htmlFor='email' className='flex flex-col mt-6'>
+					<label htmlFor='email' className='flex flex-col mt-8'>
 						Your email address
 						<input
 							onChange={handleOnChange}
@@ -117,24 +138,24 @@ const ContactForm = () => {
 							name='email'
 							id='email'
 							type='text'
-							className={`bg-backgroundOne border-b-3 px-4 py-3 mt-2 ${
-								!inputs.email
-									? "border-primaryBrand"
+							className={`bg-backgroundOne border-l-4 px-4 py-3 mt-2 transition-all duration-200 ease-out ${
+								!inputs.email && !errors.email
+									? "border-lighterGrey"
 									: !errors.email
 									? "border-green-500"
-									: "border-red-500"
+									: "border-red-500 border-l-6"
 							}`}
 						/>
 					</label>
 					{errors.email && errors.email.type === "required" && (
-						<p className='mt-4 text-red-500'>Your email is required.</p>
+						<p className='mt-3 text-red-400'>Your email is required.</p>
 					)}
 					{errors.email && errors.email.type === "pattern" && (
-						<p className='mt-4 text-red-500'>
+						<p className='mt-3 text-red-400'>
 							The entered email address is not valid.
 						</p>
 					)}
-					<label htmlFor='message' className='flex flex-col mt-6'>
+					<label htmlFor='message' className='flex flex-col mt-8'>
 						Type your message here
 						<textarea
 							onChange={handleOnChange}
@@ -147,41 +168,35 @@ const ContactForm = () => {
 							id='message'
 							type='text'
 							maxLength='200'
-							className={`bg-backgroundOne border-b-3 px-4 py-3 min-h-32 mt-2 ${
-								!inputs.message
-									? "border-primaryBrand"
+							className={`bg-backgroundOne border-l-4 px-4 py-3 min-h-32 mt-2 transition-all duration-200 ease-out ${
+								!inputs.message && !errors.message
+									? "border-lighterGrey"
 									: !errors.message
 									? "border-green-500"
-									: "border-red-500"
+									: "border-red-500 border-l-6"
 							}`}
 						/>
 					</label>
-					<p id='message_chars_left' className='mt-4'>
+					<p id='message_chars_left' className='mt-3'>
 						{inputs.message.length <= 200
 							? `${inputs.message.length}/200`
 							: "hi"}
 					</p>
 					{errors.message && errors.message.type === "required" && (
-						<p className='mt-4 text-red-500'>Your message is required.</p>
+						<p className='mt-3 text-red-400'>Your message is required.</p>
 					)}
 					{errors.message && errors.message.type === "minLength" && (
-						<p className='mt-4 text-red-500'>
+						<p className='mt-3 text-red-400'>
 							Your message requires a length of 10 characters.
 						</p>
 					)}
 					{errors.message && errors.message.type === "maxLength" && (
-						<p className='mt-4 text-red-500'>Your message is too long.</p>
+						<p className='mt-3 text-red-400'>Your message is too long.</p>
 					)}
 					<div id='submit_button'>
 						<input
 							type='submit'
-							className={`default-focus md:w-auto w-full px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${
-								!status.submitting
-									? !status.submitted
-										? "bg-primaryBrand hover:bg-primaryGrey"
-										: "bg-green-500 hover:bg-green-600"
-									: "bg-yellow-400 hover:bg-yellow-500"
-							}`}
+							className={`default-focus md:w-auto w-full px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${sendColor}`}
 							disabled={status.submitting || status.submitted}
 							value={
 								!status.submitting
