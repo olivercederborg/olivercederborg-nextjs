@@ -98,16 +98,14 @@ const Layout = ({ children, href }) => {
 				<link rel='icon' sizes='16x16' href='/favicon_16x16.png' />
 				<link
 					href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
-					rel='stylesheet'
-				></link>
+					rel='stylesheet'></link>
 			</Head>
 			{router.pathname === "/" ? (
 				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-10 hidden w-full'>
 					<nav className='container'>
 						<div
 							id='navigation'
-							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'
-						>
+							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'>
 							<div>
 								<AnchorLink href='#hero' className='default-focus'>
 									<img
@@ -121,39 +119,34 @@ const Layout = ({ children, href }) => {
 								<Scrollspy
 									items={["hero", "work", "about", "connect"]}
 									currentClassName='is-current'
-									offset={-350}
-								>
+									offset={-350}>
 									<AnchorLink
 										href='index#hero'
 										offset='72'
-										className='default-focus hover:text-white hidden px-5 duration-300 ease-in-out'
-									>
+										className='default-focus hover:text-white hidden px-5 duration-300 ease-in-out'>
 										Home
 									</AnchorLink>
 									<AnchorLink
 										href='#work'
 										id='work-link'
 										offset='72'
-										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
-									>
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 										Work
 									</AnchorLink>
 									<AnchorLink
 										href='#about'
 										offset='72'
-										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
-									>
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 										About
 									</AnchorLink>
 									<AnchorLink
 										href='#connect'
 										offset='72'
-										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
-									>
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 										Connect
 									</AnchorLink>
 									<Link href='/portfolio'>
-										<a className='default-focus bg-none hover:bg-primaryGrey px-4 py-3 text-white duration-300 ease-in-out'>
+										<a className='default-focus bg-none hover:bg-lightGrey px-4 py-3 text-white duration-300 ease-in-out'>
 											<FaDribbble className='inline text-lg' />
 										</a>
 									</Link>
@@ -167,8 +160,7 @@ const Layout = ({ children, href }) => {
 					<nav className='container'>
 						<div
 							id='navigation'
-							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'
-						>
+							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'>
 							<div>
 								<Link href='/'>
 									<a className='default-focus hover:opacity-70 h-8 duration-200 ease-in-out'>
@@ -184,8 +176,7 @@ const Layout = ({ children, href }) => {
 								<Scrollspy
 									items={["hero", "work", "about", "connect"]}
 									currentClassName='is-current'
-									offset={-350}
-								>
+									offset={-350}>
 									<Link href='/#work' id='work-link'>
 										<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 											Work
@@ -202,7 +193,7 @@ const Layout = ({ children, href }) => {
 										</a>
 									</Link>
 									<Link href=''>
-										<a className='default-focus bg-primaryBrand hover:bg-primaryGrey px-4 py-3 ml-3 text-white duration-300 ease-in-out'>
+										<a className='default-focus bg-primaryBrand hover:bg-lightGrey px-4 py-3 ml-3 text-white duration-300 ease-in-out'>
 											<FaDribbble className='inline text-lg' />
 										</a>
 									</Link>
@@ -222,30 +213,25 @@ const Layout = ({ children, href }) => {
 				style={{
 					backdropFilter: "saturate(180%) blur(20px)",
 					WebkitBackdropFilter: "saturate(180%) blur(20px)",
-				}}
-			>
+				}}>
 				<AnchorLink
 					href='#hero'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
-				>
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
 					<BiHomeAlt />
 				</AnchorLink>
 				<AnchorLink
 					href='#work'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
-				>
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
 					<FiBriefcase />
 				</AnchorLink>
 				<AnchorLink
 					href='#about'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
-				>
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
 					<BiUser />
 				</AnchorLink>
 				<AnchorLink
 					href='#connect'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
-				>
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
 					<HiOutlineMail />
 				</AnchorLink>
 			</Scrollspy>
