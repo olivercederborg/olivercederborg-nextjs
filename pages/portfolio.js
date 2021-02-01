@@ -114,7 +114,7 @@ const Portfolio = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Followers
 								</p>
@@ -127,7 +127,7 @@ const Portfolio = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Shots
 								</p>
@@ -150,11 +150,14 @@ const Portfolio = (props) => {
 								className='group default-focus transition-opacity duration-200 ease-in-out'>
 								<figure
 									key={id}
-									className='bg-lightGrey relative w-full overflow-hidden'>
-									<div className='bg-primaryBrand group-hover:bg-opacity-80 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
-										<p className='group-hover:opacity-100 text-2xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
+									className='bg-lighterGrey relative w-full overflow-hidden'>
+									<div className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
+										<p className='group-hover:opacity-100 text-3xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
 											{title}
 										</p>
+										<RiExternalLinkLine className='group-hover:opacity-100 top-1/4 lg:text-5xl absolute text-4xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
+											{title}
+										</RiExternalLinkLine>
 									</div>
 									<img src={images.hidpi} className='dribbble_shot' />
 								</figure>
