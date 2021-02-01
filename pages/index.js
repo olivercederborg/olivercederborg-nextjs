@@ -200,16 +200,16 @@ export async function getStaticProps() {
 	);
 	const account = res.data;
 
-	// GITHUB
-	const resGithubUser = await axios.get(
-		`https://api.github.com/users/olivercederborg`
-	);
-	const githubUser = await resGithubUser.data;
+	// // GITHUB
+	// const resGithubUser = await axios.get(
+	// 	`https://api.github.com/users/olivercederborg`
+	// );
+	// const githubUser = await resGithubUser.data;
 
 	return {
 		props: {
 			account,
-			githubUser,
+			// githubUser,
 		},
 	};
 }
