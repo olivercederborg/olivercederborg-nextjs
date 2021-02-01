@@ -18,9 +18,8 @@ export default function MyApp({ Component, pageProps, router }) {
 					initial={{ y: -150, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					exit={{ y: -150, opacity: 0 }}
-					id='page-transition-container'
-				>
-					<Component {...pageProps} key={router.pathname}  />
+					id='page-transition-container'>
+					<Component {...pageProps} key={router.pathname} />
 				</motion.div>
 			</div>
 		</AnimatePresence>
