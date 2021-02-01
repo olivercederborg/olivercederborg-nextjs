@@ -115,7 +115,7 @@ const Portfolio = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out'
+								className='bg-primaryBrand hover:bg-primaryGrey focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-opacity-75 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out'
 							>
 								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Followers

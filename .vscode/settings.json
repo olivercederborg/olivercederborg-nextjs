@@ -12,5 +12,6 @@
       "prevstate",
       "semibold",
       "sendgrid"
-   ]
+   ],
+   "editor.tabSize": 2
 }

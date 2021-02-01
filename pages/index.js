@@ -191,14 +191,14 @@ const Index = (props) => {
 			<script> </script>
 		</Layout>
 	);
-}
+};
 
 export async function getStaticProps() {
 	const res = await axios.get(
 		`https://api.dribbble.com/v2/user?access_token=${process.env.DRIBBBLE_TOKEN}`
 	);
 	const account = res.data;
-	
+
 	return {
 		props: {
 			account,
