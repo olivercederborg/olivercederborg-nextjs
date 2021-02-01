@@ -162,7 +162,7 @@ const AboutSection = (props) => {
 					<a
 						href='https://dribbble.com/oliver'
 						target='_blank'
-						className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+						className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 						<p className='opacity-90 inline-flex items-center text-sm'>
 							Dribbble Followers
 						</p>
@@ -173,7 +173,7 @@ const AboutSection = (props) => {
 					<a
 						href='https://dribbble.com/oliver'
 						target='_blank'
-						className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+						className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 						<p className='opacity-90 inline-flex items-center text-sm'>
 							Some New Stat
 						</p>

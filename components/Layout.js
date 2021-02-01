@@ -146,7 +146,7 @@ const Layout = ({ children, href }) => {
 										Connect
 									</AnchorLink>
 									<Link href='/portfolio'>
-										<a className='default-focus bg-none hover:bg-lightGrey px-4 py-3 text-white duration-300 ease-in-out'>
+										<a className='default-focus bg-none hover:bg-lighterGrey px-4 py-3 text-white duration-300 ease-in-out'>
 											<FaDribbble className='inline text-lg' />
 										</a>
 									</Link>
@@ -193,7 +193,7 @@ const Layout = ({ children, href }) => {
 										</a>
 									</Link>
 									<Link href=''>
-										<a className='default-focus bg-primaryBrand hover:bg-lightGrey px-4 py-3 ml-3 text-white duration-300 ease-in-out'>
+										<a className='default-focus bg-primaryBrand hover:bg-lighterGrey px-4 py-3 ml-3 text-white duration-300 ease-in-out'>
 											<FaDribbble className='inline text-lg' />
 										</a>
 									</Link>

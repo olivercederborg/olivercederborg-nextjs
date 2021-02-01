@@ -205,7 +205,7 @@ const WorkSlider = () => {
 					className='lg:mt-36 flex flex-row items-center mt-20 text-white'>
 					<button
 						onClick={() => changeCounter("decrement")}
-						className='default-focus bg-lightGrey hover:bg-primaryBrand focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'>
+						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'>
 						<HiOutlineArrowNarrowLeft />
 					</button>
 					<p className='mr-4 text-base font-semibold text-white'>
@@ -213,7 +213,7 @@ const WorkSlider = () => {
 					</p>
 					<button
 						onClick={() => changeCounter("increment")}
-						className='default-focus bg-lightGrey hover:bg-primaryBrand focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'>
+						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'>
 						<HiOutlineArrowNarrowRight />
 					</button>
 				</div>
@@ -253,7 +253,7 @@ const WorkSlider = () => {
 								}
 								target='_blank'
 								id='case-link'
-								className='default-focus bg-primaryBrand hover:bg-lightGrey inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'>
+								className='default-focus bg-primaryBrand hover:bg-lighterGrey inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'>
 								{workCase.caseLinkText}{" "}
 								<MdKeyboardArrowRight className='ml-1 text-2xl' />
 							</a>
