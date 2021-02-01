@@ -117,17 +117,14 @@ const Index = (props) => {
 			</Head>
 			<section
 				id='hero'
-				className='bg-backgroundOne lg:bg-hero-pattern lg:bg-large-desk xl:bg-none bg-no-repeat'
-			>
+				className='bg-backgroundOne lg:bg-hero-pattern lg:bg-large-desk xl:bg-none bg-no-repeat'>
 				<div className='pb-30 md:pt-56 lg:pt-60 xl:pt-72 lg:pb-56 md:min-h-0 xl:bg-hero-pattern bg-large-desk xl:bg-large-desk-xl container flex min-h-screen pt-10 bg-no-repeat'>
 					<div
 						id='hero-content'
-						className='flex flex-col items-start w-full'
-					>
+						className='flex flex-col items-start w-full'>
 						<img
 							src='/images/logo.svg'
-							className='md:hidden h-8 mb-20'
-						></img>
+							className='md:hidden h-8 mb-20'></img>
 
 						<div>
 							<div className='reveal-title md:mb-4 relative mb-2'>
@@ -176,8 +173,7 @@ const Index = (props) => {
 										`User clicked CTA on hero section`
 									)
 								}
-								className='default-focus bg-primaryBrand hover:bg-primaryGrey md:px-8 mt-14 inline-flex justify-center w-full py-4 text-base font-medium text-center text-white duration-300 ease-in-out'
-							>
+								className='default-focus bg-primaryBrand hover:bg-lightGrey md:px-8 mt-14 inline-flex justify-center w-full py-4 text-base font-medium text-center text-white duration-300 ease-in-out'>
 								See my work
 							</AnchorLink>
 						</div>
@@ -185,7 +181,11 @@ const Index = (props) => {
 				</div>
 			</section>
 			<WorkSection sectionNumber={2} />
-			<AboutSection sectionNumber={3} account={props.account} githubUser={props.githubUser} />
+			<AboutSection
+				sectionNumber={3}
+				account={props.account}
+				githubUser={props.githubUser}
+			/>
 			<ConnectSection sectionNumber={4} />
 
 			<script> </script>
@@ -200,11 +200,11 @@ export async function getStaticProps() {
 	);
 	const account = res.data;
 
-		// GITHUB
-		const resGithubUser = await axios.get(
-			`https://api.github.com/users/olivercederborg`
-		);
-		const githubUser = await resGithubUser.data;
+	// GITHUB
+	const resGithubUser = await axios.get(
+		`https://api.github.com/users/olivercederborg`
+	);
+	const githubUser = await resGithubUser.data;
 
 	return {
 		props: {

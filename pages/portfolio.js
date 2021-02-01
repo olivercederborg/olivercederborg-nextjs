@@ -94,8 +94,7 @@ const Portfolio = (props) => {
 		<Layout>
 			<section
 				id='portfolio'
-				className='bg-backgroundTwo pb-14 md:pb-0 flex flex-col'
-			>
+				className='bg-backgroundTwo pb-14 md:pb-0 flex flex-col'>
 				<section className='bg-backgroundOne lg:pb-30 md:pt-44 lg:pt-64 pt-20 pb-16'>
 					<div className='lg:grid-cols-3 container grid items-end grid-cols-1 gap-10'>
 						<section>
@@ -115,13 +114,11 @@ const Portfolio = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='default-focus bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'
-							>
+								className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Followers
-									<RiExternalLinkLine className='ml-2 text-lg' />
 								</p>
-								<p className='mt-1 text-4xl font-semibold'>
+								<p className='mt-1 text-3xl font-semibold'>
 									{props.account.followers_count}
 								</p>
 							</a>
@@ -130,13 +127,11 @@ const Portfolio = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='default-focus bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm'
-							>
+								className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Shots
-									<RiExternalLinkLine className='ml-2 text-lg' />
 								</p>
-								<p className='mt-1 text-4xl font-semibold'>
+								<p className='mt-1 text-3xl font-semibold'>
 									{props.shot.length}
 								</p>
 							</a>
@@ -146,18 +141,21 @@ const Portfolio = (props) => {
 				<div className='container pb-20'>
 					<div
 						id='dribbble_container'
-						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'
-					>
-						{props.shot.map(({ id, images, html_url }) => (
+						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'>
+						{props.shot.map(({ id, images, html_url, title, tags }) => (
 							<a
 								key={id}
 								href={html_url}
-								className='default-focus hover:opacity-50 transition-opacity duration-200 ease-in-out'
-							>
+								target='_blank'
+								className='group default-focus transition-opacity duration-200 ease-in-out'>
 								<figure
 									key={id}
-									className='bg-primaryGrey w-full overflow-hidden'
-								>
+									className='bg-lightGrey relative w-full overflow-hidden'>
+									<div className='bg-primaryBrand group-hover:bg-opacity-80 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
+										<p className='group-hover:opacity-100 text-2xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
+											{title}
+										</p>
+									</div>
 									<img src={images.hidpi} className='dribbble_shot' />
 								</figure>
 							</a>
@@ -181,7 +179,7 @@ export async function getStaticProps() {
 	);
 	const shot = await resShots.data;
 	const account = await resAccount.data;
-	
+
 	return {
 		props: {
 			shot,
