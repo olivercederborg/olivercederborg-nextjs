@@ -115,7 +115,7 @@ const Portfolio = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='bg-primaryBrand hover:bg-primaryGrey focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-opacity-75 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out'
+								className='default-focus bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-pink-200 transition-colors duration-200 ease-in-out rounded-sm outline-none'
 							>
 								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Followers
@@ -130,7 +130,7 @@ const Portfolio = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out'
+								className='default-focus bg-primaryBrand hover:bg-primaryGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm'
 							>
 								<p className='opacity-90 inline-flex items-center text-base'>
 									Dribbble Shots
@@ -152,7 +152,7 @@ const Portfolio = (props) => {
 							<a
 								key={id}
 								href={html_url}
-								className='hover:opacity-50 transition-opacity duration-200 ease-in-out'
+								className='default-focus hover:opacity-50 transition-opacity duration-200 ease-in-out'
 							>
 								<figure
 									key={id}

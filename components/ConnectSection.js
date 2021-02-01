@@ -70,7 +70,7 @@ const ConnectSection = (props) => {
             </h2>
 
             <p className='md:w-3/5 lg:w-1/3 connect-content text-greyText w-full mt-6 text-base font-normal leading-loose'>
-               Reach me on social media, by filling out the contact form or by sending an email to <a href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..." target="_blank" onClick={() => logEvent("Contact me", "Email link clicked")} className="text-primaryBrand border-b-1 border-backgroundTwo hover:border-primaryBrand duration-200 ease-in-out">hey@olivercederborg.com</a>
+               Reach me on social media, by filling out the contact form or by sending an email to <a href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..." target="_blank" onClick={() => logEvent("Contact me", "Email link clicked")} className="default-focus text-primaryBrand border-b-1 border-backgroundTwo hover:border-primaryBrand duration-200 ease-in-out">hey@olivercederborg.com</a>
             </p>
 
             <div className="connect-cta">

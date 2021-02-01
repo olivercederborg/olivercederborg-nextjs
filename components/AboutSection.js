@@ -203,14 +203,14 @@ const AboutSection = (props) => {
 										`User clicked CTA on about section`
 									)
 								}
-								className='bg-primaryBrand hover:bg-primaryGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'
+								className='default-focus bg-primaryBrand hover:bg-primaryGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'
 							>
 								Get in touch
 							</AnchorLink>
 							<a
 								href='https://dribbble.com/oliver'
 								target="_blank"
-								className='bg-primaryBrand hover:bg-primaryGrey md:mt-14 md:ml-5 relative inline-flex justify-center w-auto px-8 py-4 mt-5 text-base font-medium text-white duration-300 ease-in-out'
+								className='default-focus bg-primaryBrand hover:bg-primaryGrey md:mt-14 md:ml-5 relative inline-flex justify-center w-auto px-8 py-4 mt-5 text-base font-medium text-white duration-300 ease-in-out'
 							>
 								<FaDribbble className="flex items-center justify-center mr-3 text-2xl text-center" />
 								Follow me

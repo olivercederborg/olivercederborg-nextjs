@@ -173,9 +173,9 @@ const ContactForm = () => {
 						<p className='mt-4 text-red-500'>Your message is too long.</p>
 					)}
 					<div id='submit_button'>
-						<button
+						<input
 							type='submit'
-							className={`md:w-auto w-full px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${
+							className={`default-focus md:w-auto w-full px-8 py-4 mt-10 text-base font-medium text-white duration-300 ease-in-out cursor-pointer ${
 								!status.submitting
 									? !status.submitted
 										? "bg-primaryBrand hover:bg-primaryGrey"
@@ -183,13 +183,14 @@ const ContactForm = () => {
 									: "bg-yellow-400 hover:bg-yellow-500"
 							}`}
 							disabled={status.submitting || status.submitted}
-						>
-							{!status.submitting
-								? !status.submitted
-									? "Send message"
-									: "Message sent"
-								: "Sending..."}
-						</button>
+							value={
+								!status.submitting
+									? !status.submitted
+										? "Send message"
+										: "Message sent"
+									: "Sending..."
+							}
+						/>
 					</div>
 				</div>
 			</motion.form>

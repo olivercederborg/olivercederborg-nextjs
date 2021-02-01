@@ -176,7 +176,7 @@ const Index = (props) => {
 										`User clicked CTA on hero section`
 									)
 								}
-								className='bg-primaryBrand hover:bg-primaryGrey md:px-8 mt-14 inline-flex justify-center w-full py-4 text-base font-medium text-center text-white duration-300 ease-in-out'
+								className='default-focus bg-primaryBrand hover:bg-primaryGrey md:px-8 mt-14 inline-flex justify-center w-full py-4 text-base font-medium text-center text-white duration-300 ease-in-out'
 							>
 								See my work
 							</AnchorLink>

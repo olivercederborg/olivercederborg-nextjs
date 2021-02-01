@@ -26,7 +26,7 @@ const Layout = ({ children, href }) => {
 			window.GA_INITIALIZED = true;
 		}
 		logPageView();
-		
+
 		if (router.pathname === "/") {
 			gsap.fromTo(
 				"header",
@@ -109,7 +109,7 @@ const Layout = ({ children, href }) => {
 							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'
 						>
 							<div>
-								<AnchorLink href='#hero'>
+								<AnchorLink href='#hero' className='default-focus'>
 									<img
 										src='/images/logo.svg'
 										alt='Oliver Cederborg Logo'
@@ -126,7 +126,7 @@ const Layout = ({ children, href }) => {
 									<AnchorLink
 										href='index#hero'
 										offset='72'
-										className='hover:text-white hidden px-5 duration-300 ease-in-out'
+										className='default-focus hover:text-white hidden px-5 duration-300 ease-in-out'
 									>
 										Home
 									</AnchorLink>
@@ -134,26 +134,26 @@ const Layout = ({ children, href }) => {
 										href='#work'
 										id='work-link'
 										offset='72'
-										className='hover:text-white px-5 duration-300 ease-in-out'
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
 									>
 										Work
 									</AnchorLink>
 									<AnchorLink
 										href='#about'
 										offset='72'
-										className='hover:text-white px-5 duration-300 ease-in-out'
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
 									>
 										About
 									</AnchorLink>
 									<AnchorLink
 										href='#connect'
 										offset='72'
-										className='hover:text-white px-5 duration-300 ease-in-out'
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
 									>
 										Connect
 									</AnchorLink>
 									<Link href='/portfolio'>
-										<a className='bg-none hover:bg-primaryGrey px-4 py-3 text-white duration-300 ease-in-out'>
+										<a className='default-focus bg-none hover:bg-primaryGrey px-4 py-3 text-white duration-300 ease-in-out'>
 											<FaDribbble className='inline text-lg' />
 										</a>
 									</Link>
@@ -171,11 +171,11 @@ const Layout = ({ children, href }) => {
 						>
 							<div>
 								<Link href='/'>
-									<a>
+									<a className='default-focus hover:opacity-70 h-8 duration-200 ease-in-out'>
 										<img
 											src='/images/logo.svg'
 											alt='Oliver Cederborg Logo'
-											className='hover:opacity-70 h-8 duration-200 ease-in-out'
+											className=' hover:opacity-70 h-8 duration-200 ease-in-out'
 										/>
 									</a>
 								</Link>
@@ -187,22 +187,22 @@ const Layout = ({ children, href }) => {
 									offset={-350}
 								>
 									<Link href='/#work' id='work-link'>
-										<a className='hover:text-white px-5 duration-300 ease-in-out'>
+										<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 											Work
 										</a>
 									</Link>
 									<Link href='/#about'>
-										<a className='hover:text-white px-5 duration-300 ease-in-out'>
+										<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 											About
 										</a>
 									</Link>
 									<Link href='/#connect'>
-										<a className='hover:text-white px-5 duration-300 ease-in-out'>
+										<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 											Connect
 										</a>
 									</Link>
-									<Link href="">
-										<a className='bg-primaryBrand hover:bg-primaryGrey px-4 py-3 ml-3 text-white duration-300 ease-in-out'>
+									<Link href=''>
+										<a className='default-focus bg-primaryBrand hover:bg-primaryGrey px-4 py-3 ml-3 text-white duration-300 ease-in-out'>
 											<FaDribbble className='inline text-lg' />
 										</a>
 									</Link>
@@ -226,25 +226,25 @@ const Layout = ({ children, href }) => {
 			>
 				<AnchorLink
 					href='#hero'
-					className='hover:text-white px-8 py-6 duration-300 ease-in-out'
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
 				>
 					<BiHomeAlt />
 				</AnchorLink>
 				<AnchorLink
 					href='#work'
-					className='hover:text-white px-8 py-6 duration-300 ease-in-out'
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
 				>
 					<FiBriefcase />
 				</AnchorLink>
 				<AnchorLink
 					href='#about'
-					className='hover:text-white px-8 py-6 duration-300 ease-in-out'
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
 				>
 					<BiUser />
 				</AnchorLink>
 				<AnchorLink
 					href='#connect'
-					className='hover:text-white px-8 py-6 duration-300 ease-in-out'
+					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
 				>
 					<HiOutlineMail />
 				</AnchorLink>
