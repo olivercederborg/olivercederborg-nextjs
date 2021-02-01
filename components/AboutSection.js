@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { logEvent } from "../utils/analytics";
 import { FaDribbble } from "react-icons/fa";
+import { VscGithubInverted } from "react-icons/vsc";
 
 const AboutSection = (props) => {
 	useEffect(() => {
@@ -144,8 +145,7 @@ const AboutSection = (props) => {
 					: props.sectionNumber % 2 != 0
 					? " bg-backgroundOne"
 					: "")
-			}
-		>
+			}>
 			<div className='container'>
 				<div className='flex flex-row items-center'>
 					<div className='section-line bg-primaryBrand w-16 h-1 mr-6'></div>
@@ -158,12 +158,32 @@ const AboutSection = (props) => {
 					Get a closer look at who I am.
 				</h2>
 
-				<div className='lg:flex-row flex flex-col-reverse items-start'>
+				<section className='mt-30 grid w-1/3 grid-cols-2 gap-5'>
+					<a
+						href='https://dribbble.com/oliver'
+						target='_blank'
+						className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+						<p className='opacity-90 inline-flex items-center text-sm'>
+							Dribbble Followers
+						</p>
+						<p className='mt-1 text-3xl font-semibold'>
+							{props.account.followers_count}
+						</p>
+					</a>
+					<a
+						href='https://dribbble.com/oliver'
+						target='_blank'
+						className='default-focus bg-lightGrey hover:bg-gray-500 flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+						<p className='opacity-90 inline-flex items-center text-sm'>
+							Some New Stat
+						</p>
+						<p className='mt-1 text-3xl font-semibold'>420</p>
+					</a>
+				</section>
+
+				<div className='lg:flex-row lg:mt-20 flex flex-col-reverse items-start mt-16'>
 					<div className='lg:w-7/12 w-full'>
-						<div
-							id='aboutme'
-							className='lg:mt-36 flex flex-row items-center mt-16'
-						>
+						<div id='aboutme' className='flex flex-row items-center'>
 							<div className='intro-line bg-primaryBrand w-6 h-1 mr-6'></div>
 							<p className='intro-text text-base font-medium text-white'>
 								Who am I
@@ -203,28 +223,18 @@ const AboutSection = (props) => {
 										`User clicked CTA on about section`
 									)
 								}
-								className='default-focus bg-primaryBrand hover:bg-primaryGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'
-							>
+								className='default-focus bg-primaryBrand hover:bg-lighterGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'>
 								Get in touch
 							</AnchorLink>
-							<a
-								href='https://dribbble.com/oliver'
-								target="_blank"
-								className='default-focus bg-primaryBrand hover:bg-primaryGrey md:mt-14 md:ml-5 relative inline-flex justify-center w-auto px-8 py-4 mt-5 text-base font-medium text-white duration-300 ease-in-out'
-							>
-								<FaDribbble className="flex items-center justify-center mr-3 text-2xl text-center" />
-								Follow me
-								<span className="text-primaryBrand absolute top-0 right-0 px-2 py-1 -mt-2 -mr-2 text-xs font-semibold bg-pink-100 rounded-full shadow-xl">{props.account.followers_count}</span>
-							</a>
 						</div>
 					</div>
 
-					<div className='md:w-5/12 flex justify-end w-9/12'>
+					<div className='md:w-5/12 flex flex-col self-start justify-end w-9/12'>
 						<img
 							id='about-img'
 							src='/images/about-oliver.webp'
 							alt='About Oliver Cederborg'
-							className='md:max-h-sm md:mt-30 object-contain w-full h-full mt-20 pointer-events-none'
+							className='md:max-h-sm md:mt-0 object-contain w-full h-full mt-0 pointer-events-none'
 						/>
 					</div>
 				</div>
