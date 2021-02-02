@@ -177,9 +177,11 @@ const AboutSection = (props) => {
 								target='_blank'
 								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 								<p className='opacity-90 inline-flex items-center text-sm'>
-									Some New Stat
+									Dribbble Shots
 								</p>
-								<p className='mt-1 text-3xl font-semibold'>420</p>
+								<p className='mt-1 text-3xl font-semibold'>
+									{props.shot.length}
+								</p>
 							</a>
 						</section>
 
