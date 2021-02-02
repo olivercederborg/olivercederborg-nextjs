@@ -95,7 +95,7 @@ const ContactForm = () => {
 		<div id='form_wrapper'>
 			<form
 				onSubmit={handleSubmit(() => handleOnSubmit())}
-				className='md:w-5/5 lg:w-1/3 w-full mt-20'>
+				className='md:w-5/5 lg:w-2/5 w-full mt-20'>
 				<div className='flex flex-col text-white'>
 					<label htmlFor='name' className='flex flex-col'>
 						What’s your name?
