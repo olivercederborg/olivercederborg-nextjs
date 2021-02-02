@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { logEvent } from "../utils/analytics";
 import { FaDribbble } from "react-icons/fa";
 import { VscGithubInverted } from "react-icons/vsc";
+import Link from "next/link";
 
 const AboutSection = (props) => {
 	useEffect(() => {
@@ -172,17 +173,16 @@ const AboutSection = (props) => {
 									{props.account.followers_count}
 								</p>
 							</a>
-							<a
-								href='https://dribbble.com/oliver'
-								target='_blank'
-								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
-								<p className='opacity-90 inline-flex items-center text-sm'>
-									Dribbble Shots
-								</p>
-								<p className='mt-1 text-3xl font-semibold'>
-									{props.shot.length}
-								</p>
-							</a>
+							<Link href='/portfolio'>
+								<a className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+									<p className='opacity-90 inline-flex items-center text-sm'>
+										Dribbble Shots
+									</p>
+									<p className='mt-1 text-3xl font-semibold'>
+										{props.shot.length}
+									</p>
+								</a>
+							</Link>
 						</section>
 
 						<div id='aboutme' className='flex flex-row items-center'>
