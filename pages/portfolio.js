@@ -179,7 +179,7 @@ const Portfolio = (props) => {
 export async function getStaticProps() {
 	// DRIBBBLE
 	const resShots = await axios.get(
-		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}`
+		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}&per_page=100`
 	);
 	const resAccount = await axios.get(
 		`https://api.dribbble.com/v2/user?access_token=${process.env.DRIBBBLE_TOKEN}`

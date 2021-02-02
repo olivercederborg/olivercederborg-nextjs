@@ -80,7 +80,7 @@ const Index = (props) => {
 			<AboutSection
 				sectionNumber={3}
 				account={props.account}
-				githubUser={props.githubUser}
+				shot={props.shot}
 			/>
 			<ConnectSection sectionNumber={4} />
 
@@ -91,21 +91,19 @@ const Index = (props) => {
 
 export async function getStaticProps() {
 	// DRIBBBLE
-	const res = await axios.get(
+	const resShots = await axios.get(
+		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}&per_page=100`
+	);
+	const resAccount = await axios.get(
 		`https://api.dribbble.com/v2/user?access_token=${process.env.DRIBBBLE_TOKEN}`
 	);
-	const account = res.data;
-
-	// // GITHUB
-	// const resGithubUser = await axios.get(
-	// 	`https://api.github.com/users/olivercederborg`
-	// );
-	// const githubUser = await resGithubUser.data;
+	const shot = await resShots.data;
+	const account = await resAccount.data;
 
 	return {
 		props: {
+			shot,
 			account,
-			// githubUser,
 		},
 	};
 }
