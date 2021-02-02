@@ -11,7 +11,7 @@ import { FaDribbble } from "react-icons/fa";
 import { initGA, logPageView, logEvent } from "../utils/analytics";
 import { useRouter } from "next/router";
 
-const Navbar = ({ children, href }) => {
+const Navbar = (props) => {
 	const router = useRouter();
 	useEffect(() => {
 		if (!window.GA_INITIALIZED) {
@@ -37,7 +37,7 @@ const Navbar = ({ children, href }) => {
 			);
 		}
 
-		function onScroll() {
+		const onScroll = () => {
 			const navId = document.getElementById("navigation");
 			const topPos = 100;
 			let currentPosition = window.pageYOffset;
@@ -57,10 +57,9 @@ const Navbar = ({ children, href }) => {
 					navId.classList.add("py-12");
 				}
 			}
-		}
+		};
 
 		window.addEventListener("scroll", onScroll);
-		return window.addEventListener("scroll", onScroll);
 	});
 	return (
 		<>
@@ -168,37 +167,67 @@ const Navbar = ({ children, href }) => {
 				</header>
 			)}
 
-			<Scrollspy
-				items={["hero", "work", "about", "connect"]}
-				currentClassName='mobile-current'
-				offset={-350}
-				componentTag={"nav"}
-				className='md:hidden bg-opacity-90 justify-evenly border-t-1 fixed bottom-0 z-10 flex flex-row w-full text-2xl text-center text-gray-500 bg-gray-900 border-gray-800'
-				style={{
-					backdropFilter: "saturate(180%) blur(20px)",
-					WebkitBackdropFilter: "saturate(180%) blur(20px)",
-				}}>
-				<AnchorLink
-					href='#hero'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
-					<BiHomeAlt />
-				</AnchorLink>
-				<AnchorLink
-					href='#work'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
-					<FiBriefcase />
-				</AnchorLink>
-				<AnchorLink
-					href='#about'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
-					<BiUser />
-				</AnchorLink>
-				<AnchorLink
-					href='#connect'
-					className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
-					<HiOutlineMail />
-				</AnchorLink>
-			</Scrollspy>
+			{router.pathname === "/" ? (
+				<Scrollspy
+					items={["hero", "work", "about", "connect"]}
+					currentClassName='mobile-current'
+					offset={-350}
+					componentTag={"nav"}
+					className='md:hidden bg-opacity-90 justify-evenly border-t-1 fixed bottom-0 z-10 flex flex-row w-full text-2xl text-center text-gray-500 bg-gray-900 border-gray-800'
+					style={{
+						backdropFilter: "saturate(180%) blur(20px)",
+						WebkitBackdropFilter: "saturate(180%) blur(20px)",
+					}}>
+					<AnchorLink
+						href='#hero'
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						<BiHomeAlt />
+					</AnchorLink>
+					<AnchorLink
+						href='#work'
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						<FiBriefcase />
+					</AnchorLink>
+					<AnchorLink
+						href='#about'
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						<BiUser />
+					</AnchorLink>
+					<AnchorLink
+						href='#connect'
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						<HiOutlineMail />
+					</AnchorLink>
+				</Scrollspy>
+			) : (
+				<nav
+					className='md:hidden bg-opacity-90 justify-evenly border-t-1 fixed bottom-0 z-10 flex flex-row w-full text-2xl text-center text-gray-500 bg-gray-900 border-gray-800'
+					style={{
+						backdropFilter: "saturate(180%) blur(20px)",
+						WebkitBackdropFilter: "saturate(180%) blur(20px)",
+					}}>
+					<Link href='/'>
+						<a className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+							<BiHomeAlt />
+						</a>
+					</Link>
+					<Link href='/#work'>
+						<a className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+							<FiBriefcase />
+						</a>
+					</Link>
+					<Link href='/#about'>
+						<a className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+							<BiUser />
+						</a>
+					</Link>
+					<Link href='/#connect'>
+						<a className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+							<HiOutlineMail />
+						</a>
+					</Link>
+				</nav>
+			)}
 		</>
 	);
 };
