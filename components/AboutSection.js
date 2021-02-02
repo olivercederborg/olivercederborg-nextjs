@@ -154,35 +154,35 @@ const AboutSection = (props) => {
 					</p>
 				</div>
 
-				<h2 className='about-h2 lg:text-secheader mt-8 text-4xl font-semibold text-white'>
+				<h2 className='about-h2 lg:text-secheader mt-8 text-4xl font-semibold leading-normal text-white'>
 					Get a closer look at who I am.
 				</h2>
 
-				<section className='mt-30 grid w-1/3 grid-cols-2 gap-5'>
-					<a
-						href='https://dribbble.com/oliver'
-						target='_blank'
-						className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
-						<p className='opacity-90 inline-flex items-center text-sm'>
-							Dribbble Followers
-						</p>
-						<p className='mt-1 text-3xl font-semibold'>
-							{props.account.followers_count}
-						</p>
-					</a>
-					<a
-						href='https://dribbble.com/oliver'
-						target='_blank'
-						className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
-						<p className='opacity-90 inline-flex items-center text-sm'>
-							Some New Stat
-						</p>
-						<p className='mt-1 text-3xl font-semibold'>420</p>
-					</a>
-				</section>
-
-				<div className='lg:flex-row lg:mt-20 flex flex-col-reverse items-start mt-16'>
+				<div className='lg:flex-row lg:mt-30 flex flex-col-reverse items-start mt-16'>
 					<div className='lg:w-7/12 w-full'>
+						<section className='lg:w-4/5 md:grid-cols-2 grid w-full grid-cols-1 gap-5 mb-20'>
+							<a
+								href='https://dribbble.com/oliver'
+								target='_blank'
+								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+								<p className='opacity-90 inline-flex items-center text-sm'>
+									Dribbble Followers
+								</p>
+								<p className='mt-1 text-3xl font-semibold'>
+									{props.account.followers_count}
+								</p>
+							</a>
+							<a
+								href='https://dribbble.com/oliver'
+								target='_blank'
+								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+								<p className='opacity-90 inline-flex items-center text-sm'>
+									Some New Stat
+								</p>
+								<p className='mt-1 text-3xl font-semibold'>420</p>
+							</a>
+						</section>
+
 						<div id='aboutme' className='flex flex-row items-center'>
 							<div className='intro-line bg-primaryBrand w-6 h-1 mr-6'></div>
 							<p className='intro-text text-base font-medium text-white'>
@@ -229,12 +229,12 @@ const AboutSection = (props) => {
 						</div>
 					</div>
 
-					<div className='md:w-5/12 flex flex-col self-start justify-end w-9/12'>
+					<div className='md:w-5/12 lg:mb-0 lg:self-center lg:mt-0 flex flex-col justify-center w-9/12 mt-10 mb-10'>
 						<img
 							id='about-img'
 							src='/images/about-oliver.webp'
 							alt='About Oliver Cederborg'
-							className='md:max-h-sm md:mt-0 object-contain w-full h-full mt-0 pointer-events-none'
+							className='md:max-h-sm md:mt-0 object-contain w-full h-full pointer-events-none'
 						/>
 					</div>
 				</div>
