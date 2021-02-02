@@ -9,8 +9,11 @@ import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 
 const Portfolio = (props) => {
+	const [loadedShots, setLoadedShots] = useState(9);
+
 	useEffect(() => {
 		gsap.to("body", 0, { css: { visibility: "visible" } });
+
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
@@ -132,7 +135,7 @@ const Portfolio = (props) => {
 									Dribbble Shots
 								</p>
 								<p className='mt-1 text-3xl font-semibold'>
-									{props.shot.length}
+									{`${loadedShots}/${props.shot.length}`}
 								</p>
 							</a>
 						</section>
@@ -142,32 +145,41 @@ const Portfolio = (props) => {
 					<div
 						id='dribbble_container'
 						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'>
-						{props.shot.map(({ id, images, html_url, title, tags }) => (
-							<a
-								key={id}
-								href={html_url}
-								target='_blank'
-								className='group default-focus transition-opacity duration-200 ease-in-out'>
-								<figure
+						{props.shot
+							.slice(0, loadedShots)
+							.map(({ id, images, html_url, title, tags }) => (
+								<a
 									key={id}
-									className='bg-lighterGrey relative w-full overflow-hidden'>
-									<div className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
-										<p className='group-hover:opacity-100 flex flex-col items-center text-3xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
-											<div className='p-2 mb-3 bg-white rounded-full opacity-50'>
-												<RiExternalLinkLine className='text-primaryBrand text-2xl font-semibold transition-all duration-200 ease-in-out' />
-											</div>
-											{title}
-										</p>
-									</div>
-									<img
-										src={images.hidpi}
-										className='dribbble_shot'
-										alt={title}
-									/>
-								</figure>
-							</a>
-						))}
+									href={html_url}
+									target='_blank'
+									className='group default-focus transition-opacity duration-200 ease-in-out'>
+									<figure
+										key={id}
+										className='bg-lighterGrey relative w-full overflow-hidden'>
+										<div className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
+											<p className='group-hover:opacity-100 flex flex-col items-center text-3xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
+												<div className='p-2 mb-3 bg-white rounded-full opacity-50'>
+													<RiExternalLinkLine className='text-primaryBrand text-2xl font-semibold transition-all duration-200 ease-in-out' />
+												</div>
+												{title}
+											</p>
+										</div>
+										<img
+											src={images.hidpi}
+											className='dribbble_shot'
+											alt={title}
+										/>
+									</figure>
+								</a>
+							))}
 					</div>
+					{loadedShots !== 100 && (
+						<button
+							onClick={() => setLoadedShots(100)}
+							className='default-focus bg-primaryBrand hover:bg-lighterGrey md:px-8 mt-14 inline-flex justify-center py-4 text-base font-medium text-center text-white duration-300 ease-in-out'>
+							Load all shots
+						</button>
+					)}
 				</div>
 				<Footer />
 			</section>
