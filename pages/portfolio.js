@@ -8,10 +8,32 @@ import { RiExternalLinkLine } from "react-icons/ri";
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
 
+const token =
+	"fb5c9878ed1310074623102d57943582b284dedb33bc0d82b1b4d4052d9e4394";
+
 const Portfolio = (props) => {
 	const [loadedShots, setLoadedShots] = useState(9);
+	const getDribbble = async () => {
+		// DRIBBBLE
+		const resShots = await axios.get(
+			`https://api.dribbble.com/v2/user/shots?access_token=${token}&per_page=100`
+		);
+		const resAccount = await axios.get(
+			`https://api.dribbble.com/v2/user?access_token=${token}`
+		);
+		const shot = await resShots.data;
+		const account = await resAccount.data;
+
+		return {
+			props: {
+				shot,
+				account,
+			},
+		};
+	};
 
 	useEffect(() => {
+		getDribbble();
 		gsap.to("body", 0, { css: { visibility: "visible" } });
 
 		if (typeof window !== "undefined") {
@@ -133,7 +155,7 @@ const Portfolio = (props) => {
 								target='_blank'
 								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 								<p className='opacity-90 inline-flex items-center text-base'>
-									Dribbble Shots
+									Shots Shown
 								</p>
 								<p className='mt-1 text-3xl font-semibold'>
 									{`${loadedShots}/${props.shot.length}`}
@@ -148,7 +170,7 @@ const Portfolio = (props) => {
 						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'>
 						{props.shot
 							.slice(0, loadedShots)
-							.map(({ id, images, html_url, title, tags }) => (
+							.map(({ id, images, html_url, title }) => (
 								<a
 									key={id}
 									href={html_url}
