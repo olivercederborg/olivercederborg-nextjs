@@ -80,13 +80,13 @@ const Portfolio = (props) => {
 		});
 		gsap.fromTo(
 			".dribbble_shot",
-			1,
+			2,
 			{
 				opacity: 0,
 			},
 			{
 				opacity: 1,
-				delay: 1.5,
+				delay: 1.25,
 				stagger: 0.15,
 				ease: "power3.out",
 				scrollTrigger: ".dribbble_shot",
