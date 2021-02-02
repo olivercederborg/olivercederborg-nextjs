@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer"; // 1.9K gzipped
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 
-const MotionInView = ({ children }) => {
+const MotionInView = (props, { children }) => {
 	const animation = useAnimation();
 	const [ref, inView, entry] = useInView({ threshold: 0.1 });
 
@@ -35,7 +35,7 @@ const MotionInView = ({ children }) => {
 			ref={ref}
 			animate={animation}
 			initial='hidden'
-			variants={variants}>
+			variants={props.variants ? props.variants : variants}>
 			{children}
 		</motion.div>
 	);

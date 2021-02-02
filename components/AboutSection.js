@@ -5,9 +5,17 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { logEvent } from "../utils/analytics";
 import { FaDribbble } from "react-icons/fa";
 import { VscGithubInverted } from "react-icons/vsc";
+import useSWR from "swr";
+
+import fetcher from "../utils/fetcher";
 import Link from "next/link";
 
 const AboutSection = (props) => {
+	const { data } = useSWR("/api/dribbble", fetcher);
+
+	const followers = data?.followers;
+	const shotCount = data?.shots.length;
+
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
@@ -32,22 +40,39 @@ const AboutSection = (props) => {
 					ease: "power3.inOut",
 				}
 			)
-			.from("#about .section-category", 1.5, {
-				x: -10,
-				opacity: 0,
-				stagger: 0.3,
-				skewX: 5,
-				delay: -0.5,
-				ease: "power3.out",
-			})
-			.from(".about-h2", 1, {
-				x: -70,
-				opacity: 0,
-				stagger: 0.3,
-				skewX: 3,
-				delay: -1.5,
-				ease: "power3.out",
-			});
+			.fromTo(
+				"#about .section-category",
+				1.5,
+				{
+					x: -10,
+					opacity: 0,
+				},
+				{
+					x: 0,
+					opacity: 1,
+					skewX: 0,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out",
+				}
+			)
+			.fromTo(
+				".about-h2",
+				1,
+				{
+					x: -70,
+					opacity: 0,
+					skewX: 3,
+				},
+				{
+					x: 0,
+					opacity: 1,
+					skewX: 0,
+					stagger: 0.3,
+					delay: -1.5,
+					ease: "power3.out",
+				}
+			);
 
 		//about skills timeline
 		const skillsTl = gsap.timeline({
@@ -69,27 +94,53 @@ const AboutSection = (props) => {
 					ease: "power3.inOut",
 				}
 			)
-			.from("#skills .intro-text", 1, {
-				opacity: 0,
-				x: -10,
-				stagger: 0.3,
-				skewX: 2,
-				delay: -0.5,
-			})
-			.from(".skills-content", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				skewX: 2,
-				delay: -0.75,
-			})
-			.from(".about-cta", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.5,
-				ease: "power3.out",
-			});
+			.fromTo(
+				"#skills .intro-text",
+				1,
+				{
+					opacity: 0,
+					x: -10,
+					skewX: 2,
+				},
+				{
+					opacity: 1,
+					x: 0,
+					skewX: 0,
+					stagger: 0.3,
+					delay: -0.5,
+				}
+			)
+			.fromTo(
+				".skills-content",
+				1,
+				{
+					y: -20,
+					opacity: 0,
+					skewX: 2,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					skewX: 0,
+					stagger: 0.3,
+					delay: -0.75,
+				}
+			)
+			.fromTo(
+				".about-cta",
+				1,
+				{
+					y: -20,
+					opacity: 0,
+				},
+				{
+					y: -20,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out",
+				}
+			);
 
 		const aboutMeTl = gsap.timeline({
 			scrollTrigger: {
@@ -110,30 +161,59 @@ const AboutSection = (props) => {
 					ease: "power3.inOut",
 				}
 			)
-			.from("#aboutme .intro-text", 1, {
-				opacity: 0,
-				x: -10,
-				stagger: 0.3,
-				delay: -0.5,
-			})
-			.from(".aboutme-content", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.75,
-			});
+			.fromTo(
+				"#aboutme .intro-text",
+				1,
+				{
+					opacity: 0,
+					x: -10,
+				},
+				{
+					opacity: 1,
+					x: 0,
+					stagger: 0.3,
+					delay: -0.5,
+				}
+			)
+			.fromTo(
+				".aboutme-content",
+				1,
+				{
+					y: -20,
+					opacity: 0,
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.75,
+				}
+			);
 
-		gsap.from("#about-img", 1, {
-			opacity: 0,
-			x: -50,
-			ease: "power3.out",
-			delay: 0.5,
-			scrollTrigger: {
-				trigger: "#about-img",
-				start: "top bottom",
-				end: "=-300",
+		gsap.fromTo(
+			"#about-img",
+			1,
+			{
+				opacity: 0,
+				x: -50,
+				scrollTrigger: {
+					trigger: "#about-img",
+					start: "top bottom",
+					end: "=-300",
+				},
 			},
-		});
+			{
+				opacity: 1,
+				x: 0,
+				ease: "power3.out",
+				delay: 0.5,
+				scrollTrigger: {
+					trigger: "#about-img",
+					start: "top bottom",
+					end: "=-300",
+				},
+			}
+		);
 	});
 
 	return (
@@ -170,7 +250,7 @@ const AboutSection = (props) => {
 									Dribbble Followers
 								</p>
 								<p className='mt-1 text-3xl font-semibold'>
-									{props.account.followers_count}
+									{followers}
 								</p>
 							</a>
 							<Link href='/portfolio'>
@@ -179,7 +259,7 @@ const AboutSection = (props) => {
 										Dribbble Shots
 									</p>
 									<p className='mt-1 text-3xl font-semibold'>
-										{props.shot.length}
+										{shotCount}
 									</p>
 								</a>
 							</Link>

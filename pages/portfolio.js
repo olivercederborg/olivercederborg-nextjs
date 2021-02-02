@@ -1,39 +1,27 @@
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import axios from "axios";
 import { RiExternalLinkLine } from "react-icons/ri";
+import useSWR from "swr";
 
 //import components
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
-
-const token =
-	"fb5c9878ed1310074623102d57943582b284dedb33bc0d82b1b4d4052d9e4394";
+import fetcher from "../utils/fetcher";
 
 const Portfolio = (props) => {
-	const [loadedShots, setLoadedShots] = useState(9);
-	// const getDribbble = async () => {
-	// 	// DRIBBBLE
-	// 	const resShots = await axios.get(
-	// 		`https://api.dribbble.com/v2/user/shots?access_token=${token}&per_page=100`
-	// 	);
-	// 	const resAccount = await axios.get(
-	// 		`https://api.dribbble.com/v2/user?access_token=${token}`
-	// 	);
-	// 	const shot = await resShots.data;
-	// 	const account = await resAccount.data;
+	const { data } = useSWR("/api/dribbble", fetcher);
 
-	// 	return {
-	// 		props: {
-	// 			shot,
-	// 			account,
-	// 		},
-	// 	};
-	// };
+	const [loadedShots, setLoadedShots] = useState(9);
+
+	const followers = data?.followers;
+	const shots = data?.shots;
+	const shotCount = data?.shots.length;
 
 	useEffect(() => {
-		// getDribbble();
+		console.log(`followers: ${followers}`);
+		console.log(`shots: ${shots}`);
+		console.log(`shotCount: ${shotCount}`);
 		gsap.to("body", 0, { css: { visibility: "visible" } });
 
 		if (typeof window !== "undefined") {
@@ -63,48 +51,99 @@ const Portfolio = (props) => {
 				1,
 				{
 					width: 0,
+					ease: "power3.inOut",
 				},
 				{
 					width: "4rem",
 					ease: "power3.inOut",
 				}
 			)
-			.from("#portfolio .section-category", 1.5, {
-				x: -10,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.5,
-				ease: "power3.out",
-			})
-			.from(".dribbble-h2", 1, {
-				x: -70,
-				opacity: 0,
-				stagger: 0.3,
-				skewX: 3,
-				delay: -1.5,
-				ease: "power3.out",
-			})
-			.from(".dribbble-stats", 1, {
-				y: -30,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -1.5,
-				ease: "power3.out",
-			});
+			.fromTo(
+				"#portfolio .section-category",
+				1.5,
+				{
+					x: -10,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out",
+				},
+				{
+					x: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out",
+				}
+			)
+			.fromTo(
+				".dribbble-h2",
+				1,
+				{
+					x: -70,
+					opacity: 0,
+					stagger: 0.3,
+					skewX: 3,
+					delay: -1.5,
+					ease: "power3.out",
+				},
+				{
+					x: 0,
+					opacity: 1,
+					stagger: 0.3,
+					skewX: 0,
+					delay: -1.5,
+					ease: "power3.out",
+				}
+			)
+			.fromTo(
+				".dribbble-stats",
+				1,
+				{
+					y: -30,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -1.5,
+					ease: "power3.out",
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -1.5,
+					ease: "power3.out",
+				}
+			);
 
-		gsap.from("figure", 1, {
-			scrollTrigger: ".dribbble_shot",
-			scaleY: 0,
-			transformOrigin: "top",
-			ease: "power4.inOut",
-			stagger: 0.15,
-			delay: 0.5,
-		});
+		gsap.fromTo(
+			"figure",
+			1,
+			{
+				scrollTrigger: ".dribbble_shot",
+				scaleY: 0,
+				transformOrigin: "top",
+				ease: "power4.inOut",
+				stagger: 0.15,
+				delay: 0.5,
+			},
+			{
+				scrollTrigger: ".dribbble_shot",
+				scaleY: 1,
+				transformOrigin: "top",
+				ease: "power4.inOut",
+				stagger: 0.15,
+				delay: 0.5,
+			}
+		);
 		gsap.fromTo(
 			".dribbble_shot",
 			2,
 			{
 				opacity: 0,
+				delay: 1.25,
+				stagger: 0.15,
+				ease: "power3.out",
+				scrollTrigger: ".dribbble_shot",
 			},
 			{
 				opacity: 1,
@@ -145,7 +184,7 @@ const Portfolio = (props) => {
 									Dribbble Followers
 								</p>
 								<p className='mt-1 text-3xl font-semibold'>
-									{props.account.followers_count}
+									{followers}
 								</p>
 							</a>
 						</section>
@@ -158,7 +197,7 @@ const Portfolio = (props) => {
 									Shots Shown
 								</p>
 								<p className='mt-1 text-3xl font-semibold'>
-									{`${loadedShots}/${props.shot.length}`}
+									{`${loadedShots}/${shotCount}`}
 								</p>
 							</a>
 						</section>
@@ -168,7 +207,7 @@ const Portfolio = (props) => {
 					<div
 						id='dribbble_container'
 						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'>
-						{props.shot
+						{shots
 							.slice(0, loadedShots)
 							.map(({ id, images, html_url, title }) => (
 								<a
@@ -197,9 +236,9 @@ const Portfolio = (props) => {
 								</a>
 							))}
 					</div>
-					{loadedShots !== props.shot.length && (
+					{loadedShots !== shotCount && (
 						<button
-							onClick={() => setLoadedShots(props.shot.length)}
+							onClick={() => setLoadedShots(shotCount)}
 							className='default-focus bg-primaryBrand hover:bg-lighterGrey md:px-8 mt-14 md:w-auto flex justify-center w-full py-4 mx-auto text-base font-medium text-white duration-300 ease-in-out'>
 							Load all shots
 						</button>
@@ -211,24 +250,5 @@ const Portfolio = (props) => {
 		</Layout>
 	);
 };
-
-export async function getServerSideProps() {
-	// DRIBBBLE
-	const resShots = await axios.get(
-		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}&per_page=100`
-	);
-	const resAccount = await axios.get(
-		`https://api.dribbble.com/v2/user?access_token=${process.env.DRIBBBLE_TOKEN}`
-	);
-	const shot = await resShots.data;
-	const account = await resAccount.data;
-
-	return {
-		props: {
-			shot,
-			account,
-		},
-	};
-}
 
 export default Portfolio;

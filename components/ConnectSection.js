@@ -109,9 +109,7 @@ const ConnectSection = (props) => {
                   Drop an email
 						</a> */}
 				</div>
-				<MotionInView>
-					<ContactForm />
-				</MotionInView>
+				<ContactForm />
 			</div>
 
 			<Footer />

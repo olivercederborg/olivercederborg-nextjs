@@ -79,8 +79,8 @@ const Index = (props) => {
 			<WorkSection sectionNumber={2} />
 			<AboutSection
 				sectionNumber={3}
-				account={props.account}
-				shot={props.shot}
+				// account={props.account}
+				// shot={props.shot}
 			/>
 			<ConnectSection sectionNumber={4} />
 
@@ -89,23 +89,23 @@ const Index = (props) => {
 	);
 };
 
-export async function getServerSideProps() {
-	// DRIBBBLE
-	const resShots = await axios.get(
-		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}&per_page=100`
-	);
-	const resAccount = await axios.get(
-		`https://api.dribbble.com/v2/user?access_token=${process.env.DRIBBBLE_TOKEN}`
-	);
-	const shot = await resShots.data;
-	const account = await resAccount.data;
+// export async function getServerSideProps() {
+// 	// DRIBBBLE
+// 	const resShots = await fetch(
+// 		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}&per_page=100`
+// 	);
+// 	const resAccount = await fetch(
+// 		`https://api.dribbble.com/v2/user?access_token=${process.env.DRIBBBLE_TOKEN}`
+// 	);
+// 	const shot = await resShots.json();
+// 	const account = await resAccount.json();
 
-	return {
-		props: {
-			shot,
-			account,
-		},
-	};
-}
+// 	return {
+// 		props: {
+// 			shot,
+// 			account,
+// 		},
+// 	};
+// }
 
 export default Index;
