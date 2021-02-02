@@ -13,27 +13,27 @@ const token =
 
 const Portfolio = (props) => {
 	const [loadedShots, setLoadedShots] = useState(9);
-	const getDribbble = async () => {
-		// DRIBBBLE
-		const resShots = await axios.get(
-			`https://api.dribbble.com/v2/user/shots?access_token=${token}&per_page=100`
-		);
-		const resAccount = await axios.get(
-			`https://api.dribbble.com/v2/user?access_token=${token}`
-		);
-		const shot = await resShots.data;
-		const account = await resAccount.data;
+	// const getDribbble = async () => {
+	// 	// DRIBBBLE
+	// 	const resShots = await axios.get(
+	// 		`https://api.dribbble.com/v2/user/shots?access_token=${token}&per_page=100`
+	// 	);
+	// 	const resAccount = await axios.get(
+	// 		`https://api.dribbble.com/v2/user?access_token=${token}`
+	// 	);
+	// 	const shot = await resShots.data;
+	// 	const account = await resAccount.data;
 
-		return {
-			props: {
-				shot,
-				account,
-			},
-		};
-	};
+	// 	return {
+	// 		props: {
+	// 			shot,
+	// 			account,
+	// 		},
+	// 	};
+	// };
 
 	useEffect(() => {
-		getDribbble();
+		// getDribbble();
 		gsap.to("body", 0, { css: { visibility: "visible" } });
 
 		if (typeof window !== "undefined") {
@@ -212,7 +212,7 @@ const Portfolio = (props) => {
 	);
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	// DRIBBBLE
 	const resShots = await axios.get(
 		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}&per_page=100`
