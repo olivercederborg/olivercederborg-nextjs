@@ -70,27 +70,28 @@ const Portfolio = (props) => {
 				ease: "power3.out",
 			});
 
-		dribbbleShotTl
-			.from("figure", 1, {
-				scaleY: 0,
-				transformOrigin: "top",
-				ease: "power4.inOut",
+		gsap.from("figure", 1, {
+			scrollTrigger: ".dribbble_shot",
+			scaleY: 0,
+			transformOrigin: "top",
+			ease: "power4.inOut",
+			stagger: 0.15,
+			delay: 0.5,
+		});
+		gsap.fromTo(
+			".dribbble_shot",
+			1,
+			{
+				opacity: 0,
+			},
+			{
+				opacity: 1,
+				delay: 1.5,
 				stagger: 0.15,
-				delay: 0.5,
-			})
-			.fromTo(
-				".dribbble_shot",
-				2,
-				{
-					opacity: 0,
-				},
-				{
-					opacity: 1,
-					delay: -1.75,
-					stagger: 0.15,
-					ease: "power3.out",
-				}
-			);
+				ease: "power3.out",
+				scrollTrigger: ".dribbble_shot",
+			}
+		);
 	});
 
 	return (
@@ -154,6 +155,7 @@ const Portfolio = (props) => {
 									target='_blank'
 									className='group default-focus transition-opacity duration-200 ease-in-out'>
 									<figure
+										id={id}
 										key={id}
 										className='bg-lighterGrey relative w-full overflow-hidden'>
 										<div className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
@@ -173,10 +175,10 @@ const Portfolio = (props) => {
 								</a>
 							))}
 					</div>
-					{loadedShots !== 100 && (
+					{loadedShots !== props.shot.length && (
 						<button
-							onClick={() => setLoadedShots(100)}
-							className='default-focus bg-primaryBrand hover:bg-lighterGrey md:px-8 mt-14 inline-flex justify-center py-4 text-base font-medium text-center text-white duration-300 ease-in-out'>
+							onClick={() => setLoadedShots(props.shot.length)}
+							className='default-focus bg-primaryBrand hover:bg-lighterGrey md:px-8 mt-14 md:w-auto flex justify-center w-full py-4 mx-auto text-base font-medium text-white duration-300 ease-in-out'>
 							Load all shots
 						</button>
 					)}
