@@ -18,19 +18,19 @@ const ConnectSection = (props) => {
 			scrollTrigger: {
 				trigger: "#connect",
 				start: "center bottom",
-				end: "=-300",
-			},
+				end: "=-300"
+			}
 		});
 		connectTl
 			.fromTo(
 				"#connect .section-line",
 				1,
 				{
-					width: 0,
+					width: 0
 				},
 				{
 					width: "4rem",
-					ease: "power3.inOut",
+					ease: "power3.inOut"
 				}
 			)
 			.from("#connect .section-category", 1.5, {
@@ -38,7 +38,7 @@ const ConnectSection = (props) => {
 				opacity: 0,
 				stagger: 0.3,
 				delay: -0.5,
-				ease: "power3.out",
+				ease: "power3.out"
 			})
 			.from(".connect-h2", 1, {
 				x: -70,
@@ -46,21 +46,21 @@ const ConnectSection = (props) => {
 				stagger: 0.3,
 				skewX: 3,
 				delay: -1.5,
-				ease: "power3.out",
+				ease: "power3.out"
 			})
 			.from(".connect-content", 1, {
 				y: -20,
 				opacity: 0,
 				stagger: 0.3,
 				delay: -0.75,
-				ease: "power3.out",
+				ease: "power3.out"
 			})
 			.from("#connect .connect-cta", 1, {
 				y: -20,
 				opacity: 0,
 				stagger: 0.3,
 				delay: -0.75,
-				ease: "power3.out",
+				ease: "power3.out"
 			});
 	});
 
@@ -74,7 +74,8 @@ const ConnectSection = (props) => {
 					: props.sectionNumber % 2 != 0
 					? " bg-backgroundOne"
 					: "")
-			}>
+			}
+		>
 			<div className='pb-36 md:pb-48 container'>
 				<div className='flex flex-row items-center'>
 					<div className='section-line bg-primaryBrand w-16 h-1 mr-6'></div>
@@ -95,20 +96,11 @@ const ConnectSection = (props) => {
 						href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..."
 						target='_blank'
 						onClick={() => logEvent("Contact me", "Email link clicked")}
-						className='default-focus text-primaryBrand border-b-1 border-backgroundTwo hover:border-primaryBrand duration-200 ease-in-out'>
+						className='default-focus text-primaryBrand border-b-1 border-backgroundTwo hover:border-primaryBrand duration-200 ease-in-out'
+					>
 						hey@olivercederborg.com
 					</a>
 				</p>
-
-				<div className='connect-cta'>
-					{/* <a
-                  href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..."
-                  onClick={() => logEvent("Contact me", "Contact me button clicked")}
-                  className='bg-primaryBrand hover:bg-lightGrey inline-flex w-auto px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'
-               >
-                  Drop an email
-						</a> */}
-				</div>
 				<ContactForm />
 			</div>
 
