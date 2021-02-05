@@ -26,13 +26,13 @@ const Navbar = (props) => {
 				1.5,
 				{
 					// y: -30,
-					opacity: 0,
+					opacity: 0
 				},
 				{
 					// y: 0,
 					opacity: 1,
 					delay: 0.3,
-					ease: "power3.inOut",
+					ease: "power3.inOut"
 				}
 			);
 		}
@@ -64,11 +64,12 @@ const Navbar = (props) => {
 	return (
 		<>
 			{router.pathname === "/" ? (
-				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-10 hidden w-full'>
+				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-20 hidden w-full'>
 					<nav className='container'>
 						<div
 							id='navigation'
-							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'>
+							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'
+						>
 							<div>
 								<AnchorLink href='#hero' className='default-focus'>
 									<img
@@ -82,30 +83,35 @@ const Navbar = (props) => {
 								<Scrollspy
 									items={["hero", "work", "about", "connect"]}
 									currentClassName='is-current'
-									offset={-350}>
+									offset={-350}
+								>
 									<AnchorLink
 										href='index#hero'
 										offset='72'
-										className='default-focus hover:text-white hidden px-5 duration-300 ease-in-out'>
+										className='default-focus hover:text-white hidden px-5 duration-300 ease-in-out'
+									>
 										Home
 									</AnchorLink>
 									<AnchorLink
 										href='#work'
 										id='work-link'
 										offset='72'
-										className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
+									>
 										Work
 									</AnchorLink>
 									<AnchorLink
 										href='#about'
 										offset='72'
-										className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
+									>
 										About
 									</AnchorLink>
 									<AnchorLink
 										href='#connect'
 										offset='72'
-										className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
+										className='default-focus hover:text-white px-5 duration-300 ease-in-out'
+									>
 										Connect
 									</AnchorLink>
 									<Link href='/portfolio'>
@@ -119,11 +125,12 @@ const Navbar = (props) => {
 					</nav>
 				</header>
 			) : (
-				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-10 hidden w-full'>
+				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-20 hidden w-full'>
 					<nav className='container'>
 						<div
 							id='navigation'
-							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'>
+							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'
+						>
 							<div>
 								<Link href='/'>
 									<a className='default-focus hover:opacity-70 h-8 duration-200 ease-in-out'>
@@ -139,7 +146,8 @@ const Navbar = (props) => {
 								<Scrollspy
 									items={["hero", "work", "about", "connect"]}
 									currentClassName='is-current'
-									offset={-350}>
+									offset={-350}
+								>
 									<Link href='/#work' id='work-link'>
 										<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
 											Work
@@ -176,26 +184,31 @@ const Navbar = (props) => {
 					className='md:hidden bg-opacity-90 justify-evenly border-t-1 fixed bottom-0 z-10 flex flex-row w-full text-2xl text-center text-gray-500 bg-gray-900 border-gray-800'
 					style={{
 						backdropFilter: "saturate(180%) blur(20px)",
-						WebkitBackdropFilter: "saturate(180%) blur(20px)",
-					}}>
+						WebkitBackdropFilter: "saturate(180%) blur(20px)"
+					}}
+				>
 					<AnchorLink
 						href='#hero'
-						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
+					>
 						<BiHomeAlt />
 					</AnchorLink>
 					<AnchorLink
 						href='#work'
-						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
+					>
 						<FiBriefcase />
 					</AnchorLink>
 					<AnchorLink
 						href='#about'
-						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
+					>
 						<BiUser />
 					</AnchorLink>
 					<AnchorLink
 						href='#connect'
-						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
+						className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'
+					>
 						<HiOutlineMail />
 					</AnchorLink>
 				</Scrollspy>
@@ -204,8 +217,9 @@ const Navbar = (props) => {
 					className='md:hidden bg-opacity-90 justify-evenly border-t-1 fixed bottom-0 z-10 flex flex-row w-full text-2xl text-center text-gray-500 bg-gray-900 border-gray-800'
 					style={{
 						backdropFilter: "saturate(180%) blur(20px)",
-						WebkitBackdropFilter: "saturate(180%) blur(20px)",
-					}}>
+						WebkitBackdropFilter: "saturate(180%) blur(20px)"
+					}}
+				>
 					<Link href='/'>
 						<a className='default-focus hover:text-white px-8 py-6 duration-300 ease-in-out'>
 							<BiHomeAlt />

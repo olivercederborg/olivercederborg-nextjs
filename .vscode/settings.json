@@ -9,7 +9,9 @@
       "gsap",
       "hidpi",
       "key",
+      "maxage",
       "prevstate",
+      "secheader",
       "semibold",
       "sendgrid"
    ]

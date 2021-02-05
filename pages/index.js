@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { gsap } from "gsap";
-import axios from "axios";
+import useSWR from "swr";
 
 //import components
 import Layout from "../components/Layout";
@@ -10,7 +10,12 @@ import AboutSection from "../components/AboutSection";
 import ConnectSection from "../components/ConnectSection";
 import HeroSection from "../components/HeroSection";
 
+import fetcher from "../utils/fetcher";
+import { DribbbleContext } from "../utils/DribbbleContext";
+
 const Index = (props) => {
+	const { shots, followers } = useContext(DribbbleContext);
+
 	useEffect(() => {
 		gsap.to("body", 0, { css: { visibility: "visible" } });
 	});
@@ -77,35 +82,12 @@ const Index = (props) => {
 			</Head>
 			<HeroSection />
 			<WorkSection sectionNumber={2} />
-			<AboutSection
-				sectionNumber={3}
-				// account={props.account}
-				// shot={props.shot}
-			/>
+			<AboutSection sectionNumber={3} followers={followers} shots={shots} />
 			<ConnectSection sectionNumber={4} />
 
 			<script> </script>
 		</Layout>
 	);
 };
-
-// export async function getServerSideProps() {
-// 	// DRIBBBLE
-// 	const resShots = await fetch(
-// 		`https://api.dribbble.com/v2/user/shots?access_token=${process.env.DRIBBBLE_TOKEN}&per_page=100`
-// 	);
-// 	const resAccount = await fetch(
-// 		`https://api.dribbble.com/v2/user?access_token=${process.env.DRIBBBLE_TOKEN}`
-// 	);
-// 	const shot = await resShots.json();
-// 	const account = await resAccount.json();
-
-// 	return {
-// 		props: {
-// 			shot,
-// 			account,
-// 		},
-// 	};
-// }
 
 export default Index;

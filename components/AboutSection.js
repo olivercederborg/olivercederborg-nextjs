@@ -5,18 +5,17 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { logEvent } from "../utils/analytics";
 import { FaDribbble } from "react-icons/fa";
 import { VscGithubInverted } from "react-icons/vsc";
-import useSWR from "swr";
 
-import fetcher from "../utils/fetcher";
 import Link from "next/link";
 
-const AboutSection = (props) => {
-	const { data } = useSWR("/api/dribbble", fetcher);
+const AboutSection = ({ followers, shots, sectionNumber }) => {
+	// const { data, error } = useSWR("/api/dribbble", fetcher);
 
-	const followers = data?.followers;
-	const shotCount = data?.shots.length;
+	// const followers = data?.followers;
+	// const shotCount = data?.shots.length;
 
 	useEffect(() => {
+		console.log(followers);
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
@@ -25,19 +24,19 @@ const AboutSection = (props) => {
 			scrollTrigger: {
 				trigger: "#about .section-line",
 				start: "top bottom",
-				end: "=-300",
-			},
+				end: "=-300"
+			}
 		});
 		aboutTl
 			.fromTo(
 				"#about .section-line",
 				1,
 				{
-					width: 0,
+					width: 0
 				},
 				{
 					width: "4rem",
-					ease: "power3.inOut",
+					ease: "power3.inOut"
 				}
 			)
 			.fromTo(
@@ -45,7 +44,7 @@ const AboutSection = (props) => {
 				1.5,
 				{
 					x: -10,
-					opacity: 0,
+					opacity: 0
 				},
 				{
 					x: 0,
@@ -53,7 +52,7 @@ const AboutSection = (props) => {
 					skewX: 0,
 					stagger: 0.3,
 					delay: -0.5,
-					ease: "power3.out",
+					ease: "power3.out"
 				}
 			)
 			.fromTo(
@@ -62,7 +61,7 @@ const AboutSection = (props) => {
 				{
 					x: -70,
 					opacity: 0,
-					skewX: 3,
+					skewX: 3
 				},
 				{
 					x: 0,
@@ -70,7 +69,7 @@ const AboutSection = (props) => {
 					skewX: 0,
 					stagger: 0.3,
 					delay: -1.5,
-					ease: "power3.out",
+					ease: "power3.out"
 				}
 			);
 
@@ -79,19 +78,19 @@ const AboutSection = (props) => {
 			scrollTrigger: {
 				trigger: "#skills",
 				start: "top bottom",
-				end: "=-300",
-			},
+				end: "=-300"
+			}
 		});
 		skillsTl
 			.fromTo(
 				"#skills .intro-line",
 				1,
 				{
-					width: 0,
+					width: 0
 				},
 				{
 					width: "1.5rem",
-					ease: "power3.inOut",
+					ease: "power3.inOut"
 				}
 			)
 			.fromTo(
@@ -100,14 +99,14 @@ const AboutSection = (props) => {
 				{
 					opacity: 0,
 					x: -10,
-					skewX: 2,
+					skewX: 2
 				},
 				{
 					opacity: 1,
 					x: 0,
 					skewX: 0,
 					stagger: 0.3,
-					delay: -0.5,
+					delay: -0.5
 				}
 			)
 			.fromTo(
@@ -116,14 +115,14 @@ const AboutSection = (props) => {
 				{
 					y: -20,
 					opacity: 0,
-					skewX: 2,
+					skewX: 2
 				},
 				{
 					y: 0,
 					opacity: 1,
 					skewX: 0,
 					stagger: 0.3,
-					delay: -0.75,
+					delay: -0.75
 				}
 			)
 			.fromTo(
@@ -131,14 +130,14 @@ const AboutSection = (props) => {
 				1,
 				{
 					y: -20,
-					opacity: 0,
+					opacity: 0
 				},
 				{
-					y: -20,
-					opacity: 0,
+					y: 0,
+					opacity: 1,
 					stagger: 0.3,
 					delay: -0.5,
-					ease: "power3.out",
+					ease: "power3.out"
 				}
 			);
 
@@ -146,19 +145,19 @@ const AboutSection = (props) => {
 			scrollTrigger: {
 				trigger: "#aboutme",
 				start: "top bottom",
-				end: "=-300",
-			},
+				end: "=-300"
+			}
 		});
 		aboutMeTl
 			.fromTo(
 				"#aboutme .intro-line",
 				1,
 				{
-					width: 0,
+					width: 0
 				},
 				{
 					width: "1.5rem",
-					ease: "power3.inOut",
+					ease: "power3.inOut"
 				}
 			)
 			.fromTo(
@@ -166,13 +165,13 @@ const AboutSection = (props) => {
 				1,
 				{
 					opacity: 0,
-					x: -10,
+					x: -10
 				},
 				{
 					opacity: 1,
 					x: 0,
 					stagger: 0.3,
-					delay: -0.5,
+					delay: -0.5
 				}
 			)
 			.fromTo(
@@ -180,13 +179,13 @@ const AboutSection = (props) => {
 				1,
 				{
 					y: -20,
-					opacity: 0,
+					opacity: 0
 				},
 				{
 					y: 0,
 					opacity: 1,
 					stagger: 0.3,
-					delay: -0.75,
+					delay: -0.75
 				}
 			);
 
@@ -199,8 +198,8 @@ const AboutSection = (props) => {
 				scrollTrigger: {
 					trigger: "#about-img",
 					start: "top bottom",
-					end: "=-300",
-				},
+					end: "=-300"
+				}
 			},
 			{
 				opacity: 1,
@@ -210,8 +209,8 @@ const AboutSection = (props) => {
 				scrollTrigger: {
 					trigger: "#about-img",
 					start: "top bottom",
-					end: "=-300",
-				},
+					end: "=-300"
+				}
 			}
 		);
 	});
@@ -221,12 +220,13 @@ const AboutSection = (props) => {
 			id='about'
 			className={
 				"pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden" +
-				(props.sectionNumber % 2 === 0
+				(sectionNumber % 2 === 0
 					? " bg-backgroundTwo "
-					: props.sectionNumber % 2 != 0
+					: sectionNumber % 2 != 0
 					? " bg-backgroundOne"
 					: "")
-			}>
+			}
+		>
 			<div className='container'>
 				<div className='flex flex-row items-center'>
 					<div className='section-line bg-primaryBrand w-16 h-1 mr-6'></div>
@@ -245,12 +245,13 @@ const AboutSection = (props) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'
+							>
 								<p className='opacity-90 inline-flex items-center text-sm'>
 									Dribbble Followers
 								</p>
 								<p className='mt-1 text-3xl font-semibold'>
-									{followers}
+									{followers ? followers : "Loading"}
 								</p>
 							</a>
 							<Link href='/portfolio'>
@@ -259,7 +260,7 @@ const AboutSection = (props) => {
 										Dribbble Shots
 									</p>
 									<p className='mt-1 text-3xl font-semibold'>
-										{shotCount}
+										{shots ? shots.length : "Loading"}
 									</p>
 								</a>
 							</Link>
@@ -305,7 +306,8 @@ const AboutSection = (props) => {
 										`User clicked CTA on about section`
 									)
 								}
-								className='default-focus bg-primaryBrand hover:bg-lighterGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'>
+								className='default-focus bg-primaryBrand hover:bg-lighterGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'
+							>
 								Get in touch
 							</AnchorLink>
 						</div>
