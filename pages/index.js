@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useContext, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 
 //import components
@@ -8,11 +8,8 @@ import WorkSection from "../components/WorkSection";
 import AboutSection from "../components/AboutSection";
 import ConnectSection from "../components/ConnectSection";
 import HeroSection from "../components/HeroSection";
-import { DribbbleContext } from "../utils/DribbbleContext";
 
 const Index = (props) => {
-	const { shots, followers } = useContext(DribbbleContext);
-
 	useEffect(() => {
 		gsap.to("body", 0, { css: { visibility: "visible" } });
 	});
@@ -79,7 +76,7 @@ const Index = (props) => {
 			</Head>
 			<HeroSection />
 			<WorkSection sectionNumber={2} />
-			<AboutSection sectionNumber={3} followers={followers} shots={shots} />
+			<AboutSection sectionNumber={3} />
 			<ConnectSection sectionNumber={4} />
 
 			<script> </script>
