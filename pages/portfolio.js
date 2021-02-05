@@ -29,14 +29,6 @@ const Portfolio = (props) => {
 			}
 		});
 
-		const dribbbleShotTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: "#dribbble_container",
-				start: "top bottom",
-				end: "=-300"
-			}
-		});
-
 		portfolioTl
 			.fromTo(
 				"#portfolio .section-line",
@@ -107,73 +99,40 @@ const Portfolio = (props) => {
 				}
 			);
 
-		// gsap.fromTo(
-		// 	"figure",
-		// 	1,
-		// 	{
-		// 		scaleY: 0,
-		// 		transformOrigin: "top",
-		// 	},
-		// 	{
-		// 		scrollTrigger: ".dribbble_shot",
-		// 		scaleY: 1,
-		// 		transformOrigin: "top",
-		// 		ease: "power4.inOut",
-		// 		stagger: 0.15,
-		// 		delay: 0.5,
-		// 	}
-		// );
-		// gsap.fromTo(
-		// 	".dribbble_shot",
-		// 	2,
-		// 	{
-		// 		opacity: 0,
-		// 		delay: 1.25,
-		// 	},
-		// 	{
-		// 		opacity: 1,
-		// 		delay: 1.25,
-		// 		stagger: 0.15,
-		// 		ease: "power3.out",
-		// 		scrollTrigger: ".dribbble_shot",
-		// 	}
-		// );
-	}, []);
-
-	const shotContainer = {
-		hidden: {
-			opacity: 0
-		},
-		visible: {
-			opacity: 1,
-			transition: {
-				duration: 1,
-				staggerChildren: 0.5,
-				delayChildren: 0.5
+		gsap.fromTo(
+			"figure",
+			1,
+			{
+				scaleY: 0,
+				skew: 0,
+				transformOrigin: "top"
+			},
+			{
+				scrollTrigger: ".dribbble_shot",
+				scaleY: 1,
+				skew: 0,
+				transformOrigin: "top",
+				ease: "power4.inOut",
+				stagger: 0.15,
+				delay: 0.5
 			}
-		}
-	};
-
-	// const variants = {
-	// 	hidden: {
-	// 		y: -100,
-	// 		opacity: 0,
-	// 		transition: {
-	// 			duration: 1,
-	// 			stagger: 0.5,
-	// 			delay: 0.5,
-	// 		},
-	// 	},
-	// 	visible: (i) => ({
-	// 		y: 0,
-	// 		opacity: 1,
-	// 		transition: {
-	// 			duration: 1,
-	// 			stagger: 0.5,
-	// 			delay: i * 0.05,
-	// 		},
-	// 	}),
-	// };
+		);
+		gsap.fromTo(
+			".dribbble_shot",
+			2,
+			{
+				opacity: 0,
+				delay: 1.3
+			},
+			{
+				opacity: 1,
+				delay: 1.3,
+				stagger: 0.15,
+				ease: "power3.out",
+				scrollTrigger: ".dribbble_shot"
+			}
+		);
+	}, []);
 
 	return (
 		<Layout>
@@ -229,54 +188,46 @@ const Portfolio = (props) => {
 					</div>
 				</section>
 				<div className='container pb-20'>
-					<AnimatePresence>
-						<motion.div
-							id='dribbble_container'
-							className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'
-							variants={shotContainer}
-							animate='visible'
-							initial='hidden'
-						>
-							{shots ? (
-								shots
-									.slice(0, loadedShots)
-									.map(({ id, images, html_url, title }) => (
-										<motion.a
+					<div
+						id='dribbble_container'
+						className='lg:grid-cols-3 md:grid-cols-2 grid grid-cols-1 gap-0 mt-20'
+					>
+						{shots ? (
+							shots
+								.slice(0, loadedShots)
+								.map(({ id, images, html_url, title }) => (
+									<a
+										key={id}
+										href={html_url}
+										target='_blank'
+										className='group default-focus transition-opacity duration-200 ease-in-out'
+									>
+										<figure
+											id={id}
 											key={id}
-											href={html_url}
-											target='_blank'
-											className='group default-focus transition-opacity duration-200 ease-in-out'
-											initial='hidden'
-											animate='visible'
+											className='bg-lighterGrey relative w-full overflow-hidden'
 										>
-											<figure
-												id={id}
-												key={id}
-												className='bg-lighterGrey relative w-full overflow-hidden'
-											>
-												<div className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
-													<p className='group-hover:opacity-100 flex flex-col items-center text-3xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
-														<span className='p-2 mb-3 bg-white rounded-full opacity-50'>
-															<RiExternalLinkLine className='text-primaryBrand text-2xl font-semibold transition-all duration-200 ease-in-out' />
-														</span>
-														{title}
-													</p>
-												</div>
-												<motion.img
-													src={images.hidpi}
-													className='dribbble_shot'
-													alt={title}
-													initial='hidden'
-													animate='visible'
-												/>
-											</figure>
-										</motion.a>
-									))
-							) : (
-								<></>
-							)}
-						</motion.div>
-					</AnimatePresence>
+											<div className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
+												<p className='group-hover:opacity-100 flex flex-col items-center text-3xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
+													<span className='p-2 mb-3 bg-white rounded-full opacity-50'>
+														<RiExternalLinkLine className='text-primaryBrand text-2xl font-semibold transition-all duration-200 ease-in-out' />
+													</span>
+													{title}
+												</p>
+											</div>
+											<img
+												src={images.hidpi}
+												className='dribbble_shot'
+												alt={title}
+											/>
+										</figure>
+									</a>
+								))
+						) : (
+							<></>
+						)}
+					</div>
+
 					{shots && loadedShots !== shots.length ? (
 						<button
 							onClick={() => setLoadedShots(shots.length)}
