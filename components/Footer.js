@@ -5,11 +5,6 @@ import { FaTwitter, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer = (props) => {
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			gsap.registerPlugin(ScrollTrigger);
-		}
-
-		//footer section
 		const footerTl = gsap.timeline({});
 		footerTl.fromTo(
 			"footer",
