@@ -121,12 +121,25 @@ const Portfolio = (props) => {
 			".dribbble_shot",
 			2,
 			{
-				opacity: 0,
-				delay: 1.3
+				opacity: 0
 			},
 			{
 				opacity: 1,
 				delay: 1.3,
+				stagger: 0.15,
+				ease: "power3.out",
+				scrollTrigger: ".dribbble_shot"
+			}
+		);
+		gsap.fromTo(
+			"#overlay",
+			2,
+			{
+				opacity: 0
+			},
+			{
+				opacity: 1,
+				delay: 0.5,
 				stagger: 0.15,
 				ease: "power3.out",
 				scrollTrigger: ".dribbble_shot"
@@ -207,7 +220,10 @@ const Portfolio = (props) => {
 											key={id}
 											className='bg-lighterGrey relative w-full overflow-hidden'
 										>
-											<div className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'>
+											<div
+												id='overlay'
+												className='bg-primaryBrand group-hover:bg-opacity-90 justify-items-center absolute top-0 bottom-0 left-0 right-0 z-10 flex items-center justify-center px-6 py-10 text-center transition-all duration-200 ease-in-out bg-opacity-0'
+											>
 												<p className='group-hover:opacity-100 flex flex-col items-center text-3xl font-semibold text-white transition-all duration-200 ease-in-out opacity-0'>
 													<span className='p-2 mb-3 bg-white rounded-full opacity-50'>
 														<RiExternalLinkLine className='text-primaryBrand text-2xl font-semibold transition-all duration-200 ease-in-out' />
