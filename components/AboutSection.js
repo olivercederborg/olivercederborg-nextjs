@@ -1,16 +1,19 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { logEvent } from "../utils/analytics";
 import Link from "next/link";
+import { DribbbleContext } from "../utils/DribbbleContext";
 
-const AboutSection = ({ followers, shots, sectionNumber }) => {
+const AboutSection = ({ sectionNumber }) => {
+	const { shots, followers } = useContext(DribbbleContext);
+
 	useEffect(() => {
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
-		//about section timeline
+
 		const aboutTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#about .section-line",
@@ -62,9 +65,75 @@ const AboutSection = ({ followers, shots, sectionNumber }) => {
 					delay: -1.5,
 					ease: "power3.out"
 				}
+			)
+			.fromTo(
+				".dribbble-stats",
+				1,
+				{
+					y: -30,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -1.5,
+					ease: "power3.out"
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -1.5,
+					ease: "power3.out"
+				}
 			);
 
-		//about skills timeline
+		const aboutMeTl = gsap.timeline({
+			scrollTrigger: {
+				trigger: "#aboutme",
+				start: "top bottom",
+				end: "=-300"
+			}
+		});
+		aboutMeTl
+			.fromTo(
+				"#aboutme .intro-line",
+				1,
+				{
+					width: 0
+				},
+				{
+					width: "1.5rem",
+					delay: 0.5,
+					ease: "power3.inOut"
+				}
+			)
+			.fromTo(
+				"#aboutme .intro-text",
+				1,
+				{
+					opacity: 0,
+					x: -10
+				},
+				{
+					opacity: 1,
+					x: 0,
+					stagger: 0.3,
+					delay: -0.5
+				}
+			)
+			.fromTo(
+				".aboutme-content",
+				1,
+				{
+					y: -20,
+					opacity: 0
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.75
+				}
+			);
+
 		const skillsTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#skills",
@@ -81,6 +150,7 @@ const AboutSection = ({ followers, shots, sectionNumber }) => {
 				},
 				{
 					width: "1.5rem",
+					delay: 0.5,
 					ease: "power3.inOut"
 				}
 			)
@@ -129,54 +199,6 @@ const AboutSection = ({ followers, shots, sectionNumber }) => {
 					stagger: 0.3,
 					delay: -0.5,
 					ease: "power3.out"
-				}
-			);
-
-		const aboutMeTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: "#aboutme",
-				start: "top bottom",
-				end: "=-300"
-			}
-		});
-		aboutMeTl
-			.fromTo(
-				"#aboutme .intro-line",
-				1,
-				{
-					width: 0
-				},
-				{
-					width: "1.5rem",
-					ease: "power3.inOut"
-				}
-			)
-			.fromTo(
-				"#aboutme .intro-text",
-				1,
-				{
-					opacity: 0,
-					x: -10
-				},
-				{
-					opacity: 1,
-					x: 0,
-					stagger: 0.3,
-					delay: -0.5
-				}
-			)
-			.fromTo(
-				".aboutme-content",
-				1,
-				{
-					y: -20,
-					opacity: 0
-				},
-				{
-					y: 0,
-					opacity: 1,
-					stagger: 0.3,
-					delay: -0.75
 				}
 			);
 
@@ -236,7 +258,7 @@ const AboutSection = ({ followers, shots, sectionNumber }) => {
 							<a
 								href='https://dribbble.com/oliver'
 								target='_blank'
-								className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'
+								className='dribbble-stats default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'
 							>
 								<p className='opacity-90 inline-flex items-center text-sm'>
 									Dribbble Followers
@@ -246,7 +268,7 @@ const AboutSection = ({ followers, shots, sectionNumber }) => {
 								</p>
 							</a>
 							<Link href='/portfolio'>
-								<a className='default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
+								<a className='dribbble-stats default-focus bg-lightGrey hover:bg-lighterGrey flex flex-col px-5 py-5 text-base text-white transition-colors duration-200 ease-in-out rounded-sm outline-none'>
 									<p className='opacity-90 inline-flex items-center text-sm'>
 										Dribbble Shots
 									</p>
