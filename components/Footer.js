@@ -10,18 +10,26 @@ const Footer = (props) => {
 		}
 
 		//footer section
-		const footerTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: "footer",
-				start: "top bottom",
-				end: "=-300",
+		const footerTl = gsap.timeline({});
+		footerTl.fromTo(
+			"footer",
+			1.5,
+			{
+				y: -30,
+				opacity: 0,
+				ease: "power3.inOut",
+				scrollTrigger: {
+					trigger: "footer",
+					start: "top bottom",
+					end: "=-300"
+				}
 			},
-		});
-		footerTl.from("footer", 1.5, {
-			y: -30,
-			opacity: 0,
-			ease: "power3.inOut",
-		});
+			{
+				y: 0,
+				opacity: 1,
+				ease: "power3.inOut"
+			}
+		);
 	});
 
 	return (
@@ -34,25 +42,29 @@ const Footer = (props) => {
 				<a
 					href='https://dribbble.com/oliver'
 					target='_blank'
-					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'>
+					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'
+				>
 					<FaDribbble />
 				</a>
 				<a
 					href='https://twitter.com/olivercederborg'
 					target='_blank'
-					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'>
+					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'
+				>
 					<FaTwitter />
 				</a>
 				<a
 					href='https://instagram.com/olivercederborg'
 					target='_blank'
-					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'>
+					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'
+				>
 					<FaInstagram />
 				</a>
 				<a
 					href='https://www.linkedin.com/in/olivercederborg'
 					target='_blank'
-					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'>
+					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'
+				>
 					<FaLinkedin />
 				</a>
 			</div>
