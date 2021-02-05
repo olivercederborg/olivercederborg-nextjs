@@ -8,7 +8,6 @@ const Footer = (props) => {
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
-
 		//footer section
 		const footerTl = gsap.timeline({});
 		footerTl.fromTo(

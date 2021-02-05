@@ -1,12 +1,9 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { FaTwitter, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { logEvent } from "../utils/analytics";
 
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
-import MotionInView from "./MotionInView";
 
 const ConnectSection = (props) => {
 	useEffect(() => {
@@ -18,50 +15,95 @@ const ConnectSection = (props) => {
 			scrollTrigger: {
 				trigger: "#connect",
 				start: "center bottom",
-				end: "=-300",
-			},
+				end: "=-300"
+			}
 		});
 		connectTl
 			.fromTo(
 				"#connect .section-line",
 				1,
 				{
-					width: 0,
+					width: 0
 				},
 				{
 					width: "4rem",
-					ease: "power3.inOut",
+					ease: "power3.inOut"
 				}
 			)
-			.from("#connect .section-category", 1.5, {
-				x: -10,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.5,
-				ease: "power3.out",
-			})
-			.from(".connect-h2", 1, {
-				x: -70,
-				opacity: 0,
-				stagger: 0.3,
-				skewX: 3,
-				delay: -1.5,
-				ease: "power3.out",
-			})
-			.from(".connect-content", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.75,
-				ease: "power3.out",
-			})
-			.from("#connect .connect-cta", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.75,
-				ease: "power3.out",
-			});
+			.fromTo(
+				"#connect .section-category",
+				1.5,
+				{
+					x: -10,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out"
+				},
+				{
+					x: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out"
+				}
+			)
+			.fromTo(
+				".connect-h2",
+				1,
+				{
+					x: -70,
+					opacity: 0,
+					stagger: 0.3,
+					skewX: 3,
+					delay: -1.5,
+					ease: "power3.out"
+				},
+				{
+					x: 0,
+					opacity: 1,
+					stagger: 0.3,
+					skewX: 0,
+					delay: -1.5,
+					ease: "power3.out"
+				}
+			)
+			.fromTo(
+				".connect-content",
+				1,
+				{
+					y: -20,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				}
+			)
+			.fromTo(
+				"#connect .connect-cta",
+				1,
+				{
+					y: -20,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				}
+			);
 	});
 
 	return (
@@ -74,7 +116,8 @@ const ConnectSection = (props) => {
 					: props.sectionNumber % 2 != 0
 					? " bg-backgroundOne"
 					: "")
-			}>
+			}
+		>
 			<div className='pb-36 md:pb-48 container'>
 				<div className='flex flex-row items-center'>
 					<div className='section-line bg-primaryBrand w-16 h-1 mr-6'></div>
@@ -95,20 +138,11 @@ const ConnectSection = (props) => {
 						href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..."
 						target='_blank'
 						onClick={() => logEvent("Contact me", "Email link clicked")}
-						className='default-focus text-primaryBrand border-b-1 border-backgroundTwo hover:border-primaryBrand duration-200 ease-in-out'>
+						className='default-focus text-primaryBrand border-b-1 border-backgroundTwo hover:border-primaryBrand duration-200 ease-in-out'
+					>
 						hey@olivercederborg.com
 					</a>
 				</p>
-
-				<div className='connect-cta'>
-					{/* <a
-                  href="mailto:hey@olivercederborg.com?subject=Contact from olivercederborg.com&amp;body=Hey Oliver, I'm contacting you because..."
-                  onClick={() => logEvent("Contact me", "Contact me button clicked")}
-                  className='bg-primaryBrand hover:bg-lightGrey inline-flex w-auto px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'
-               >
-                  Drop an email
-						</a> */}
-				</div>
 				<ContactForm />
 			</div>
 

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useContext, useEffect, useState } from "react";
 import { gsap } from "gsap";
-import useSWR from "swr";
 
 //import components
 import Layout from "../components/Layout";
@@ -9,8 +8,6 @@ import WorkSection from "../components/WorkSection";
 import AboutSection from "../components/AboutSection";
 import ConnectSection from "../components/ConnectSection";
 import HeroSection from "../components/HeroSection";
-
-import fetcher from "../utils/fetcher";
 import { DribbbleContext } from "../utils/DribbbleContext";
 
 const Index = (props) => {

@@ -6,8 +6,6 @@ import { logEvent } from "../utils/analytics";
 
 const HeroSection = (props) => {
 	useEffect(() => {
-		//gsap
-		gsap.to("body", 0, { css: { visibility: "visible" } });
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}
@@ -16,33 +14,33 @@ const HeroSection = (props) => {
 			scrollTrigger: {
 				trigger: "#hero-content .reveal-title",
 				start: "top bottom",
-				end: "=-200",
-			},
+				end: "=-200"
+			}
 		});
 		titleRevealTl
 			.to(".reveal-title-content", 0, {
 				visibility: "visible",
-				delay: 0.3,
+				delay: 0.3
 			})
 			.to(".reveal-title-revealer", 1, {
 				scaleX: 0,
 				transformOrigin: "right",
 				ease: "power4.inOut",
-				stagger: 0.6,
+				stagger: 0.6
 			})
 			.fromTo(
 				".hero-add",
 				1,
 				{
 					y: -20,
-					opacity: 0,
+					opacity: 0
 				},
 				{
 					y: 0,
 					opacity: 1,
 					delay: -0.3,
 					stagger: 0.3,
-					ease: "power3.out",
+					ease: "power3.out"
 				}
 			);
 	});
@@ -50,12 +48,14 @@ const HeroSection = (props) => {
 	return (
 		<section
 			id='hero'
-			className='bg-backgroundOne lg:bg-hero-pattern lg:bg-large-desk xl:bg-none bg-no-repeat'>
+			className='bg-backgroundOne lg:bg-hero-pattern lg:bg-large-desk xl:bg-none bg-no-repeat'
+		>
 			<div className='pb-30 md:pt-56 lg:pt-60 xl:pt-72 lg:pb-56 md:min-h-0 xl:bg-hero-pattern bg-large-desk xl:bg-large-desk-xl container flex min-h-screen pt-10 bg-no-repeat'>
 				<div id='hero-content' className='flex flex-col items-start w-full'>
 					<img
 						src='/images/logo.svg'
-						className='md:hidden h-8 mb-20'></img>
+						className='md:hidden h-8 mb-20'
+					></img>
 
 					<div>
 						<div className='reveal-title md:mb-4 relative mb-2'>
@@ -98,7 +98,8 @@ const HeroSection = (props) => {
 							onClick={() =>
 								logEvent(`Hero CTA`, `User clicked CTA on hero section`)
 							}
-							className='default-focus bg-primaryBrand hover:bg-lighterGrey md:px-8 mt-14 inline-flex justify-center w-full py-4 text-base font-medium text-center text-white duration-300 ease-in-out'>
+							className='default-focus bg-primaryBrand hover:bg-lighterGrey md:px-8 mt-14 inline-flex justify-center w-full py-4 text-base font-medium text-center text-white duration-300 ease-in-out'
+						>
 							See my work
 						</AnchorLink>
 					</div>

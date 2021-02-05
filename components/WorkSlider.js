@@ -4,16 +4,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
 	HiOutlineArrowNarrowRight,
-	HiOutlineArrowNarrowLeft,
+	HiOutlineArrowNarrowLeft
 } from "react-icons/hi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { logEvent } from "../utils/analytics";
 
 const WorkSlider = () => {
-	if (typeof window !== "undefined") {
-		gsap.registerPlugin(ScrollTrigger);
-	}
-
 	//case slider
 	const [count, setCount] = useState(1);
 	const maxCount = workCases.length;
@@ -46,12 +42,12 @@ const WorkSlider = () => {
 					1.5,
 					{
 						opacity: 0,
-						x: -30,
+						x: -30
 					},
 					{
 						opacity: 1,
 						x: 0,
-						ease: "power4.out",
+						ease: "power4.out"
 					}
 				)
 				.fromTo(
@@ -59,13 +55,13 @@ const WorkSlider = () => {
 					1.5,
 					{
 						opacity: 0,
-						x: -50,
+						x: -50
 					},
 					{
 						opacity: 1,
 						x: 0,
 						delay: -1.5,
-						ease: "power4.out",
+						ease: "power4.out"
 					}
 				);
 		};
@@ -84,12 +80,12 @@ const WorkSlider = () => {
 					1.5,
 					{
 						opacity: 0,
-						x: 30,
+						x: 30
 					},
 					{
 						opacity: 1,
 						x: 0,
-						ease: "power4.out",
+						ease: "power4.out"
 					}
 				)
 				.fromTo(
@@ -97,13 +93,13 @@ const WorkSlider = () => {
 					1.5,
 					{
 						opacity: 0,
-						x: 50,
+						x: 50
 					},
 					{
 						opacity: 1,
 						x: 0,
 						delay: -1.5,
-						ease: "power4.out",
+						ease: "power4.out"
 					}
 				);
 		};
@@ -113,15 +109,17 @@ const WorkSlider = () => {
 	};
 
 	useEffect(() => {
-		gsap.to("body", 0, { css: { visibility: "visible" } });
+		if (typeof window !== "undefined") {
+			gsap.registerPlugin(ScrollTrigger);
+		}
 
 		//case text timeline
 		const caseTextTl = gsap.timeline({
 			scrollTrigger: {
 				trigger: "#case-nav",
-				start: "top bottom",
-				end: "=-300",
-			},
+				start: "center bottom",
+				end: "=-300"
+			}
 		});
 
 		caseTextTl
@@ -129,26 +127,26 @@ const WorkSlider = () => {
 				y: -20,
 				opacity: 0,
 				delay: 0,
-				ease: "power3.out",
+				ease: "power3.out"
 			})
 			.from("#case-header", 1, {
 				y: -20,
 				opacity: 0,
 				stagger: 0.3,
 				delay: -1.5,
-				ease: "power3.out",
+				ease: "power3.out"
 			})
 			.fromTo(
 				"#case-category-line",
 				1,
 				{
-					width: 0,
+					width: 0
 				},
 				{
 					width: "1.5rem",
 					stagger: 0.3,
 					delay: -1.5,
-					ease: "power3.inOut",
+					ease: "power3.inOut"
 				}
 			)
 			.from("#case-category", 1, {
@@ -156,21 +154,21 @@ const WorkSlider = () => {
 				opacity: 0,
 				stagger: 0.3,
 				delay: -1,
-				ease: "power3.out",
+				ease: "power3.out"
 			})
 			.from("#case-description", 1, {
 				y: -20,
 				opacity: 0,
 				stagger: 0.3,
 				delay: -1,
-				ease: "power3.out",
+				ease: "power3.out"
 			})
 			.from(".case-cta", 1, {
 				opacity: 0,
 				y: -20,
 				stagger: 0.3,
 				delay: -0.7,
-				ease: "power3.out",
+				ease: "power3.out"
 			});
 
 		//case image
@@ -178,23 +176,23 @@ const WorkSlider = () => {
 			scrollTrigger: {
 				trigger: "#case-image",
 				start: "top bottom",
-				end: "=-300",
+				end: "=-300"
 			},
 			x: -50,
 			opacity: 0,
 			delay: 1,
-			ease: "power3.out",
+			ease: "power3.out"
 		});
 		gsap.from("#case-image-mobile", 1.3, {
 			scrollTrigger: {
 				trigger: "#case-image-mobile",
 				start: "top bottom",
-				end: "=-300",
+				end: "=-300"
 			},
 			x: -50,
 			opacity: 0,
 			delay: 0.5,
-			ease: "power3.out",
+			ease: "power3.out"
 		});
 	}, []);
 	return (
@@ -202,10 +200,12 @@ const WorkSlider = () => {
 			<div className='w-12/12 lg:w-5/12'>
 				<div
 					id='case-nav'
-					className='lg:mt-36 flex flex-row items-center mt-20 text-white'>
+					className='lg:mt-36 flex flex-row items-center mt-20 text-white'
+				>
 					<button
 						onClick={() => changeCounter("decrement")}
-						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'>
+						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'
+					>
 						<HiOutlineArrowNarrowLeft />
 					</button>
 					<p className='mr-4 text-base font-semibold text-white'>
@@ -213,7 +213,8 @@ const WorkSlider = () => {
 					</p>
 					<button
 						onClick={() => changeCounter("increment")}
-						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'>
+						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'
+					>
 						<HiOutlineArrowNarrowRight />
 					</button>
 				</div>
@@ -221,23 +222,27 @@ const WorkSlider = () => {
 				<div id='case-text-content'>
 					<h3
 						id='case-header'
-						className='text-secheader mt-12 font-semibold text-white'>
+						className='text-secheader mt-12 font-semibold text-white'
+					>
 						{workCase.title}
 					</h3>
 					<div className='mt-7 flex flex-row items-center'>
 						<div
 							id='case-category-line'
-							className='bg-primaryBrand w-6 h-1 mr-6'></div>
+							className='bg-primaryBrand w-6 h-1 mr-6'
+						></div>
 						<p
 							id='case-category'
-							className='text-greyText text-base font-medium'>
+							className='text-greyText text-base font-medium'
+						>
 							{workCase.category}
 						</p>
 					</div>
 
 					<p
 						id='case-description'
-						className='text-greyText w-12/12 lg:w-10/12 mt-6 text-base font-normal leading-loose'>
+						className='text-greyText w-12/12 lg:w-10/12 mt-6 text-base font-normal leading-loose'
+					>
 						{workCase.description}
 					</p>
 
@@ -253,7 +258,8 @@ const WorkSlider = () => {
 								}
 								target='_blank'
 								id='case-link'
-								className='default-focus bg-primaryBrand hover:bg-lighterGrey inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'>
+								className='default-focus bg-primaryBrand hover:bg-lighterGrey inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'
+							>
 								{workCase.caseLinkText}{" "}
 								<MdKeyboardArrowRight className='ml-1 text-2xl' />
 							</a>
@@ -263,7 +269,8 @@ const WorkSlider = () => {
 			</div>
 			<div
 				id='case-image'
-				className='w-12/12 lg:w-7/12 md:flex mt-26 lg:mt-40 xl:-mr-20 justify-center hidden'>
+				className='w-12/12 lg:w-7/12 md:flex mt-26 lg:mt-40 xl:-mr-20 justify-center hidden'
+			>
 				{!workCase.caseImage &&
 				workCase.caseImageOne &&
 				workCase.caseImageTwo ? (
@@ -307,7 +314,8 @@ const WorkSlider = () => {
 
 			<div
 				id='case-image-mobile'
-				className='md:hidden w-12/12 mt-26 flex justify-center'>
+				className='md:hidden w-12/12 mt-26 flex justify-center'
+			>
 				<img
 					src={workCase.caseImageMobile}
 					alt={workCase.caseImageAlt}

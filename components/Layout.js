@@ -1,15 +1,4 @@
 import Head from "next/head";
-import { useEffect } from "react";
-import Link from "next/link";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import Scrollspy from "react-scrollspy";
-import { gsap } from "gsap";
-import { BiHomeAlt, BiUser } from "react-icons/bi";
-import { FiBriefcase } from "react-icons/fi";
-import { HiOutlineMail } from "react-icons/hi";
-import { FaDribbble } from "react-icons/fa";
-import { initGA, logPageView, logEvent } from "../utils/analytics";
-import { useRouter } from "next/router";
 
 import Navbar from "./Navbar";
 
@@ -50,7 +39,8 @@ const Layout = ({ children }) => {
 				<link rel='icon' sizes='16x16' href='/favicon_16x16.png' />
 				<link
 					href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap'
-					rel='stylesheet'></link>
+					rel='stylesheet'
+				></link>
 			</Head>
 			<Navbar />
 			<main className='font-display'>{children}</main>
