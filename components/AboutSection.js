@@ -3,19 +3,11 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { logEvent } from "../utils/analytics";
-import { FaDribbble } from "react-icons/fa";
-import { VscGithubInverted } from "react-icons/vsc";
 
 import Link from "next/link";
 
 const AboutSection = ({ followers, shots, sectionNumber }) => {
-	// const { data, error } = useSWR("/api/dribbble", fetcher);
-
-	// const followers = data?.followers;
-	// const shotCount = data?.shots.length;
-
 	useEffect(() => {
-		console.log(followers);
 		if (typeof window !== "undefined") {
 			gsap.registerPlugin(ScrollTrigger);
 		}

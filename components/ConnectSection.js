@@ -1,12 +1,9 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { FaTwitter, FaDribbble, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { logEvent } from "../utils/analytics";
 
 import ContactForm from "./ContactForm";
 import Footer from "./Footer";
-import MotionInView from "./MotionInView";
 
 const ConnectSection = (props) => {
 	useEffect(() => {
@@ -33,35 +30,80 @@ const ConnectSection = (props) => {
 					ease: "power3.inOut"
 				}
 			)
-			.from("#connect .section-category", 1.5, {
-				x: -10,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.5,
-				ease: "power3.out"
-			})
-			.from(".connect-h2", 1, {
-				x: -70,
-				opacity: 0,
-				stagger: 0.3,
-				skewX: 3,
-				delay: -1.5,
-				ease: "power3.out"
-			})
-			.from(".connect-content", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.75,
-				ease: "power3.out"
-			})
-			.from("#connect .connect-cta", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -0.75,
-				ease: "power3.out"
-			});
+			.fromTo(
+				"#connect .section-category",
+				1.5,
+				{
+					x: -10,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out"
+				},
+				{
+					x: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.5,
+					ease: "power3.out"
+				}
+			)
+			.fromTo(
+				".connect-h2",
+				1,
+				{
+					x: -70,
+					opacity: 0,
+					stagger: 0.3,
+					skewX: 3,
+					delay: -1.5,
+					ease: "power3.out"
+				},
+				{
+					x: 0,
+					opacity: 1,
+					stagger: 0.3,
+					skewX: 0,
+					delay: -1.5,
+					ease: "power3.out"
+				}
+			)
+			.fromTo(
+				".connect-content",
+				1,
+				{
+					y: -20,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				}
+			)
+			.fromTo(
+				"#connect .connect-cta",
+				1,
+				{
+					y: -20,
+					opacity: 0,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				},
+				{
+					y: 0,
+					opacity: 1,
+					stagger: 0.3,
+					delay: -0.75,
+					ease: "power3.out"
+				}
+			);
 	});
 
 	return (

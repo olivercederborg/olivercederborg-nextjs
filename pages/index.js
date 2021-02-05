@@ -10,7 +10,6 @@ import AboutSection from "../components/AboutSection";
 import ConnectSection from "../components/ConnectSection";
 import HeroSection from "../components/HeroSection";
 
-import fetcher from "../utils/fetcher";
 import { DribbbleContext } from "../utils/DribbbleContext";
 
 const Index = (props) => {

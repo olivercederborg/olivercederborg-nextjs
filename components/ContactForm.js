@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import MotionInView from "./MotionInView";
 
 const ContactForm = (props) => {
 	const contactItem = {
 		hidden: { opacity: 0 },
-		show: { opacity: 1 },
+		show: { opacity: 1 }
 	};
 
 	const { register, errors, handleSubmit, handleChange } = useForm({
-		mode: "onChange",
+		mode: "onChange"
 	});
 
 	const [status, setStatus] = useState({
 		submitted: false,
 		submitting: false,
-		info: { error: false, msg: null },
+		info: { error: false, msg: null }
 	});
 
 	const [inputs, setInputs] = useState({
 		name: "",
 		email: "",
-		message: "",
+		message: ""
 	});
 	const [sendColor, setSendColor] = useState("");
 
@@ -35,19 +35,19 @@ const ContactForm = (props) => {
 			setStatus({
 				submitted: true,
 				submitting: false,
-				info: { error: false, msg: msg },
+				info: { error: false, msg: msg }
 			});
 			setInputs({
 				name: "",
 				email: "",
-				message: "",
+				message: ""
 			});
 			nameInputField.value = "";
 			emailInputField.value = "";
 			messageInputField.value = "";
 		} else {
 			setStatus({
-				info: { error: true, msg: msg },
+				info: { error: true, msg: msg }
 			});
 		}
 	};
@@ -56,12 +56,12 @@ const ContactForm = (props) => {
 		e.persist();
 		setInputs((prev) => ({
 			...prev,
-			[e.target.id]: e.target.value,
+			[e.target.id]: e.target.value
 		}));
 		setStatus({
 			submitted: false,
 			submitting: false,
-			info: { error: false, msg: null },
+			info: { error: false, msg: null }
 		});
 	};
 
@@ -70,9 +70,9 @@ const ContactForm = (props) => {
 		const res = await fetch("/api/send", {
 			method: "POST",
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type": "application/json"
 			},
-			body: JSON.stringify(inputs),
+			body: JSON.stringify(inputs)
 		});
 		const text = await res.text();
 		handleResponse(res.status, text);
@@ -103,7 +103,8 @@ const ContactForm = (props) => {
 		<div id='form_wrapper'>
 			<form
 				onSubmit={handleSubmit(() => handleOnSubmit())}
-				className='md:w-5/5 lg:w-2/5 w-full mt-20'>
+				className='md:w-5/5 lg:w-2/5 w-full mt-20'
+			>
 				<div className='flex flex-col text-white'>
 					<MotionInView>
 						<motion.div>
@@ -138,7 +139,7 @@ const ContactForm = (props) => {
 									onChange={handleOnChange}
 									ref={register({
 										required: true,
-										pattern: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/,
+										pattern: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 									})}
 									name='email'
 									id='email'
@@ -171,7 +172,7 @@ const ContactForm = (props) => {
 									ref={register({
 										required: true,
 										minLength: 10,
-										maxLength: 200,
+										maxLength: 200
 									})}
 									name='message'
 									id='message'
