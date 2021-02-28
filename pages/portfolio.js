@@ -1,14 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import { RiExternalLinkLine } from "react-icons/ri";
-import useSWR from "swr";
 
 //import components
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
-import fetcher from "../utils/fetcher";
 import MotionComponent from "../components/MotionComponent";
 
 export const headerVariants = {
@@ -111,13 +107,10 @@ export const staggerChildren = {
 
 const Portfolio = (props) => {
 	const [loadedShots, setLoadedShots] = useState(9);
-	const { data, error } = useSWR("/api/dribbble", fetcher);
-	const shots = data?.shots;
-	const followers = data?.followers;
+	const shots = props?.shots;
+	const followers = props?.user.followers_count;
 
-	useEffect(() => {
-		console.log(data);
-	}, []);
+	console.log(props.user);
 
 	return (
 		<Layout>
@@ -159,7 +152,7 @@ const Portfolio = (props) => {
 										Dribbble Followers
 									</p>
 									<p className='mt-1 text-3xl font-semibold'>
-										{data?.length ? followers : "Loading"}
+										{followers ? followers : "Loading"}
 									</p>
 								</a>
 							</section>
@@ -175,7 +168,7 @@ const Portfolio = (props) => {
 										Shots Shown
 									</p>
 									<p className='mt-1 text-3xl font-semibold'>
-										{data?.length
+										{shots?.length
 											? `${loadedShots}/${shots.length}`
 											: "Loading"}
 									</p>
@@ -184,7 +177,7 @@ const Portfolio = (props) => {
 						</MotionComponent>
 					</div>
 				</section>
-				{!data?.length && (
+				{!shots?.length && (
 					<h2 className='mt-40 text-5xl font-semibold text-center text-white'>
 						Check back later.
 					</h2>
@@ -197,7 +190,7 @@ const Portfolio = (props) => {
 						animate='visible'
 						variants={staggerContainer}
 					>
-						{data?.length
+						{shots?.length
 							? shots
 									.slice(0, loadedShots)
 									.map(({ id, images, html_url, title }) => (
@@ -235,7 +228,7 @@ const Portfolio = (props) => {
 							: null}
 					</motion.div>
 
-					{data?.length ? (
+					{shots?.length ? (
 						<>
 							{shots && loadedShots !== shots?.length ? (
 								<button
@@ -263,3 +256,17 @@ const Portfolio = (props) => {
 };
 
 export default Portfolio;
+
+export async function getStaticProps() {
+	const API_KEY = process.env.DRIBBBLE_TOKEN;
+	const userRes = await fetch(
+		`https://api.dribbble.com/v2/user?access_token=${API_KEY}`
+	);
+	const shotsRes = await fetch(
+		`https://api.dribbble.com/v2/user/shots?access_token=${API_KEY}&per_page=100`
+	);
+	const user = await userRes.json();
+	const shots = await shotsRes.json();
+
+	return { props: { user, shots }, revalidate: 600 };
+}
