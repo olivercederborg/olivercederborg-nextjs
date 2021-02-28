@@ -110,8 +110,6 @@ const Portfolio = (props) => {
 	const shots = props?.shots;
 	const followers = props?.user.followers_count;
 
-	console.log(props.user);
-
 	return (
 		<Layout>
 			<section
