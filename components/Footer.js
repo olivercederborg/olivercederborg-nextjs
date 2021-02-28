@@ -39,6 +39,8 @@ const Footer = (props) => {
 
 			<div className='md:mb-0 flex flex-row mb-10 text-white'>
 				<a
+					rel='noopener'
+					aria-label='Dribbble'
 					href='https://dribbble.com/oliver'
 					target='_blank'
 					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'
@@ -46,6 +48,8 @@ const Footer = (props) => {
 					<FaDribbble />
 				</a>
 				<a
+					rel='noopener'
+					aria-label='Twitter'
 					href='https://twitter.com/olivercederborg'
 					target='_blank'
 					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'
@@ -53,6 +57,8 @@ const Footer = (props) => {
 					<FaTwitter />
 				</a>
 				<a
+					rel='noopener'
+					aria-label='Instagram'
 					href='https://instagram.com/olivercederborg'
 					target='_blank'
 					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'
@@ -60,6 +66,8 @@ const Footer = (props) => {
 					<FaInstagram />
 				</a>
 				<a
+					rel='noopener'
+					aria-label='Linkedin'
 					href='https://www.linkedin.com/in/olivercederborg'
 					target='_blank'
 					className='default-focus bg-lightGrey hover:bg-primaryBrand p-4 mx-1 text-xl duration-300 ease-in-out'

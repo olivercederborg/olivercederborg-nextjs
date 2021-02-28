@@ -54,6 +54,7 @@ const HeroSection = (props) => {
 				<div id='hero-content' className='flex flex-col items-start w-full'>
 					<img
 						src='/images/logo.svg'
+						alt='oliver cederborg logo'
 						className='md:hidden h-8 mb-20'
 					></img>
 

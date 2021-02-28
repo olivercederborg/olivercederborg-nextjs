@@ -1,3 +1,4 @@
+import Image from "next/image";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { logEvent } from "../utils/analytics";
 
@@ -200,10 +201,12 @@ const AboutSection = ({ sectionNumber }) => {
 
 					<div className='md:w-5/12 lg:mb-0 lg:self-start lg:mt-0 flex flex-col justify-center w-9/12 mt-10 mb-10'>
 						<MotionComponent variants={imgVariants}>
-							<img
+							<Image
 								id='about-img'
 								src='/images/about-oliver.webp'
 								alt='About Oliver Cederborg'
+								height={500}
+								width={500}
 								className='md:max-h-sm md:mt-0 object-contain w-full h-full pointer-events-none'
 							/>
 						</MotionComponent>

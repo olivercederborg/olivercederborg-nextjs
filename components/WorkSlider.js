@@ -203,6 +203,7 @@ const WorkSlider = () => {
 					className='lg:mt-36 flex flex-row items-center mt-20 text-white'
 				>
 					<button
+						aria-label='previous'
 						onClick={() => changeCounter("decrement")}
 						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'
 					>
@@ -212,6 +213,7 @@ const WorkSlider = () => {
 						0{count}/0{maxCount}
 					</p>
 					<button
+						aria-label='next'
 						onClick={() => changeCounter("increment")}
 						className='default-focus bg-lightGrey hover:bg-lighterGrey focus:outline-none p-4 mr-4 text-2xl duration-300 ease-in-out'
 					>
@@ -249,6 +251,7 @@ const WorkSlider = () => {
 					{workCase.caseLink ? (
 						<div className='case-cta'>
 							<a
+								rel='noopener'
 								href={workCase.caseLink}
 								onClick={() =>
 									logEvent(
