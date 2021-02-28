@@ -65,7 +65,7 @@ const WorkSlider = () => {
 					}
 				);
 		};
-		if (nextCaseTl.isActive() === false) {
+		if (!nextCaseTl.isActive()) {
 			nextCaseAni();
 		}
 	};
@@ -103,101 +103,101 @@ const WorkSlider = () => {
 					}
 				);
 		};
-		if (prevCaseTl.isActive() === false) {
+		if (!prevCaseTl.isActive()) {
 			prevCaseAni();
 		}
 	};
 
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			gsap.registerPlugin(ScrollTrigger);
-		}
+	// useEffect(() => {
+	// 	if (typeof window !== "undefined") {
+	// 		gsap.registerPlugin(ScrollTrigger);
+	// 	}
 
-		//case text timeline
-		const caseTextTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: "#case-nav",
-				start: "center bottom",
-				end: "=-300"
-			}
-		});
+	// 	//case text timeline
+	// 	const caseTextTl = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: "#case-image",
+	// 			start: "top center"
+	// 		}
+	// 	});
 
-		caseTextTl
-			.from("#case-nav", 2, {
-				y: -20,
-				opacity: 0,
-				delay: 0,
-				ease: "power3.out"
-			})
-			.from("#case-header", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -1.5,
-				ease: "power3.out"
-			})
-			.fromTo(
-				"#case-category-line",
-				1,
-				{
-					width: 0
-				},
-				{
-					width: "1.5rem",
-					stagger: 0.3,
-					delay: -1.5,
-					ease: "power3.inOut"
-				}
-			)
-			.from("#case-category", 1, {
-				x: -10,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -1,
-				ease: "power3.out"
-			})
-			.from("#case-description", 1, {
-				y: -20,
-				opacity: 0,
-				stagger: 0.3,
-				delay: -1,
-				ease: "power3.out"
-			})
-			.from(".case-cta", 1, {
-				opacity: 0,
-				y: -20,
-				stagger: 0.3,
-				delay: -0.7,
-				ease: "power3.out"
-			});
+	// 	caseTextTl
+	// 		.from("#case-nav", 2, {
+	// 			y: -20,
+	// 			opacity: 0,
+	// 			delay: 0,
+	// 			ease: "power3.out"
+	// 		})
+	// 		.from("#case-header", 1, {
+	// 			y: -20,
+	// 			opacity: 0,
+	// 			stagger: 0.3,
+	// 			delay: -1.5,
+	// 			ease: "power3.out"
+	// 		})
+	// 		.fromTo(
+	// 			"#case-category-line",
+	// 			1,
+	// 			{
+	// 				width: 0
+	// 			},
+	// 			{
+	// 				width: "1.5rem",
+	// 				stagger: 0.3,
+	// 				delay: -1.5,
+	// 				ease: "power3.inOut"
+	// 			}
+	// 		)
+	// 		.from("#case-category", 1, {
+	// 			x: -10,
+	// 			opacity: 0,
+	// 			stagger: 0.3,
+	// 			delay: -1,
+	// 			ease: "power3.out"
+	// 		})
+	// 		.from("#case-description", 1, {
+	// 			y: -20,
+	// 			opacity: 0,
+	// 			stagger: 0.3,
+	// 			delay: -1,
+	// 			ease: "power3.out"
+	// 		})
+	// 		.from(".case-cta", 1, {
+	// 			opacity: 0,
+	// 			y: -20,
+	// 			stagger: 0.3,
+	// 			delay: -0.7,
+	// 			ease: "power3.out"
+	// 		});
 
-		//case image
-		gsap.from("#case-image", 1.3, {
-			scrollTrigger: {
-				trigger: "#case-image",
-				start: "top bottom",
-				end: "=-300"
-			},
-			x: -50,
-			opacity: 0,
-			delay: 1,
-			ease: "power3.out"
-		});
-		gsap.from("#case-image-mobile", 1.3, {
-			scrollTrigger: {
-				trigger: "#case-image-mobile",
-				start: "top bottom",
-				end: "=-300"
-			},
-			x: -50,
-			opacity: 0,
-			delay: 0.5,
-			ease: "power3.out"
-		});
-	}, []);
+	// 	//case image
+	// 	gsap.from("#case-image", 1.3, {
+	// 		scrollTrigger: {
+	// 			trigger: "#case-image",
+	// 			start: "top bottom",
+	// 			end: "=-300"
+	// 		},
+	// 		x: -50,
+	// 		opacity: 0,
+	// 		delay: 1,
+	// 		ease: "power3.out"
+	// 	});
+	// 	gsap.from("#case-image-mobile", 1.3, {
+	// 		scrollTrigger: {
+	// 			trigger: "#case-image-mobile",
+	// 			start: "top bottom",
+	// 			end: "=-300"
+	// 		},
+	// 		x: -50,
+	// 		opacity: 0,
+	// 		delay: 0.5,
+	// 		ease: "power3.out"
+	// 	});
+	// }, []);
+
 	return (
 		<div className='lg:flex-row flex flex-col-reverse items-start'>
-			<div className='w-12/12 lg:w-5/12'>
+			<div className='w-12/12 lg:w-6/12'>
 				<div
 					id='case-nav'
 					className='lg:mt-36 flex flex-row items-center mt-20 text-white'
@@ -269,12 +269,12 @@ const WorkSlider = () => {
 			</div>
 			<div
 				id='case-image'
-				className='w-12/12 lg:w-7/12 md:flex mt-26 lg:mt-40 xl:-mr-20 justify-center hidden'
+				className='w-12/12 lg:w-6/12 md:flex mt-26 lg:mt-30 xl:-mr-20 justify-center hidden'
 			>
 				{!workCase.caseImage &&
 				workCase.caseImageOne &&
 				workCase.caseImageTwo ? (
-					<div className='w-full'>
+					<div className='relative flex justify-center w-full'>
 						<img
 							src={workCase.caseImageTwo}
 							id='dualImageCaeSecond'
@@ -295,19 +295,21 @@ const WorkSlider = () => {
 						/>
 					</div>
 				) : (
-					<div className='w-full'>
-						<img
-							src={workCase.caseImage}
-							id='singleImageCase'
-							alt={workCase.caseImageAlt}
-							className='md:max-h-xl absolute z-10 object-contain w-full h-full -ml-2 pointer-events-none'
-						/>
-						<img
-							src={workCase.caseBackground}
-							id='case-image-background'
-							alt=''
-							className='md:max-h-xl z-0 object-contain w-full h-full pointer-events-none'
-						/>
+					<div className='flex justify-center w-full'>
+						<div className='relative'>
+							<img
+								src={workCase.caseImage}
+								id='singleImageCase'
+								alt={workCase.caseImageAlt}
+								className='md:max-h-xl absolute z-10 object-contain w-full h-full -ml-2 pointer-events-none'
+							/>
+							<img
+								src={workCase.caseBackground}
+								id='case-image-background'
+								alt=''
+								className='md:max-h-xl z-0 object-contain w-full h-full pointer-events-none'
+							/>
+						</div>
 					</div>
 				)}
 			</div>

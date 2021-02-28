@@ -1,16 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
-import useSWR from "swr";
 
 import "../css/style.scss";
 import "../css/tailwind.css";
-import { DribbbleContext } from "../utils/DribbbleContext";
-import fetcher from "../utils/fetcher";
 
 export default function App({ Component, pageProps, router }) {
-	const { data } = useSWR("/api/dribbble", fetcher);
-	const shots = data?.shots;
-	const followers = data?.followers;
-
 	const spring = {
 		type: "spring",
 		damping: 18,
@@ -29,9 +22,7 @@ export default function App({ Component, pageProps, router }) {
 					exit={{ y: -150, opacity: 0 }}
 					id='page-transition-container'
 				>
-					<DribbbleContext.Provider value={{ shots, followers }}>
-						<Component {...pageProps} key={router.pathname} />
-					</DribbbleContext.Provider>
+					<Component {...pageProps} key={router.pathname} />
 				</motion.div>
 			</div>
 		</AnimatePresence>

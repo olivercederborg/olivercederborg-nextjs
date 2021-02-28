@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 
-import MotionInView from "./MotionInView";
+import MotionComponent from "./MotionComponent";
 
 const ContactForm = (props) => {
 	const contactItem = {
@@ -106,7 +106,7 @@ const ContactForm = (props) => {
 				className='md:w-5/5 lg:w-2/5 w-full mt-20'
 			>
 				<div className='flex flex-col text-white'>
-					<MotionInView>
+					<MotionComponent>
 						<motion.div>
 							<label htmlFor='name' className='flex flex-col'>
 								What’s your name?
@@ -222,7 +222,7 @@ const ContactForm = (props) => {
 								}
 							/>
 						</motion.div>
-					</MotionInView>
+					</MotionComponent>
 				</div>
 			</form>
 		</div>
