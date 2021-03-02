@@ -1,5 +1,6 @@
 export const workCases = [
 	{
+		id: 1,
 		title: "Noyer",
 		category: "WordPress Webshop",
 		description: `Noyer is a Danish design company that crafts handmade quality products in American walnut wood.
@@ -12,6 +13,7 @@ export const workCases = [
 		caseLinkText: "Visit Noyer"
 	},
 	{
+		id: 2,
 		title: "Lunar Way",
 		category: "UI concept",
 		description:
@@ -26,6 +28,7 @@ export const workCases = [
 		caseLinkText: "View on Dribbble"
 	},
 	{
+		id: 3,
 		title: "Nordsjælland Osteopati & Fysioterapi",
 		category: "WordPress Website",
 		description:

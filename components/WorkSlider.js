@@ -108,93 +108,6 @@ const WorkSlider = () => {
 		}
 	};
 
-	// useEffect(() => {
-	// 	if (typeof window !== "undefined") {
-	// 		gsap.registerPlugin(ScrollTrigger);
-	// 	}
-
-	// 	//case text timeline
-	// 	const caseTextTl = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: "#case-image",
-	// 			start: "top center"
-	// 		}
-	// 	});
-
-	// 	caseTextTl
-	// 		.from("#case-nav", 2, {
-	// 			y: -20,
-	// 			opacity: 0,
-	// 			delay: 0,
-	// 			ease: "power3.out"
-	// 		})
-	// 		.from("#case-header", 1, {
-	// 			y: -20,
-	// 			opacity: 0,
-	// 			stagger: 0.3,
-	// 			delay: -1.5,
-	// 			ease: "power3.out"
-	// 		})
-	// 		.fromTo(
-	// 			"#case-category-line",
-	// 			1,
-	// 			{
-	// 				width: 0
-	// 			},
-	// 			{
-	// 				width: "1.5rem",
-	// 				stagger: 0.3,
-	// 				delay: -1.5,
-	// 				ease: "power3.inOut"
-	// 			}
-	// 		)
-	// 		.from("#case-category", 1, {
-	// 			x: -10,
-	// 			opacity: 0,
-	// 			stagger: 0.3,
-	// 			delay: -1,
-	// 			ease: "power3.out"
-	// 		})
-	// 		.from("#case-description", 1, {
-	// 			y: -20,
-	// 			opacity: 0,
-	// 			stagger: 0.3,
-	// 			delay: -1,
-	// 			ease: "power3.out"
-	// 		})
-	// 		.from(".case-cta", 1, {
-	// 			opacity: 0,
-	// 			y: -20,
-	// 			stagger: 0.3,
-	// 			delay: -0.7,
-	// 			ease: "power3.out"
-	// 		});
-
-	// 	//case image
-	// 	gsap.from("#case-image", 1.3, {
-	// 		scrollTrigger: {
-	// 			trigger: "#case-image",
-	// 			start: "top bottom",
-	// 			end: "=-300"
-	// 		},
-	// 		x: -50,
-	// 		opacity: 0,
-	// 		delay: 1,
-	// 		ease: "power3.out"
-	// 	});
-	// 	gsap.from("#case-image-mobile", 1.3, {
-	// 		scrollTrigger: {
-	// 			trigger: "#case-image-mobile",
-	// 			start: "top bottom",
-	// 			end: "=-300"
-	// 		},
-	// 		x: -50,
-	// 		opacity: 0,
-	// 		delay: 0.5,
-	// 		ease: "power3.out"
-	// 	});
-	// }, []);
-
 	return (
 		<div className='lg:flex-row flex flex-col-reverse items-start'>
 			<div className='w-12/12 lg:w-6/12'>
@@ -221,101 +134,115 @@ const WorkSlider = () => {
 					</button>
 				</div>
 
-				<div id='case-text-content'>
-					<h3
-						id='case-header'
-						className='text-secheader mt-12 font-semibold text-white'
-					>
-						{workCase.title}
-					</h3>
-					<div className='mt-7 flex flex-row items-center'>
+				{workCases.map((currentCase, i) => {
+					return (
 						<div
-							id='case-category-line'
-							className='bg-primaryBrand w-6 h-1 mr-6'
-						></div>
-						<p
-							id='case-category'
-							className='text-greyText text-base font-medium'
+							id='case-text-content'
+							key={i}
+							style={i != count - 1 ? { display: "none" } : null}
 						>
-							{workCase.category}
-						</p>
-					</div>
-
-					<p
-						id='case-description'
-						className='text-greyText w-12/12 lg:w-10/12 mt-6 text-base font-normal leading-loose'
-					>
-						{workCase.description}
-					</p>
-
-					{workCase.caseLink ? (
-						<div className='case-cta'>
-							<a
-								rel='noopener'
-								href={workCase.caseLink}
-								onClick={() =>
-									logEvent(
-										`Case ${workCase.title}`,
-										`Redirected to ${workCase.caseLink}`
-									)
-								}
-								target='_blank'
-								id='case-link'
-								className='default-focus bg-primaryBrand hover:bg-lighterGrey inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'
+							<h3
+								id='case-header'
+								className='text-secheader mt-12 font-semibold text-white'
 							>
-								{workCase.caseLinkText}{" "}
-								<MdKeyboardArrowRight className='ml-1 text-2xl' />
-							</a>
+								{currentCase.title}
+							</h3>
+							<div className='mt-7 flex flex-row items-center'>
+								<div
+									id='case-category-line'
+									className='bg-primaryBrand w-6 h-1 mr-6'
+								></div>
+								<p
+									id='case-category'
+									className='text-greyText text-base font-medium'
+								>
+									{currentCase.category}
+								</p>
+							</div>
+
+							<p
+								id='case-description'
+								className='text-greyText w-12/12 lg:w-10/12 mt-6 text-base font-normal leading-loose'
+							>
+								{currentCase.description}
+							</p>
+							{workCase.caseLink ? (
+								<div className='case-cta'>
+									<a
+										rel='noopener'
+										href={workCase.caseLink}
+										onClick={() =>
+											logEvent(
+												`Case ${workCase.title}`,
+												`Redirected to ${workCase.caseLink}`
+											)
+										}
+										target='_blank'
+										id='case-link'
+										className='default-focus bg-primaryBrand hover:bg-lighterGrey inline-flex items-center px-8 py-4 mt-12 text-base font-medium text-white duration-300 ease-in-out'
+									>
+										{workCase.caseLinkText}{" "}
+										<MdKeyboardArrowRight className='ml-1 text-2xl' />
+									</a>
+								</div>
+							) : null}
 						</div>
-					) : null}
-				</div>
+					);
+				})}
 			</div>
-			<div
-				id='case-image'
-				className='w-12/12 lg:w-6/12 md:flex mt-26 lg:mt-30 xl:-mr-20 justify-center hidden'
-			>
-				{!workCase.caseImage &&
-				workCase.caseImageOne &&
-				workCase.caseImageTwo ? (
-					<div className='relative flex justify-center w-full'>
-						<img
-							src={workCase.caseImageTwo}
-							id='dualImageCaeSecond'
-							alt={workCase.caseImageAlt}
-							className='case-image-two md:max-h-xl absolute z-10 object-contain h-full pointer-events-none'
-						/>
-						<img
-							src={workCase.caseImageOne}
-							id='dualImageCaseFirst'
-							alt={workCase.caseImageAlt}
-							className='case-image-one md:max-h-xl absolute z-10 object-contain h-full pointer-events-none'
-						/>
-						<img
-							src={workCase.caseBackground}
-							id='case-image-background'
-							alt=''
-							className='md:max-h-xl z-0 object-contain h-full mt-3 pointer-events-none'
-						/>
+
+			{workCases.map((currentCase, i) => {
+				return (
+					<div
+						id='case-image'
+						key={i}
+						className='w-12/12 lg:w-6/12 md:flex mt-26 lg:mt-30 xl:-mr-20 justify-center hidden'
+						style={i != count - 1 ? { display: "none" } : null}
+					>
+						{!currentCase.caseImage &&
+						currentCase.caseImageOne &&
+						currentCase.caseImageTwo ? (
+							<div className='relative flex justify-center w-full'>
+								<img
+									src={currentCase.caseImageTwo}
+									id='dualImageCaeSecond'
+									alt={currentCase.caseImageAlt}
+									className='case-image-two md:max-h-xl absolute z-10 object-contain h-full pointer-events-none'
+								/>
+								<img
+									src={currentCase.caseImageOne}
+									id='dualImageCaseFirst'
+									alt={currentCase.caseImageAlt}
+									className='case-image-one md:max-h-xl absolute z-10 object-contain h-full pointer-events-none'
+								/>
+								<img
+									src={currentCase.caseBackground}
+									id='case-image-background'
+									alt=''
+									className='md:max-h-xl z-0 object-contain h-full mt-3 pointer-events-none'
+								/>
+							</div>
+						) : (
+							<div className='flex justify-center w-full'>
+								<div className='relative'>
+									<img
+										src={currentCase.caseImage}
+										id='singleImageCase'
+										alt={currentCase.caseImageAlt}
+										className='md:max-h-xl absolute z-10 object-contain w-full h-full -ml-2 pointer-events-none'
+									/>
+									<img
+										src={currentCase.caseBackground}
+										id='case-image-background'
+										alt=''
+										className='md:max-h-xl z-0 object-contain w-full h-full pointer-events-none'
+									/>
+								</div>
+							</div>
+						)}
 					</div>
-				) : (
-					<div className='flex justify-center w-full'>
-						<div className='relative'>
-							<img
-								src={workCase.caseImage}
-								id='singleImageCase'
-								alt={workCase.caseImageAlt}
-								className='md:max-h-xl absolute z-10 object-contain w-full h-full -ml-2 pointer-events-none'
-							/>
-							<img
-								src={workCase.caseBackground}
-								id='case-image-background'
-								alt=''
-								className='md:max-h-xl z-0 object-contain w-full h-full pointer-events-none'
-							/>
-						</div>
-					</div>
-				)}
-			</div>
+				);
+			})}
 
 			<div
 				id='case-image-mobile'
