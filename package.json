@@ -31,6 +31,8 @@
     "gsap": "^3.5.1",
     "next": "^10.0.0",
     "next-purgecss": "^4.0.0",
+    "next-sanity": "^0.4.0",
+    "next-sanity-image": "^3.1.5",
     "next-sass": "^1.0.3",
     "node-fetch": "^2.6.1",
     "nodemailer": "^6.4.17",
