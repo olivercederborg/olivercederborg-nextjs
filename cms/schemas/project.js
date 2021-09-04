@@ -6,7 +6,12 @@ export default {
 		{
 			name: 'title',
 			title: 'Title',
-			type: 'string'
+			type: 'string',
+			initialValue: 'Project Title',
+			validation: (Rule) => [
+				Rule.required().error('Title is required'),
+				Rule.max(32).warning('Shorter titles are usually better')
+			]
 		},
 		{
 			name: 'slug',
@@ -15,21 +20,35 @@ export default {
 			options: {
 				source: 'title',
 				maxLength: 64
-			}
+			},
+			validation: (Rule) => Rule.required().error('Slug is required')
 		},
 		{
-			name: 'mainImage',
-			title: 'Main image',
+			name: 'thumbnail',
+			title: 'Thumbnail',
 			type: 'image',
 			options: {
 				hotspot: true
-			}
+			},
+			validation: (Rule) => Rule.required().error('Thumbnail is required')
+		},
+		{
+			name: 'description',
+			title: 'Description',
+			type: 'blockContent',
+			validation: (Rule) => Rule.required().error('Description is required')
 		},
 		{
 			name: 'categories',
 			title: 'Categories',
 			type: 'array',
-			of: [{ type: 'reference', to: { type: 'category' } }]
+			of: [{ type: 'reference', to: { type: 'category' } }],
+			validation: (Rule) => Rule.required().error('Categories are required')
+		},
+		{
+			name: 'mainImage',
+			title: 'Main image',
+			type: 'image'
 		},
 		{
 			name: 'body',
@@ -41,7 +60,7 @@ export default {
 	preview: {
 		select: {
 			title: 'title',
-			media: 'mainImage'
+			media: 'thumbnail'
 		},
 		prepare(selection) {
 			return Object.assign({}, selection)
