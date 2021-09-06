@@ -4,23 +4,17 @@ import { useNextSanityImage } from 'next-sanity-image'
 import BlockContent from '@sanity/block-content-to-react'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import type {
 	GetStaticPaths,
 	GetStaticProps,
 	InferGetStaticPropsType
 } from 'next'
+import { Project } from 'types'
 
 type StaticProps = {
-	project: {
-		title: string
-		slug: string
-		mainImage: SanityImageSource
-		body: BlockContent
-		categories: {
-			title: string
-		}[]
-	}
+	project: Project
 }
 
 const projectQuery = (
@@ -30,9 +24,7 @@ const projectQuery = (
   "slug": slug.current,
   mainImage,
 	body,
-	categories[]->{
-		title
-	}
+	"categories": categories[]->title
 }`
 
 export const getStaticProps: GetStaticProps<StaticProps> = async ({
@@ -53,7 +45,7 @@ export const getStaticProps: GetStaticProps<StaticProps> = async ({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const projects = await sanity().fetch<{ slug: any }[]>(
+	const projects = await sanity().fetch<{ slug: string }[]>(
 		groq`*[_type == 'project' && defined(slug.current)]{
       "slug": slug.current
     }`
@@ -80,17 +72,19 @@ const ProjectPage = ({ project }: Props) => {
 				<h1 className='mt-8 text-4xl text-white'>{project.title}</h1>
 				<section className='mt-2 mb-8 space-x-2 text-pink-400'>
 					{project.categories.map((category, i) => (
-						<span key={i}>{category.title}</span>
+						<span key={i}>{category}</span>
 					))}
 				</section>
 
-				<Image
-					{...bannerImageProps}
-					alt={project.title}
-					height='500'
-					objectFit='cover'
-					objectPosition='center 75%'
-				/>
+				<motion.div layoutId={project.slug}>
+					<Image
+						{...bannerImageProps}
+						alt={project.title}
+						height='500'
+						objectFit='cover'
+						objectPosition='center 75%'
+					/>
+				</motion.div>
 
 				<BlockContent
 					blocks={project.body}
