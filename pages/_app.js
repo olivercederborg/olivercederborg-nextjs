@@ -1,30 +1,18 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion'
+import { cubicBezier } from 'utils/motion'
 
-import "../css/style.scss";
-import "../css/tailwind.css";
+import '../css/style.scss'
+import '../css/tailwind.css'
 
 export default function App({ Component, pageProps, router }) {
-	const spring = {
-		type: "spring",
-		damping: 18,
-		stiffness: 85,
-		when: "afterChildren"
-	};
-
 	return (
-		<AnimatePresence>
-			<div className='page-transition-wrapper overflow-hidden'>
-				<motion.div
-					transition={spring}
-					key={router.pathname}
-					initial={{ y: -150, opacity: 0 }}
-					animate={{ y: 0, opacity: 1 }}
-					exit={{ y: -150, opacity: 0 }}
-					id='page-transition-container'
-				>
-					<Component {...pageProps} key={router.pathname} />
-				</motion.div>
-			</div>
+		<AnimatePresence exitBeforeEnter>
+			<motion.div
+				key={router.pathname}
+				transition={cubicBezier}
+				exit={{ opacity: 0 }}>
+				<Component {...pageProps} key={router.pathname} />
+			</motion.div>
 		</AnimatePresence>
-	);
+	)
 }
