@@ -1,121 +1,28 @@
-import Image from "next/image";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { logEvent } from "../utils/analytics";
+import Image from 'next/image'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import MotionComponent from "./MotionComponent";
-
-export const headerVariants = {
-	visible: {
-		x: 0,
-		opacity: 1,
-		skewX: 0,
-		transition: {
-			duration: 0.5,
-			delay: 0.5,
-			ease: "easeOut"
-		}
-	},
-	hidden: {
-		x: -50,
-		skewX: 3,
-		opacity: 0
-	}
-};
-
-export const subHeaderVariants = {
-	visible: {
-		x: 0,
-		opacity: 1,
-		skewX: 0,
-		transition: {
-			duration: 0.5,
-			delay: 0.3,
-			ease: "easeOut"
-		}
-	},
-	hidden: {
-		x: -50,
-		skewX: 3,
-		opacity: 0
-	}
-};
-
-export const lineVariants = {
-	visible: {
-		scaleX: 1,
-		transition: {
-			duration: 0.5,
-			delay: 0.3,
-			ease: "easeOut"
-		}
-	},
-	hidden: {
-		originX: 0,
-		scaleX: 0
-	}
-};
-export const imgVariants = {
-	visible: {
-		opacity: 1,
-		x: 0,
-		transition: {
-			duration: 0.5,
-			delay: 0.8,
-			ease: "easeOut"
-		}
-	},
-	hidden: {
-		opacity: 0,
-		x: -50
-	}
-};
-
-export const paragraphVariants = {
-	visible: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			duration: 0.75,
-			delay: 0.6,
-			ease: "easeOut"
-		}
-	},
-	hidden: {
-		y: -30,
-		opacity: 0
-	}
-};
-
-export const buttonVariants = {
-	visible: {
-		y: 0,
-		opacity: 1,
-		skewX: 0,
-		transition: {
-			duration: 0.75,
-			delay: 0.8,
-			ease: "easeOut"
-		}
-	},
-	hidden: {
-		y: -20,
-		opacity: 0
-	}
-};
+import MotionComponent from './MotionComponent'
+import {
+	lineVariants,
+	subHeaderVariants,
+	headerVariants,
+	paragraphVariants,
+	buttonVariants,
+	imgVariants
+} from 'utils/motion'
 
 const AboutSection = ({ sectionNumber }) => {
 	return (
 		<section
 			id='about'
 			className={
-				"pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden" +
+				'pt-26 pb-32 md:pt-32 md:pb-48 overflow-x-hidden' +
 				(sectionNumber % 2 === 0
-					? " bg-backgroundTwo "
+					? ' bg-backgroundTwo '
 					: sectionNumber % 2 != 0
-					? " bg-backgroundOne"
-					: "")
-			}
-		>
+					? ' bg-backgroundOne'
+					: '')
+			}>
 			<div className='container'>
 				<div className='flex flex-row items-center'>
 					<MotionComponent variants={lineVariants}>
@@ -149,7 +56,7 @@ const AboutSection = ({ sectionNumber }) => {
 						</div>
 						<MotionComponent variants={paragraphVariants}>
 							<p className='aboutme-content text-greyText mt-6 text-base font-normal leading-loose'>
-								I'm Oliver Cederborg, 23 years old and from Denmark.{" "}
+								I'm Oliver Cederborg, 23 years old and from Denmark.{' '}
 								<br></br>Digital design has been an interest of mine for
 								many years, and I work with anything from logo design to
 								UI design and front-end development. <br></br>All the
@@ -185,14 +92,7 @@ const AboutSection = ({ sectionNumber }) => {
 							<div className='about-cta md:flex-row flex flex-col'>
 								<AnchorLink
 									href='#connect'
-									onClick={() =>
-										logEvent(
-											`Get in touch`,
-											`User clicked CTA on about section`
-										)
-									}
-									className='default-focus bg-primaryBrand hover:bg-lighterGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'
-								>
+									className='default-focus bg-primaryBrand hover:bg-lighterGrey mt-14 inline-flex items-center justify-center w-auto px-8 py-4 text-base font-medium text-white duration-300 ease-in-out'>
 									Get in touch
 								</AnchorLink>
 							</div>
@@ -214,7 +114,7 @@ const AboutSection = ({ sectionNumber }) => {
 				</div>
 			</div>
 		</section>
-	);
-};
+	)
+}
 
-export default AboutSection;
+export default AboutSection
