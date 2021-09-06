@@ -1,27 +1,35 @@
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
+import { groq } from 'next-sanity'
+import { motion } from 'framer-motion'
 
 import Layout from '../components/Layout'
 import WorkSection from '../components/WorkSection'
 import AboutSection from '../components/AboutSection'
 import ConnectSection from '../components/ConnectSection'
 import HeroSection from '../components/HeroSection'
-import Link from 'next/link'
-import { groq } from 'next-sanity'
+
 import { sanity } from 'lib/sanity'
+
+import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { Project } from 'types'
+
+type StaticProps = {
+	projects: Project[]
+}
 
 const projectsQuery = groq`*[_type == 'project']{
 		title,
 		"slug": slug.current,
+		thumbnail,
+		description,
 		mainImage,
 		body,
-		categories[]->{
-			title
-		}
+		"categories": categories[]->title
 	}`
 
-export const getStaticProps = async () => {
-	const projects = await sanity().fetch(projectsQuery)
+export const getStaticProps: GetStaticProps<StaticProps> = async () => {
+	const projects = await sanity().fetch<StaticProps['projects']>(projectsQuery)
 
 	return {
 		props: {
@@ -31,7 +39,9 @@ export const getStaticProps = async () => {
 	}
 }
 
-const Index = ({ projects }) => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>
+
+const Index = ({ projects }: Props) => {
 	useEffect(() => {
 		gsap.to('body', 0, { css: { visibility: 'visible' } })
 	})
@@ -41,16 +51,7 @@ const Index = ({ projects }) => {
 	return (
 		<Layout>
 			<HeroSection />
-			<ul className='container'>
-				{projects.map((project, i) => (
-					<Link key={i} href={`/${project.slug}`}>
-						<li className='my-12 text-2xl text-white cursor-pointer'>
-							{project.title}
-						</li>
-					</Link>
-				))}
-			</ul>
-			<WorkSection sectionNumber={2} />
+			<WorkSection sectionNumber={2} projects={projects} />
 			<AboutSection sectionNumber={3} />
 			<ConnectSection sectionNumber={4} />
 
