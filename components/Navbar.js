@@ -63,7 +63,7 @@ const Navbar = (props) => {
 	})
 	return (
 		<>
-			{router.pathname === '/' ? (
+			{router.pathname === '/' && (
 				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-50 hidden w-full'>
 					<nav className='container'>
 						<div
@@ -119,7 +119,8 @@ const Navbar = (props) => {
 						</div>
 					</nav>
 				</header>
-			) : (
+			)}
+			{router.pathname == '/portfolio' && (
 				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-50 hidden w-full'>
 					<nav className='container'>
 						<div
@@ -156,12 +157,61 @@ const Navbar = (props) => {
 											Connect
 										</a>
 									</Link>
-									<Link href=''>
+									<Link href='#'>
 										<a className='default-focus bg-primaryBrand hover:bg-lighterGrey px-4 py-3 ml-3 text-white duration-300 ease-in-out'>
 											<FaDribbble className='inline text-lg' />
 										</a>
 									</Link>
 								</Scrollspy>
+							</div>
+						</div>
+					</nav>
+				</header>
+			)}
+
+			{router.pathname == '/[slug]' && (
+				<header className='bg-backgroundOne border-backgroundTwo md:block fixed z-50 hidden w-full'>
+					<nav className='container'>
+						<div
+							id='navigation'
+							className='font-display flex items-center justify-between py-12 font-medium text-white transition-all duration-200 ease-in-out'>
+							<Link href='/#hero'>
+								<a className='default-focus'>
+									<img
+										src='/images/logo.svg'
+										alt='Oliver Cederborg Logo'
+										className='hover:opacity-70 h-8 duration-200 ease-in-out'
+									/>
+								</a>
+							</Link>
+							<div className='text-greyText'>
+								<Link href='/#hero'>
+									<a className='default-focus hover:text-white hidden px-5 duration-300 ease-in-out'>
+										Home
+									</a>
+								</Link>
+								<Link href='/' id='work-link'>
+									<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
+										Work
+									</a>
+								</Link>
+								<Link href='/#about'>
+									<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
+										About
+									</a>
+								</Link>
+								<Link href='/#connect'>
+									<a className='default-focus hover:text-white px-5 duration-300 ease-in-out'>
+										Connect
+									</a>
+								</Link>
+								<Link href='/portfolio'>
+									<a
+										aria-label='Dribbble Portfolio'
+										className='default-focus bg-none hover:bg-lighterGrey px-4 py-3 text-white duration-300 ease-in-out'>
+										<FaDribbble className='inline text-lg' />
+									</a>
+								</Link>
 							</div>
 						</div>
 					</nav>
