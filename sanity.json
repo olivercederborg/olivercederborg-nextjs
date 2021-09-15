@@ -1,32 +1,30 @@
 {
-  "root": true,
-  "project": {
-    "name": "olivercederborg-portfolio"
-  },
-  "api": {
-    "projectId": "nzfi6lh3",
-    "dataset": "production"
-  },
-  "plugins": [
-    "@sanity/base",
-    "@sanity/components",
-    "@sanity/default-layout",
-    "@sanity/default-login",
-    "@sanity/desk-tool",
-    "media-library",
-    "markdown"
-  ],
-  "env": {
-    "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
-    }
-  },
-  "parts": [
-    {
-      "name": "part:@sanity/base/schema",
-      "path": "./cms/schemas/schema"
-    }
-  ]
+	"root": true,
+	"project": {
+		"name": "olivercederborg"
+	},
+	"api": {
+		"projectId": "nzfi6lh3",
+		"dataset": "production"
+	},
+	"plugins": [
+		"@sanity/base",
+		"@sanity/components",
+		"@sanity/default-layout",
+		"@sanity/default-login",
+		"@sanity/desk-tool",
+		"media-library",
+		"markdown"
+	],
+	"env": {
+		"development": {
+			"plugins": ["@sanity/vision"]
+		}
+	},
+	"parts": [
+		{
+			"name": "part:@sanity/base/schema",
+			"path": "./cms/schemas/schema"
+		}
+	]
 }
