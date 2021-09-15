@@ -8,6 +8,10 @@ body {
   // visibility: hidden;
 }
 
+h1 {
+  @apply text-3xl;
+}
+
 .default-focus:focus-visible {
   @apply ring-4;
   @apply ring-offset-backgroundOne;
