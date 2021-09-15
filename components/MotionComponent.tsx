@@ -1,6 +1,7 @@
 import { useInView } from 'react-intersection-observer' // 1.9K gzipped
 import { motion, useAnimation } from 'framer-motion'
 import { FC, useEffect } from 'react'
+import { cubicBezier } from 'utils/motion'
 
 type Props = {
 	variants?: {}
@@ -32,15 +33,15 @@ const MotionComponent: FC<Props> = ({
 
 	const defaultVariants = {
 		visible: {
-			y: 0,
+			translateY: 0,
 			opacity: 1,
 			transition: {
-				duration: 0.75,
-				delay: 0.75
+				duration: 0.5,
+				ease: cubicBezier
 			}
 		},
 		hidden: {
-			y: -30,
+			translateY: 30,
 			opacity: 0
 		}
 	}
