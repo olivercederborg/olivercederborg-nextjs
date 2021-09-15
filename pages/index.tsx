@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
 import { groq } from 'next-sanity'
-import { motion } from 'framer-motion'
 
 import Layout from '../components/Layout'
 import WorkSection from '../components/WorkSection'
@@ -29,7 +28,7 @@ const projectsQuery = groq`*[_type == 'project']{
 	}`
 
 export const getStaticProps: GetStaticProps<StaticProps> = async () => {
-	const projects = await sanity().fetch<StaticProps['projects']>(projectsQuery)
+	const projects = await sanity().fetch<Project[]>(projectsQuery)
 
 	return {
 		props: {
@@ -46,16 +45,12 @@ const Index = ({ projects }: Props) => {
 		gsap.to('body', 0, { css: { visibility: 'visible' } })
 	})
 
-	console.log(projects)
-
 	return (
 		<Layout>
 			<HeroSection />
 			<WorkSection sectionNumber={2} projects={projects} />
 			<AboutSection sectionNumber={3} />
 			<ConnectSection sectionNumber={4} />
-
-			<script> </script>
 		</Layout>
 	)
 }
