@@ -9,4 +9,13 @@ export type Project = {
 	description?: BlockContent
 	body: BlockContent
 	categories: string[]
+	sections?: ProjectSection[]
+}
+
+export type ProjectSection = {
+	key: string
+	image: SanityImageSource
+	title: string
+	subtitle: string
+	body: BlockContent
 }
