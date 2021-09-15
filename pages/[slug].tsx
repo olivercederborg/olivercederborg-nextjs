@@ -15,8 +15,9 @@ import type {
 } from 'next'
 import { Project } from 'types'
 import MotionComponent from 'components/MotionComponent'
+import Layout from 'components/Layout'
 
-type StaticProps = {
+type ProjectPageProps = {
 	project: Project
 }
 
@@ -27,15 +28,22 @@ const projectQuery = (
   "slug": slug.current,
   mainImage,
 	body,
-	"categories": categories[]->title
+	"categories": categories[]->title,
+	sections[]{
+		"key": _key,
+		title,
+		image,
+		subtitle,
+		body
+	}
 }`
 
-export const getStaticProps: GetStaticProps<StaticProps> = async ({
+export const getStaticProps: GetStaticProps<ProjectPageProps> = async ({
 	params
 }) => {
 	const { slug } = params
 
-	const project = await sanity().fetch<StaticProps['project']>(
+	const project = await sanity().fetch<ProjectPageProps['project']>(
 		projectQuery(slug.toString())
 	)
 
@@ -68,9 +76,9 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 const ProjectPage = ({ project }: Props) => {
 	const bannerImageProps = useNextSanityImage(sanity(), project.mainImage)
-	console.log(project, bannerImageProps)
+	console.log(project)
 	return (
-		<>
+		<Layout>
 			<main className='container'>
 				<MotionComponent>
 					<h1 className='mt-8 text-4xl text-white'>{project.title}</h1>
@@ -119,7 +127,7 @@ const ProjectPage = ({ project }: Props) => {
 					}}
 				/>
 			</main>
-		</>
+		</Layout>
 	)
 }
 
