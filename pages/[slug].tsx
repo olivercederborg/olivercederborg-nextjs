@@ -5,6 +5,8 @@ import BlockContent from '@sanity/block-content-to-react'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 import type {
 	GetStaticPaths,
@@ -12,6 +14,7 @@ import type {
 	InferGetStaticPropsType
 } from 'next'
 import { Project } from 'types'
+import MotionComponent from 'components/MotionComponent'
 
 type StaticProps = {
 	project: Project
@@ -69,7 +72,9 @@ const ProjectPage = ({ project }: Props) => {
 	return (
 		<>
 			<main className='container'>
-				<h1 className='mt-8 text-4xl text-white'>{project.title}</h1>
+				<MotionComponent>
+					<h1 className='mt-8 text-4xl text-white'>{project.title}</h1>
+				</MotionComponent>
 				<section className='mt-2 mb-8 space-x-2 text-pink-400'>
 					{project.categories.map((category, i) => (
 						<span key={i}>{category}</span>
@@ -86,12 +91,32 @@ const ProjectPage = ({ project }: Props) => {
 					/>
 				</motion.div>
 
-				<BlockContent
+				{/* <BlockContent
 					blocks={project.body}
 					className='mt-10 space-y-2 text-white'
 					imageOptions={{ h: 240, fit: 'max' }}
 					projectId='nzfi6lh3'
 					dataset='production'
+				/> */}
+
+				<ReactMarkdown
+					className={`text-white`}
+					children={project.body}
+					remarkPlugins={[remarkGfm]}
+					components={{
+						h1: ({ node, ...props }) => (
+							<h1 className='text-3xl font-semibold' {...props} />
+						),
+						h2: ({ node, ...props }) => (
+							<h2 className='text-2xl font-semibold' {...props} />
+						),
+						a: ({ node, ...props }) => (
+							<a
+								className='text-primaryBrand hover:underline'
+								{...props}
+							/>
+						)
+					}}
 				/>
 			</main>
 		</>
