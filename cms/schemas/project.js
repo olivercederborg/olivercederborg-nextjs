@@ -51,9 +51,16 @@ export default {
 			type: 'image'
 		},
 		{
-			name: 'body',
-			title: 'Body',
-			type: 'markdown'
+			name: 'sections',
+			title: 'Sections',
+			type: 'array',
+			of: [
+				{
+					type: 'section',
+					name: 'section',
+					title: 'Section'
+				}
+			]
 		}
 	],
 
